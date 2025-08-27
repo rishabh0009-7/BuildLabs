@@ -340,11 +340,24 @@ export default function MVPLabsLandingPage() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
               {
+                name: "Landing Page",
+                price: "$600+",
+                subtitle: "One-time",
+                timeline: "Professional landing page to showcase your idea and capture leads.",
+                features: [
+                  "Custom responsive design",
+                  "Lead capture forms",
+                  "SEO optimized",
+                  "Mobile-friendly",
+                  "Delivered in 3-5 days",
+                ],
+              },
+              {
                 name: "MVP Development",
-                price: "$4,500",
+                price: "$2,000+",
                 subtitle: "One-time",
                 timeline: "Go from idea to real app in 10-14 days, build, ship, and improve.",
                 features: [
@@ -354,22 +367,30 @@ export default function MVPLabsLandingPage() {
                   "1-month bug fixes + launch support",
                   "Delivered in just 10-14 days",
                 ],
+                popular: true,
               },
               {
-                name: "Continuous Support",
-                price: "$2,500",
-                subtitle: "/month",
-                timeline: "Keep improving, shipping, and scaling. Without rebuilding your team or learning tech.",
+                name: "Custom Solution",
+                price: "$3,500+",
+                subtitle: "One-time",
+                timeline: "Fully custom solution tailored to your specific business needs and requirements.",
                 features: [
-                  "Weekly updates + 1 check-ins",
-                  "Dedicated dev time (no hourly caps)",
-                  "SEO, analytics + performance tuning",
-                  "Same-day fixes + roadmap support",
-                  "Ongoing maintenance + feature builds",
+                  "Complex integrations & APIs",
+                  "Advanced features & workflows",
+                  "Scalable architecture",
+                  "Priority support & consultation",
+                  "Extended development timeline",
                 ],
               },
             ].map((plan, index) => (
-              <Card key={index} className="p-8 bg-white border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+              <Card key={index} className={`p-8 bg-white border-2 hover:shadow-xl transition-shadow duration-300 relative ${
+                plan.popular ? "border-green-500" : "border-gray-200"
+              }`}>
+                {plan.popular && (
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    <Badge className="bg-green-500 text-white px-4 py-1 text-sm font-medium">Most Popular</Badge>
+                  </div>
+                )}
                 <CardContent className="p-0">
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
                   <div className="flex items-baseline space-x-2 mb-2">
@@ -393,11 +414,13 @@ export default function MVPLabsLandingPage() {
                   </div>
                   
                   <button className={`w-full py-4 px-6 rounded-full font-semibold transition-colors duration-200 ${
-                    index === 0 
+                    plan.popular
                       ? "bg-green-500 text-white hover:bg-green-600" 
                       : "bg-white text-green-500 border-2 border-green-500 hover:bg-green-50"
                   }`}>
-                    {index === 0 ? "Show Me My MVP →" : "Take My MVP To The Next Level →"}
+                    {index === 0 ? "Get My Landing Page →" : 
+                     index === 1 ? "Start My MVP →" : 
+                     "Get Custom Solution →"}
                   </button>
                 </CardContent>
               </Card>
@@ -473,28 +496,51 @@ export default function MVPLabsLandingPage() {
         </div>
       </section>
 
-      <footer id="contact" className="py-16 bg-gray-50 border-t border-gray-200">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <div className="flex items-center justify-center space-x-2 mb-6">
-              <div className="w-8 h-8 bg-gray-900 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">M</span>
+      <footer id="contact" className="py-16 bg-white border-t border-gray-200">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-12 gap-8 mb-12">
+            {/* Logo and Description - Left Side (Much Bigger) */}
+            <div className="md:col-span-6">
+              <div className="flex items-center space-x-2 mb-6">
+                <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">M</span>
+                </div>
+                <span className="text-2xl font-bold text-gray-900">MVP Labs</span>
               </div>
-              <span className="text-xl font-bold text-gray-900">MVP Labs</span>
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+                Turn Your Idea Into a Revenue-Ready MVP in 2 Weeks
+              </h3>
             </div>
 
-            <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-              Ready to turn your idea into a real product? Let's build something amazing together.
-            </p>
+            {/* Empty Center Space */}
+            <div className="md:col-span-3"></div>
 
-            <ShimmerButton className="px-8 py-4 text-lg mb-8 bg-white text-gray-900 border border-gray-300 hover:bg-gray-50">
-              Book Your Free Consultation
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </ShimmerButton>
-
-            <div className="border-t border-gray-200 pt-8">
-              <p className="text-gray-500 text-sm"> 2024 MVP Labs. All rights reserved.</p>
+            {/* Pages Column - Right Side */}
+            <div className="md:col-span-1.5">
+              <h4 className="font-semibold text-gray-900 mb-4">Pages</h4>
+              <ul className="space-y-3">
+                <li><button onClick={() => scrollToSection("home")} className="text-gray-600 hover:text-green-500 text-sm transition-colors">Home</button></li>
+                <li><button onClick={() => scrollToSection("process")} className="text-gray-600 hover:text-green-500 text-sm transition-colors">Process</button></li>
+                <li><button onClick={() => scrollToSection("portfolio")} className="text-gray-600 hover:text-green-500 text-sm transition-colors">Projects</button></li>
+                <li><button onClick={() => scrollToSection("pricing")} className="text-gray-600 hover:text-green-500 text-sm transition-colors">Pricing</button></li>
+                <li><button onClick={() => scrollToSection("faq")} className="text-gray-600 hover:text-green-500 text-sm transition-colors">FAQ</button></li>
+              </ul>
             </div>
+
+            {/* Legal Column - Right Side */}
+            <div className="md:col-span-1.5">
+              <h4 className="font-semibold text-gray-900 mb-4">Legal</h4>
+              <ul className="space-y-3">
+                <li><a href="#" className="text-gray-600 hover:text-green-500 text-sm transition-colors">Privacy Policy</a></li>
+                <li><a href="#" className="text-gray-600 hover:text-green-500 text-sm transition-colors">Terms of Service</a></li>
+                <li><a href="#" className="text-gray-600 hover:text-green-500 text-sm transition-colors">Cookie Policy</a></li>
+                <li><span className="text-gray-600 text-sm">hello@mvplabs.com</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-t border-gray-200 pt-8">
+            <p className="text-gray-500 text-sm text-center">© 2024 MVP Labs. All rights reserved.</p>
           </div>
         </div>
       </footer>
