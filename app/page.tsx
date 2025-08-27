@@ -141,10 +141,12 @@ export default function MVPLabsLandingPage() {
                 We don't just build products. We build momentum.
               </p>
 
-              <ShimmerButton className="px-8 py-4 text-lg">
-                Book a 15-min intro
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </ShimmerButton>
+              <div className="flex justify-center">
+                <ShimmerButton className="px-8 py-4 text-lg">
+                  Book a 15-min intro
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </ShimmerButton>
+              </div>
             </div>
           </div>
         </section>
