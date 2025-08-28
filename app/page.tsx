@@ -9,10 +9,12 @@ import { Button } from "@/components/ui/button"
 import { ShimmerButton } from "@/components/ui/shimmer-button"
 import { NavBar } from "@/components/ui/tubelight-navbar"
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button"
+import { PricingCards } from "@/components/ui/pricing-cards"
 
 export default function MVPLabsLandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrollY, setScrollY] = useState(0)
+  const [pricingMode, setPricingMode] = useState<'mvp' | 'maintenance'>('mvp')
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY)
@@ -37,12 +39,12 @@ export default function MVPLabsLandingPage() {
   ]
 
   return (
-    <div className="min-h-screen w-full bg-green-50">
+    <div className="min-h-screen w-full bg-blue-50">
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo - Left Side */}
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">M</span>
             </div>
             <span className="text-xl font-bold text-gray-900">MVP Labs</span>
@@ -50,18 +52,34 @@ export default function MVPLabsLandingPage() {
 
           {/* Navigation - Center */}
           <nav className="hidden md:flex items-center space-x-8">
-            <button onClick={() => scrollToSection("home")} className="text-gray-600 hover:text-gray-900 font-medium">Home</button>
-            <button onClick={() => scrollToSection("process")} className="text-gray-600 hover:text-gray-900 font-medium">Process</button>
-            <button onClick={() => scrollToSection("portfolio")} className="text-gray-600 hover:text-gray-900 font-medium">Project</button>
-            <button onClick={() => scrollToSection("pricing")} className="text-gray-600 hover:text-gray-900 font-medium">Pricing</button>
-            <button onClick={() => scrollToSection("faq")} className="text-gray-600 hover:text-gray-900 font-medium">FAQ</button>
+            <button onClick={() => scrollToSection("home")} className="text-gray-600 hover:text-gray-900 font-medium relative group transition-colors duration-200">
+              Home
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-300"></span>
+            </button>
+            <button onClick={() => scrollToSection("process")} className="text-gray-600 hover:text-gray-900 font-medium relative group transition-colors duration-200">
+              Process
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-300"></span>
+            </button>
+            <button onClick={() => scrollToSection("portfolio")} className="text-gray-600 hover:text-gray-900 font-medium relative group transition-colors duration-200">
+              Project
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-300"></span>
+            </button>
+            <button onClick={() => scrollToSection("pricing")} className="text-gray-600 hover:text-gray-900 font-medium relative group transition-colors duration-200">
+              Pricing
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-300"></span>
+            </button>
+            <button onClick={() => scrollToSection("faq")} className="text-gray-600 hover:text-gray-900 font-medium relative group transition-colors duration-200">
+              FAQ
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-300"></span>
+            </button>
           </nav>
 
           {/* CTA Button - Right Side */}
           <div className="hidden md:block">
             <button 
               onClick={() => scrollToSection("contact")}
-              className="px-6 py-2 bg-green-500 text-white rounded-full font-medium hover:bg-green-600 transition-colors duration-200"
+              className="px-6 py-2 bg-blue-500 text-white rounded-full font-bold hover:bg-blue-600 transition-colors duration-200 shadow-lg hover:shadow-xl"
+              style={{textShadow: '0 1px 2px rgba(0,0,0,0.1)'}}
             >
               Book a Call →
             </button>
@@ -87,7 +105,8 @@ export default function MVPLabsLandingPage() {
                     scrollToSection(item.url.substring(1))
                     setIsMenuOpen(false)
                   }}
-                  className="text-left text-white font-medium py-2 px-4 rounded hover:bg-black transition-colors duration-200"
+                  className="text-left text-white font-bold py-2 px-4 rounded hover:bg-black transition-colors duration-200"
+                  style={{textShadow: '0 1px 2px rgba(0,0,0,0.2)'}}
                 >
                   {item.name}
                 </button>
@@ -106,66 +125,15 @@ export default function MVPLabsLandingPage() {
         )}
       </header>
 
-      <section id="home" className="pt-32 pb-20 bg-gray-50 relative overflow-hidden">
-        {/* Floating Elements */}
-        <div className="absolute inset-0 pointer-events-none">
-          {/* Floating Cards - Above Content */}
-          <div className="absolute top-32 left-10 bg-white rounded-lg shadow-lg p-4 animate-bounce" style={{animationDuration: '3s'}}>
-            <div className="flex items-center space-x-2">
-              <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-              <span className="text-sm font-medium text-gray-700">MVP Ready</span>
-            </div>
-          </div>
-          
-          <div className="absolute top-40 right-16 bg-white rounded-lg shadow-lg p-4 animate-pulse">
-            <div className="flex items-center space-x-2">
-              <Rocket className="w-4 h-4 text-green-500" />
-              <span className="text-sm font-medium text-gray-700">14 Days</span>
-            </div>
-          </div>
-
-          {/* Floating Cards - Below Content */}
-          <div className="absolute bottom-32 left-20 bg-white rounded-lg shadow-lg p-4" style={{animation: 'float 4s ease-in-out infinite'}}>
-            <div className="flex items-center space-x-2">
-              <Code className="w-4 h-4 text-green-500" />
-              <span className="text-sm font-medium text-gray-700">Full Stack</span>
-            </div>
-          </div>
-
-          <div className="absolute bottom-40 right-32 bg-white rounded-lg shadow-lg p-4 animate-bounce" style={{animationDuration: '2.5s', animationDelay: '1s'}}>
-            <div className="flex items-center space-x-2">
-              <Heart className="w-4 h-4 text-green-500" />
-              <span className="text-sm font-medium text-gray-700">Founder Love</span>
-            </div>
-          </div>
-
-          {/* Floating Circles */}
-          <div className="absolute top-16 right-10 w-16 h-16 bg-green-100 rounded-full opacity-60 animate-ping" style={{animationDuration: '4s'}}></div>
-          <div className="absolute bottom-20 right-20 w-12 h-12 bg-green-200 rounded-full opacity-40 animate-pulse"></div>
-          <div className="absolute top-80 left-32 w-8 h-8 bg-green-300 rounded-full opacity-50" style={{animation: 'float 3s ease-in-out infinite'}}></div>
-          <div className="absolute top-60 right-32 w-6 h-6 bg-green-200 rounded-full opacity-30 animate-bounce" style={{animationDuration: '2s'}}></div>
-          <div className="absolute bottom-40 left-16 w-10 h-10 bg-green-100 rounded-full opacity-50 animate-ping" style={{animationDuration: '3.5s'}}></div>
-          <div className="absolute top-96 right-8 w-4 h-4 bg-green-400 rounded-full opacity-60" style={{animation: 'float 2.5s ease-in-out infinite'}}></div>
-          <div className="absolute bottom-60 right-40 w-14 h-14 bg-green-50 rounded-full opacity-40 animate-pulse" style={{animationDuration: '2.8s'}}></div>
-          <div className="absolute top-40 left-40 w-5 h-5 bg-green-300 rounded-full opacity-45 animate-bounce" style={{animationDuration: '3.2s'}}></div>
-          <div className="absolute bottom-80 left-8 w-7 h-7 bg-green-200 rounded-full opacity-35" style={{animation: 'float 4.2s ease-in-out infinite'}}></div>
-          <div className="absolute top-72 right-60 w-9 h-9 bg-green-100 rounded-full opacity-55 animate-ping" style={{animationDuration: '5s'}}></div>
-        </div>
-
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-8">
-            <Badge className="bg-green-500 text-white px-4 py-2 text-sm font-medium rounded-full inline-flex items-center space-x-2">
-              <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-              <span>Trusted by founders</span>
-            </Badge>
-          </div>
+      <section id="home" className="pt-32 pb-20 bg-gray-50">
+        <div className="container mx-auto px-6">
 
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Launch Your MVP in Just <span className="text-green-500">14 Days</span>
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-gray-900 mb-12 leading-[0.9] tracking-[-0.02em]" style={{fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif', fontWeight: 900}}>
+              Launch your MVP in just <span className="text-blue-500">14 Days</span>
             </h1>
 
-            <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-700 mb-10 max-w-2xl mx-auto">
               We help founders and businesses transform ideas into investor-ready products—fast, affordable, and scalable.
             </p>
 
@@ -176,13 +144,14 @@ export default function MVPLabsLandingPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
                 onClick={() => scrollToSection("contact")}
-                className="px-8 py-4 text-lg bg-green-500 text-white rounded-full font-medium hover:bg-green-600 transition-colors duration-200"
+                className="px-8 py-4 text-lg bg-blue-500 text-white rounded-full font-bold hover:bg-blue-600 transition-colors duration-200 shadow-lg hover:shadow-xl"
+                style={{textShadow: '0 1px 3px rgba(0,0,0,0.2)'}}
               >
                 Book a Free Strategy Call
               </button>
               <button 
                 onClick={() => scrollToSection("pricing")}
-                className="px-8 py-4 text-lg bg-white text-green-500 border-2 border-green-500 rounded-full font-medium hover:bg-green-50 transition-colors duration-200"
+                className="px-8 py-4 text-lg bg-white text-blue-500 border-2 border-blue-500 rounded-full font-medium hover:bg-blue-50 transition-colors duration-200"
               >
                 Start Your 14-Day MVP Now
               </button>
@@ -190,59 +159,69 @@ export default function MVPLabsLandingPage() {
           </div>
         </div>
 
-        <style jsx>{`
-          @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-          }
-        `}</style>
       </section>
 
-      <section id="process" className="py-20 bg-gray-50">
+      <section id="process" className="py-20 bg-gray-900 relative overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <Badge className="bg-green-100 text-green-700 px-4 py-2 text-sm font-medium rounded-full mb-4">Our Process</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">How We Turn Your Idea into a Launch-Ready MVP</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <div className="text-center mb-20">
+            <Badge className="bg-blue-500 text-white px-4 py-2 text-sm font-medium rounded-full mb-4">Our Process</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">How We Turn Your Idea into a Launch-Ready MVP</h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               You bring the idea, we turn it into something real. Here's what the 2-week journey looks like.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="relative max-w-4xl mx-auto">
+            {/* Connecting Line */}
+            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-blue-500/30 transform -translate-x-1/2 hidden md:block"></div>
+            
             {[
               {
-                step: "STEP 1",
+                step: "Step 01",
                 title: "Kickoff Call",
                 description: "We dive into your idea, goals and user needs — and by the end of the call, we'll understand what we're building and how we'll build it.",
-                icon: "💬"
+                position: "left"
               },
               {
-                step: "STEP 2",
+                step: "Step 02", 
                 title: "MVP Blueprint",
                 description: "We define what's in (and what's out). You'll get a fully functional wireframe directly into what we're going to build.",
-                icon: "📋"
+                position: "right"
               },
               {
-                step: "STEP 3",
-                title: "Build Sprint",
+                step: "Step 03",
+                title: "Build Sprint", 
                 description: "We execute the code. You'll get a fully functional wireframe and an MVP in 10-14 days ready for users to signup.",
-                icon: "⚡"
+                position: "left"
               },
               {
-                step: "STEP 4",
+                step: "Step 04",
                 title: "Launch Day",
                 description: "You go live with your support and success tools, post-launch fixes, and hands-on help if you want to keep building.",
-                icon: "🚀"
+                position: "right"
               },
             ].map((step, index) => (
-              <Card key={index} className="p-6 bg-white border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-0 text-center">
-                  <div className="text-4xl mb-4">{step.icon}</div>
-                  <div className="text-green-500 text-sm font-semibold mb-2">{step.step}</div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
-                </CardContent>
-              </Card>
+              <div key={index} className={`relative flex items-center mb-16 ${step.position === 'right' ? 'md:flex-row-reverse' : ''}`}>
+                {/* Step Number Circle */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center z-10 hidden md:flex">
+                  <span className="text-white font-bold text-sm">{index + 1}</span>
+                </div>
+                
+                {/* Card */}
+                <div className={`w-full md:w-5/12 ${step.position === 'right' ? 'md:mr-auto md:ml-0' : 'md:ml-auto md:mr-0'}`}>
+                  <Card className="bg-gray-800 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10">
+                    <CardContent className="p-6">
+                      <div className="mb-4">
+                        <Badge className="bg-blue-500/20 text-blue-400 px-3 py-1 text-xs font-medium rounded-full mb-3">
+                          {step.step}
+                        </Badge>
+                        <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
+                      </div>
+                      <p className="text-gray-300 text-sm leading-relaxed">{step.description}</p>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -307,7 +286,7 @@ export default function MVPLabsLandingPage() {
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-2 mb-2">
                     <h3 className="text-xl font-bold text-gray-900">{project.name}</h3>
-                    <Badge className="bg-green-100 text-green-700 text-xs px-2 py-1">{project.category}</Badge>
+                    <Badge className="bg-blue-100 text-blue-700 text-xs px-2 py-1">{project.category}</Badge>
                   </div>
                   <p className="text-gray-600 text-sm leading-relaxed">{project.description}</p>
                 </CardContent>
@@ -316,7 +295,7 @@ export default function MVPLabsLandingPage() {
           </div>
 
           <div className="text-center">
-            <button className="px-6 py-3 bg-green-500 text-white rounded-full font-medium hover:bg-green-600 transition-colors duration-200">
+            <button className="px-6 py-3 bg-blue-500 text-white rounded-full font-medium hover:bg-blue-600 transition-colors duration-200">
               Show More Projects
             </button>
           </div>
@@ -326,105 +305,267 @@ export default function MVPLabsLandingPage() {
       <section id="pricing" className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <Badge className="bg-green-100 text-green-700 px-4 py-2 text-sm font-medium rounded-full mb-4">Pricing</Badge>
+            <Badge className="bg-blue-500 text-white px-4 py-2 text-sm font-medium rounded-full mb-4">Pricing</Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Everything You Need to Actually Launch Your MVP
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
               Validate your app idea, get something real in front of users, and skip the 6-month dev cycle. All for a flat, founder-friendly price.
             </p>
-            <div className="mt-6">
-              <Badge className="bg-red-500 text-white px-4 py-2 text-sm font-medium rounded-full">
-                Limited availability - Only 2 spots left for 2024
-              </Badge>
+
+            {/* Toggle Buttons */}
+            <div className="flex justify-center mb-12">
+              <div className="bg-gray-100 p-1 rounded-full flex">
+                <button
+                  onClick={() => setPricingMode('mvp')}
+                  className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                    pricingMode === 'mvp'
+                      ? 'bg-blue-500 text-white shadow-lg'
+                      : 'text-gray-600 hover:text-gray-900'
+                  }`}
+                >
+                  MVP Development
+                </button>
+                <button
+                  onClick={() => setPricingMode('maintenance')}
+                  className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                    pricingMode === 'maintenance'
+                      ? 'bg-blue-500 text-white shadow-lg'
+                      : 'text-gray-600 hover:text-gray-900'
+                  }`}
+                >
+                  Existing App Maintenance
+                </button>
+              </div>
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                name: "Landing Page",
-                price: "$600+",
-                subtitle: "One-time",
-                timeline: "Professional landing page to showcase your idea and capture leads.",
-                features: [
-                  "Custom responsive design",
-                  "Lead capture forms",
-                  "SEO optimized",
-                  "Mobile-friendly",
-                  "Delivered in 3-5 days",
-                ],
-              },
-              {
-                name: "MVP Development",
-                price: "$2,000+",
-                subtitle: "One-time",
-                timeline: "Go from idea to real app in 10-14 days, build, ship, and improve.",
-                features: [
-                  "Launch-ready web app or mobile app",
-                  "Clean UI, login, payments, database",
-                  "Full source code + ownership",
-                  "1-month bug fixes + launch support",
-                  "Delivered in just 10-14 days",
-                ],
-                popular: true,
-              },
-              {
-                name: "Custom Solution",
-                price: "$3,500+",
-                subtitle: "One-time",
-                timeline: "Fully custom solution tailored to your specific business needs and requirements.",
-                features: [
-                  "Complex integrations & APIs",
-                  "Advanced features & workflows",
-                  "Scalable architecture",
-                  "Priority support & consultation",
-                  "Extended development timeline",
-                ],
-              },
-            ].map((plan, index) => (
-              <Card key={index} className={`p-8 bg-white border-2 hover:shadow-xl transition-shadow duration-300 relative ${
-                plan.popular ? "border-green-500" : "border-gray-200"
-              }`}>
-                {plan.popular && (
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <Badge className="bg-green-500 text-white px-4 py-1 text-sm font-medium">Most Popular</Badge>
-                  </div>
-                )}
-                <CardContent className="p-0">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                  <div className="flex items-baseline space-x-2 mb-2">
-                    <span className="text-4xl font-bold text-green-500">{plan.price}</span>
-                    <span className="text-gray-600">{plan.subtitle}</span>
-                  </div>
-                  <p className="text-gray-600 mb-8 leading-relaxed">{plan.timeline}</p>
-                  
-                  <div className="mb-8">
-                    <h4 className="font-semibold text-gray-900 mb-4">You'll get:</h4>
-                    <ul className="space-y-3">
-                      {plan.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start">
-                          <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
-                            <Check className="h-3 w-3 text-white" />
-                          </div>
-                          <span className="text-gray-700">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <button className={`w-full py-4 px-6 rounded-full font-semibold transition-colors duration-200 ${
-                    plan.popular
-                      ? "bg-green-500 text-white hover:bg-green-600" 
-                      : "bg-white text-green-500 border-2 border-green-500 hover:bg-green-50"
-                  }`}>
-                    {index === 0 ? "Get My Landing Page →" : 
-                     index === 1 ? "Start My MVP →" : 
-                     "Get Custom Solution →"}
-                  </button>
-                </CardContent>
-              </Card>
-            ))}
+          {/* MVP Development Plans */}
+          {pricingMode === 'mvp' && (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12">
+              {[
+                {
+                  name: "Landing Page",
+                  price: "$599",
+                  period: "USD",
+                  features: [
+                    "Custom responsive landing page",
+                    "SEO-ready design",
+                    "Smooth animations",
+                    "Delivered in 7 days",
+                    "Unlimited revisions until satisfied"
+                  ],
+                  buttonText: "Start Your Project →",
+                  recommended: false
+                },
+                {
+                  name: "Complete MVP",
+                  price: "$1,999",
+                  period: "USD",
+                  features: [
+                    "Full MVP with custom UI",
+                    "API integration",
+                    "Backend setup",
+                    "2–4 weeks delivery",
+                    "Unlimited revisions until satisfied"
+                  ],
+                  buttonText: "Start Your Project →",
+                  recommended: true
+                },
+                {
+                  name: "Custom Solution",
+                  price: "$2,999+",
+                  period: "USD",
+                  features: [
+                    "Fully tailored solution",
+                    "Advanced features",
+                    "Scaling-ready architecture",
+                    "Timelines based on requirements",
+                    "Dedicated project manager"
+                  ],
+                  buttonText: "Start Your Project →",
+                  recommended: false
+                }
+              ].map((plan, index) => (
+                <Card
+                  key={index}
+                  className={`relative p-8 bg-white hover:shadow-xl transition-all duration-300 group ${
+                    plan.recommended
+                      ? 'border-2 border-blue-500 shadow-lg scale-105'
+                      : 'border border-gray-200 hover:border-blue-300'
+                  }`}
+                >
+                  {plan.recommended && (
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                      <Badge className="bg-blue-500 text-white px-4 py-2 text-sm font-medium rounded-full">
+                        Recommended
+                      </Badge>
+                    </div>
+                  )}
+
+                  <CardContent className="p-0">
+                    <div className="text-center mb-8">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4">{plan.name}</h3>
+                      <div className="flex items-baseline justify-center space-x-1">
+                        <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
+                        <span className="text-gray-500 text-lg">/{plan.period}</span>
+                      </div>
+                    </div>
+
+                    <div className="mb-8">
+                      <ul className="space-y-4">
+                        {plan.features.map((feature, featureIndex) => (
+                          <li key={featureIndex} className="flex items-start">
+                            <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-blue-500">
+                              <Check className="h-3 w-3 text-white" />
+                            </div>
+                            <span className="text-sm leading-relaxed text-gray-700">
+                              {feature}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <button
+                      onClick={() => {
+                        const element = document.getElementById("contact")
+                        if (element) {
+                          element.scrollIntoView({ behavior: "smooth" })
+                        }
+                      }}
+                      className={`w-full py-4 px-6 rounded-full font-semibold transition-all duration-200 group-hover:scale-105 ${
+                        plan.recommended
+                          ? 'bg-blue-500 text-white hover:bg-blue-600 shadow-lg hover:shadow-xl'
+                          : 'bg-white text-blue-500 border-2 border-blue-500 hover:bg-blue-50 hover:border-blue-600'
+                      }`}
+                    >
+                      {plan.buttonText}
+                    </button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
+
+          {/* Maintenance Plans */}
+          {pricingMode === 'maintenance' && (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12">
+              {[
+                {
+                  name: "Basic Plan",
+                  price: "$399",
+                  period: "month",
+                  features: [
+                    "Bug fixes",
+                    "Minor feature additions",
+                    "Performance improvements",
+                    "Security updates",
+                    "Email support"
+                  ],
+                  buttonText: "Start Your Project →",
+                  recommended: false
+                },
+                {
+                  name: "Standard Plan",
+                  price: "$799",
+                  period: "month",
+                  features: [
+                    "Everything in Basic",
+                    "Major feature additions",
+                    "Priority support",
+                    "Monthly performance reports",
+                    "Code optimization"
+                  ],
+                  buttonText: "Start Your Project →",
+                  recommended: true
+                },
+                {
+                  name: "Premium Plan",
+                  price: "$1,199",
+                  period: "month",
+                  features: [
+                    "Everything in Standard",
+                    "24/7 support",
+                    "Custom feature roadmap",
+                    "Monthly health reports",
+                    "Dedicated developer"
+                  ],
+                  buttonText: "Start Your Project →",
+                  recommended: false
+                }
+              ].map((plan, index) => (
+                <Card
+                  key={index}
+                  className={`relative p-8 bg-white hover:shadow-xl transition-all duration-300 group ${
+                    plan.recommended
+                      ? 'border-2 border-blue-500 shadow-lg scale-105'
+                      : 'border border-gray-200 hover:border-blue-300'
+                  }`}
+                >
+                  {plan.recommended && (
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                      <Badge className="bg-blue-500 text-white px-4 py-2 text-sm font-medium rounded-full">
+                        Recommended
+                      </Badge>
+                    </div>
+                  )}
+
+                  <CardContent className="p-0">
+                    <div className="text-center mb-8">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4">{plan.name}</h3>
+                      <div className="flex items-baseline justify-center space-x-1">
+                        <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
+                        <span className="text-gray-500 text-lg">/{plan.period}</span>
+                      </div>
+                    </div>
+
+                    <div className="mb-8">
+                      <ul className="space-y-4">
+                        {plan.features.map((feature, featureIndex) => (
+                          <li key={featureIndex} className="flex items-start">
+                            <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-blue-500">
+                              <Check className="h-3 w-3 text-white" />
+                            </div>
+                            <span className="text-sm leading-relaxed text-gray-700">
+                              {feature}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <button
+                      onClick={() => {
+                        const element = document.getElementById("contact")
+                        if (element) {
+                          element.scrollIntoView({ behavior: "smooth" })
+                        }
+                      }}
+                      className={`w-full py-4 px-6 rounded-full font-semibold transition-all duration-200 group-hover:scale-105 ${
+                        plan.recommended
+                          ? 'bg-blue-500 text-white hover:bg-blue-600 shadow-lg hover:shadow-xl'
+                          : 'bg-white text-blue-500 border-2 border-blue-500 hover:bg-blue-50 hover:border-blue-600'
+                      }`}
+                    >
+                      {plan.buttonText}
+                    </button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
+
+          {/* Custom Solution Text */}
+          <div className="text-center">
+            <p className="text-gray-600 text-sm">
+              Need a custom solution? <button onClick={() => {
+                const element = document.getElementById("contact")
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth" })
+                }
+              }} className="text-blue-500 hover:text-blue-600 font-medium">Contact us for personalized pricing.</button>
+            </p>
           </div>
         </div>
       </section>
@@ -502,7 +643,7 @@ export default function MVPLabsLandingPage() {
             {/* Logo and Description - Left Side (Much Bigger) */}
             <div className="md:col-span-6">
               <div className="flex items-center space-x-2 mb-6">
-                <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-lg">M</span>
                 </div>
                 <span className="text-2xl font-bold text-gray-900">MVP Labs</span>
@@ -519,11 +660,11 @@ export default function MVPLabsLandingPage() {
             <div className="md:col-span-1.5">
               <h4 className="font-semibold text-gray-900 mb-4">Pages</h4>
               <ul className="space-y-3">
-                <li><button onClick={() => scrollToSection("home")} className="text-gray-600 hover:text-green-500 text-sm transition-colors">Home</button></li>
-                <li><button onClick={() => scrollToSection("process")} className="text-gray-600 hover:text-green-500 text-sm transition-colors">Process</button></li>
-                <li><button onClick={() => scrollToSection("portfolio")} className="text-gray-600 hover:text-green-500 text-sm transition-colors">Projects</button></li>
-                <li><button onClick={() => scrollToSection("pricing")} className="text-gray-600 hover:text-green-500 text-sm transition-colors">Pricing</button></li>
-                <li><button onClick={() => scrollToSection("faq")} className="text-gray-600 hover:text-green-500 text-sm transition-colors">FAQ</button></li>
+                <li><button onClick={() => scrollToSection("home")} className="text-gray-600 hover:text-blue-500 text-sm transition-colors">Home</button></li>
+                <li><button onClick={() => scrollToSection("process")} className="text-gray-600 hover:text-blue-500 text-sm transition-colors">Process</button></li>
+                <li><button onClick={() => scrollToSection("portfolio")} className="text-gray-600 hover:text-blue-500 text-sm transition-colors">Projects</button></li>
+                <li><button onClick={() => scrollToSection("pricing")} className="text-gray-600 hover:text-blue-500 text-sm transition-colors">Pricing</button></li>
+                <li><button onClick={() => scrollToSection("faq")} className="text-gray-600 hover:text-blue-500 text-sm transition-colors">FAQ</button></li>
               </ul>
             </div>
 
@@ -531,9 +672,9 @@ export default function MVPLabsLandingPage() {
             <div className="md:col-span-1.5">
               <h4 className="font-semibold text-gray-900 mb-4">Legal</h4>
               <ul className="space-y-3">
-                <li><a href="#" className="text-gray-600 hover:text-green-500 text-sm transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-green-500 text-sm transition-colors">Terms of Service</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-green-500 text-sm transition-colors">Cookie Policy</a></li>
+                <li><a href="#" className="text-gray-600 hover:text-blue-500 text-sm transition-colors">Privacy Policy</a></li>
+                <li><a href="#" className="text-gray-600 hover:text-blue-500 text-sm transition-colors">Terms of Service</a></li>
+                <li><a href="#" className="text-gray-600 hover:text-blue-500 text-sm transition-colors">Cookie Policy</a></li>
                 <li><span className="text-gray-600 text-sm">hello@mvplabs.com</span></li>
               </ul>
             </div>
