@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { motion, useInView } from "framer-motion"
+import { motion, useInView, useAnimation } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -11,6 +11,31 @@ import { ShimmerButton } from "@/components/ui/shimmer-button"
 import { NavBar } from "@/components/ui/tubelight-navbar"
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button"
 import { PricingCards } from "@/components/ui/pricing-cards"
+import Globe from "@/components/ui/globe"
+
+// Counter component for animated numbers
+const AnimatedCounter = ({ end, duration = 2000 }: { end: number; duration?: number }) => {
+  const [count, setCount] = useState(0)
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+
+  useEffect(() => {
+    if (isInView) {
+      let startTime: number
+      const animate = (timestamp: number) => {
+        if (!startTime) startTime = timestamp
+        const progress = Math.min((timestamp - startTime) / duration, 1)
+        setCount(Math.floor(progress * end))
+        if (progress < 1) {
+          requestAnimationFrame(animate)
+        }
+      }
+      requestAnimationFrame(animate)
+    }
+  }, [isInView, end, duration])
+
+  return <span ref={ref}>{count}</span>
+}
 
 export default function MVPLabsLandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -34,14 +59,31 @@ export default function MVPLabsLandingPage() {
   const navItems = [
     { name: "Home", url: "#home", icon: Home },
     { name: "Portfolio", url: "#portfolio", icon: Briefcase },
+    { name: "Why Choose Us", url: "#why-choose-us", icon: Star },
     { name: "Pricing", url: "#pricing", icon: FileText },
     { name: "FAQ", url: "#faq", icon: User },
     { name: "Contact", url: "#contact", icon: Phone },
   ]
 
   return (
-    <div className="min-h-screen w-full bg-white">
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md">
+    <div className="min-h-screen w-full relative bg-white">
+      {/* Cool Blue Glow Top */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          background: "#ffffff",
+          backgroundImage: `
+            radial-gradient(
+              circle at top center,
+              rgba(70, 130, 180, 0.5),
+              transparent 70%
+            )
+          `,
+          filter: "blur(80px)",
+          backgroundRepeat: "no-repeat",
+        }}
+      />
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md relative">
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo - Left Side */}
           <div className="flex items-center">
@@ -62,6 +104,10 @@ export default function MVPLabsLandingPage() {
               Project
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-300"></span>
             </button>
+            <button onClick={() => scrollToSection("why-choose-us")} className="text-gray-600 hover:text-gray-900 font-medium relative group transition-colors duration-200">
+              Why Choose Us
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-300"></span>
+            </button>
             <button onClick={() => scrollToSection("pricing")} className="text-gray-600 hover:text-gray-900 font-medium relative group transition-colors duration-200">
               Pricing
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-300"></span>
@@ -75,7 +121,7 @@ export default function MVPLabsLandingPage() {
           {/* CTA Button - Right Side */}
           <div className="hidden md:block">
             <button 
-              onClick={() => scrollToSection("contact")}
+              onClick={() => window.open('https://cal.com/rishabhbuildsmvp/30min?overlayCalendar=true', '_blank')}
               className="px-6 py-2 bg-blue-500 text-white rounded-full font-bold hover:bg-blue-600 transition-colors duration-200 shadow-lg hover:shadow-xl"
               style={{textShadow: '0 1px 2px rgba(0,0,0,0.1)'}}
             >
@@ -110,7 +156,7 @@ export default function MVPLabsLandingPage() {
               ))}
               <button 
                 onClick={() => {
-                  scrollToSection("contact")
+                  window.open('https://cal.com/rishabhbuildsmvp/30min?overlayCalendar=true', '_blank')
                   setIsMenuOpen(false)
                 }}
                 className="w-full mt-2 px-6 py-2 bg-blue-500 text-white rounded-full font-bold transition-colors duration-200 hover:bg-blue-600 shadow-lg"
@@ -123,7 +169,7 @@ export default function MVPLabsLandingPage() {
         )}
       </header>
 
-      <section id="home" className="relative pt-32 pb-20 overflow-hidden">
+      <section id="home" className="relative pt-20 pb-12 overflow-hidden z-10 min-h-screen flex items-center">
         {/* Background */}
         <div className="absolute inset-0 bg-white"></div>
 
@@ -131,35 +177,35 @@ export default function MVPLabsLandingPage() {
           <div className="text-center max-w-5xl mx-auto">
             
             {/* Badge */}
-            <div className="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm text-blue-600 rounded-full text-sm font-medium mb-8 shadow-lg border border-blue-100">
+            <div className="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm text-blue-600 rounded-full text-sm font-medium mb-6 shadow-lg border border-blue-100">
               <div className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></div>
               Launch Your Startup Faster
             </div>
   
             {/* Main Heading */}
-            <h1 className="text-6xl sm:text-7xl md:text-8xl font-black text-gray-900 mb-8 leading-tight tracking-tight font-[var(--font-phonk)]">
+            <h1 className="text-6xl sm:text-7xl md:text-8xl font-black text-gray-900 mb-6 leading-tight tracking-tight font-[var(--font-phonk)]">
               <div className="block">Launch Your MVP</div>
-              <div className="block mt-2 md:mt-3">
+              <div className="block mt-1 md:mt-2">
                 in just <span className="text-blue-600 bg-gradient-to-r from-blue-600 to-sky-600 bg-clip-text text-transparent">14 Days</span>, Not <span className="line-through text-gray-400">Months</span> .
               </div>
             </h1>
 
             {/* Subheading */}
-            <p className="text-xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
               We help founders and businesses transform ideas into investor-ready products—fast, affordable, and scalable.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
               <button 
-                onClick={() => scrollToSection("contact")}
+                onClick={() => window.open('https://cal.com/rishabhbuildsmvp/30min?overlayCalendar=true', '_blank')}
                 className="px-8 py-4 text-lg bg-gradient-to-r from-blue-600 to-sky-600 text-white rounded-full font-bold hover:from-blue-700 hover:to-sky-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
                 style={{textShadow: '0 1px 3px rgba(0,0,0,0.2)'}}
               >
                 Book a Free Strategy Call
               </button>
               <button 
-                onClick={() => scrollToSection("pricing")}
+                onClick={() => window.open('https://cal.com/rishabhbuildsmvp/30min?overlayCalendar=true', '_blank')}
                 className="px-8 py-4 text-lg bg-white/90 backdrop-blur-sm text-blue-600 border-2 border-blue-200 rounded-full font-medium hover:bg-white hover:border-blue-300 transition-all duration-200 shadow-lg hover:shadow-xl"
               >
                 Start Your 14-Day MVP Now
@@ -167,7 +213,7 @@ export default function MVPLabsLandingPage() {
             </div>
 
             {/* Trust Indicators */}
-            <div className="flex flex-wrap justify-center items-center gap-6 text-sm text-gray-500">
+            <div className="flex flex-wrap justify-center items-center gap-4 text-sm text-gray-500">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                 No upfront payment
@@ -185,7 +231,7 @@ export default function MVPLabsLandingPage() {
         </div>
       </section>
 
-      <section id="process" className="py-20 bg-gray-900 relative overflow-hidden">
+      <section id="process" className="py-20 bg-gray-900 relative overflow-hidden z-10">
         <div className="container mx-auto px-6">
           <div className="text-center mb-20">
             <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-medium mb-4">
@@ -276,7 +322,7 @@ export default function MVPLabsLandingPage() {
         </div>
       </section>
 
-      <section id="portfolio" className="py-20 bg-white">
+      <section id="portfolio" className="py-20 bg-white relative z-10">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">What We've Built</h2>
@@ -351,7 +397,114 @@ export default function MVPLabsLandingPage() {
         </div>
       </section>
 
-      <section id="pricing" className="py-20 bg-white">
+      <section id="why-choose-us" className="py-20 bg-gray-900 relative overflow-hidden z-10">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-medium mb-4">
+              <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+              Why Choose Us
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Why MVP Labs is Your Best Choice</h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              We're not just developers—we're startup partners who understand the urgency of getting to market fast with a product that works.
+            </p>
+          </div>
+
+          {/* Stats Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-center"
+            >
+              <div className="text-5xl md:text-6xl font-black text-blue-400 mb-4">
+                <AnimatedCounter end={30} />+
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Projects Completed</h3>
+              <p className="text-gray-400">MVPs launched and validated in the market</p>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-center"
+            >
+              <div className="text-5xl md:text-6xl font-black text-blue-400 mb-4">
+                <AnimatedCounter end={10} />+
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Happy Clients</h3>
+              <p className="text-gray-400">Founders who trusted us with their vision</p>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-center"
+            >
+              <div className="text-5xl md:text-6xl font-black text-blue-400 mb-4">
+                <AnimatedCounter end={4} />+
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Years of Experience</h3>
+              <p className="text-gray-400">Building products that scale and succeed</p>
+            </motion.div>
+          </div>
+
+          {/* Features Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Rocket,
+                title: "Lightning Fast Delivery",
+                description: "14-day MVP delivery guaranteed. We use AI-powered development to move at startup speed without compromising quality."
+              },
+              {
+                icon: Code,
+                title: "Production-Ready Code",
+                description: "No shortcuts, no technical debt. Every line of code is written to scale from day one with your growing user base."
+              },
+              {
+                icon: Heart,
+                title: "Founder-First Approach",
+                description: "We think like founders, not just developers. Every decision is made with your business goals and user needs in mind."
+              },
+              {
+                icon: Star,
+                title: "Proven Track Record",
+                description: "30+ successful MVPs launched, with founders raising funding and acquiring customers within months of launch."
+              },
+              {
+                icon: MessageCircle,
+                title: "Unlimited Revisions",
+                description: "We don't stop until you're 100% satisfied. Your success is our success, and we'll iterate until we get it right."
+              },
+              {
+                icon: Palette,
+                title: "Modern Tech Stack",
+                description: "Built with the latest technologies that investors and technical teams recognize and respect."
+              }
+            ].map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-blue-500/50 transition-all duration-300"
+              >
+                <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4">
+                  <feature.icon className="w-6 h-6 text-blue-400" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+                <p className="text-gray-300 text-sm leading-relaxed">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" className="py-20 bg-white relative z-10">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-medium mb-4">
@@ -622,7 +775,77 @@ export default function MVPLabsLandingPage() {
         </div>
       </section>
 
-      <section id="faq" className="py-24 bg-white">
+      <section id="remote" className="py-20 bg-gray-900 relative overflow-hidden z-10">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-medium mb-4">
+              <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+              We Work Worldwide
+            </div>
+          </div>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left side - Content */}
+            <div className="space-y-8">
+              <div className="space-y-6">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  Global Collaboration, <span className="text-blue-400">Zero Boundaries</span>
+                </h2>
+                <p className="text-xl text-gray-300 leading-relaxed">
+                  We collaborate with clients from every corner of the world. Distance doesn't limit innovation—our fully remote approach means we can deliver exceptional MVPs no matter where you're located.
+                </p>
+              </div>
+
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Map className="w-6 h-6 text-blue-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-2">Worldwide Reach</h3>
+                    <p className="text-gray-300">From Silicon Valley to Singapore, we've built MVPs for clients across 6 continents.</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <MessageCircle className="w-6 h-6 text-blue-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-2">Seamless Communication</h3>
+                    <p className="text-gray-300">Real-time collaboration tools and regular check-ins keep you connected throughout the process.</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Rocket className="w-6 h-6 text-blue-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-2">Location Independent</h3>
+                    <p className="text-gray-300">Your location doesn't determine your access to world-class MVP development.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-4">
+                <button 
+                  onClick={() => window.open('https://cal.com/rishabhbuildsmvp/30min?overlayCalendar=true', '_blank')}
+                  className="px-8 py-4 bg-blue-500 text-white rounded-xl font-semibold hover:bg-blue-600 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >
+                  Let's Build Together →
+                </button>
+              </div>
+            </div>
+
+            {/* Right side - Globe */}
+            <div className="relative flex items-center justify-center">
+              <Globe />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" className="py-24 bg-white relative z-10">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-medium mb-5">
@@ -752,7 +975,7 @@ export default function MVPLabsLandingPage() {
         </div>
       </section>
 
-      <footer id="contact" className="py-16 bg-gray-900 border-t border-gray-800">
+      <footer id="contact" className="py-16 bg-gray-900 border-t border-gray-800 relative z-10">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-12 gap-8 mb-12">
             {/* Logo and Description - Left Side (Much Bigger) */}
