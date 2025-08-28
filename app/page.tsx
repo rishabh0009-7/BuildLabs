@@ -1,6 +1,7 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
+import { motion, useInView } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -43,10 +44,7 @@ export default function MVPLabsLandingPage() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo - Left Side */}
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">M</span>
-            </div>
+          <div className="flex items-center">
             <span className="text-xl font-bold text-gray-900">MVP Labs</span>
           </div>
 
@@ -127,20 +125,22 @@ export default function MVPLabsLandingPage() {
 
       <section id="home" className="pt-32 pb-20 bg-gray-50">
         <div className="container mx-auto px-6">
-
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-gray-900 mb-12 leading-[0.9] tracking-[-0.02em]" style={{fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif', fontWeight: 900}}>
-              Launch your MVP in just <span className="text-blue-500">14 Days</span>
+  
+            {/* Main Heading */}
+            <h1 className="text-6xl sm:text-7xl md:text-8xl font-black text-gray-900 mb-8 leading-tight tracking-tight" style={{fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'}}>
+              <div className="block">Launch Your MVP</div>
+              <div className="block mt-2 md:mt-3">
+                in just <span className="text-blue-500">14 Days</span>, Not <span className="line-through text-blue-500">Months</span> .
+              </div>
             </h1>
 
+            {/* Subheading */}
             <p className="text-xl text-gray-700 mb-10 max-w-2xl mx-auto">
               We help founders and businesses transform ideas into investor-ready products—fast, affordable, and scalable.
             </p>
 
-            <p className="text-lg text-gray-700 mb-12 font-medium">
-              From concept to live product in 2 weeks.
-            </p>
-
+            {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
                 onClick={() => scrollToSection("contact")}
@@ -158,7 +158,6 @@ export default function MVPLabsLandingPage() {
             </div>
           </div>
         </div>
-
       </section>
 
       <section id="process" className="py-20 bg-gray-900 relative overflow-hidden">
@@ -203,29 +202,51 @@ export default function MVPLabsLandingPage() {
                 description: "You go live with your support and success tools, post-launch fixes, and hands-on help if you want to keep building.",
                 position: "right"
               },
-            ].map((step, index) => (
-              <div key={index} className={`relative flex items-center mb-16 ${step.position === 'right' ? 'md:flex-row-reverse' : ''}`}>
-                {/* Step Number Circle */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center z-10 hidden md:flex">
-                  <span className="text-white font-bold text-sm">{index + 1}</span>
-                </div>
-                
-                {/* Card */}
-                <div className={`w-full md:w-5/12 ${step.position === 'right' ? 'md:mr-auto md:ml-0' : 'md:ml-auto md:mr-0'}`}>
-                  <Card className="bg-gray-800 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10">
-                    <CardContent className="p-6">
-                      <div className="mb-4">
-                        <Badge className="bg-blue-500/20 text-blue-400 px-3 py-1 text-xs font-medium rounded-full mb-3">
-                          {step.step}
-                        </Badge>
-                        <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
-                      </div>
-                      <p className="text-gray-300 text-sm leading-relaxed">{step.description}</p>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-            ))}
+            ].map((step, index) => {
+              const ref = useRef(null);
+              const isInView = useInView(ref, { once: true, amount: 0.3 });
+              
+              return (
+                <motion.div 
+                  key={index} 
+                  ref={ref}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                  transition={{ duration: 0.5, delay: index * 0.2 }}
+                  className={`relative flex items-center mb-16 ${step.position === 'right' ? 'md:flex-row-reverse' : ''}`}
+                >
+                  {/* Step Number Circle */}
+                  <motion.div 
+                    initial={{ scale: 0 }}
+                    animate={isInView ? { scale: 1 } : { scale: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.2 + 0.2, type: 'spring', stiffness: 100 }}
+                    className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center z-10 hidden md:flex"
+                  >
+                    <span className="text-white font-bold text-sm">{index + 1}</span>
+                  </motion.div>
+                  
+                  {/* Card */}
+                  <motion.div 
+                    initial={{ x: step.position === 'right' ? 100 : -100, opacity: 0 }}
+                    animate={isInView ? { x: 0, opacity: 1 } : { x: step.position === 'right' ? 100 : -100, opacity: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.2 + 0.3, type: 'spring', stiffness: 100 }}
+                    className={`w-full md:w-5/12 ${step.position === 'right' ? 'md:mr-auto md:ml-0' : 'md:ml-auto md:mr-0'}`}
+                  >
+                    <Card className="bg-gray-800 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10">
+                      <CardContent className="p-6">
+                        <div className="mb-4">
+                          <Badge className="bg-blue-500/20 text-blue-400 px-3 py-1 text-xs font-medium rounded-full mb-3">
+                            {step.step}
+                          </Badge>
+                          <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
+                        </div>
+                        <p className="text-gray-300 text-sm leading-relaxed">{step.description}</p>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -414,7 +435,7 @@ export default function MVPLabsLandingPage() {
                       <h3 className="text-2xl font-bold text-gray-900 mb-4">{plan.name}</h3>
                       <div className="flex items-baseline justify-center space-x-1">
                         <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
-                        <span className="text-gray-500 text-lg">/{plan.period}</span>
+                        <span className="text-gray-500 text-lg">{plan.period}</span>
                       </div>
                     </div>
 
@@ -522,7 +543,7 @@ export default function MVPLabsLandingPage() {
                       <h3 className="text-2xl font-bold text-gray-900 mb-4">{plan.name}</h3>
                       <div className="flex items-baseline justify-center space-x-1">
                         <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
-                        <span className="text-gray-500 text-lg">/{plan.period}</span>
+                        <span className="text-gray-500 text-lg">{plan.period}</span>
                       </div>
                     </div>
 
