@@ -103,8 +103,7 @@ export default function MVPLabsLandingPage() {
                     scrollToSection(item.url.substring(1))
                     setIsMenuOpen(false)
                   }}
-                  className="text-left text-white font-bold py-2 px-4 rounded hover:bg-black transition-colors duration-200"
-                  style={{textShadow: '0 1px 2px rgba(0,0,0,0.2)'}}
+                  className="text-left text-gray-900 font-medium py-2 px-4 rounded hover:bg-gray-100 transition-colors duration-200"
                 >
                   {item.name}
                 </button>
@@ -114,7 +113,8 @@ export default function MVPLabsLandingPage() {
                   scrollToSection("contact")
                   setIsMenuOpen(false)
                 }}
-                className="w-full mt-2 px-6 py-2 bg-white text-gray-900 border border-gray-300 rounded-md font-medium transition-colors duration-200 hover:bg-gray-50"
+                className="w-full mt-2 px-6 py-2 bg-blue-500 text-white rounded-full font-bold transition-colors duration-200 hover:bg-blue-600 shadow-lg"
+                style={{textShadow: '0 1px 2px rgba(0,0,0,0.1)'}}
               >
                 Book a Call
               </button>
