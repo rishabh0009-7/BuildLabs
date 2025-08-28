@@ -597,19 +597,20 @@ export default function MVPLabsLandingPage() {
         </div>
       </section>
 
-      <section id="faq" className="py-20 bg-white">
-        <div className="container mx-auto px-6">
+      <section id="faq" className="py-24 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-medium mb-4">
+            <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-medium mb-5">
               <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
               FAQ
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Everything you need to know about our MVP development process and services.</p>
+            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-5">Frequently Asked Questions</h2>
+            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto">Everything you need to know about our MVP development process and services.</p>
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-6">
+          <div className="max-w-6xl mx-auto">
+            <Card className="p-10 bg-white shadow-xl rounded-3xl border border-gray-100">
+              <Accordion type="single" collapsible className="space-y-6">
               {[
                 {
                   question: "How fast can you launch an MVP?",
@@ -705,7 +706,8 @@ export default function MVPLabsLandingPage() {
                   </AccordionContent>
                 </AccordionItem>
               ))}
-            </Accordion>
+              </Accordion>
+            </Card>
           </div>
 
           <div className="text-center mt-12">
@@ -725,18 +727,15 @@ export default function MVPLabsLandingPage() {
         </div>
       </section>
 
-      <footer id="contact" className="py-16 bg-white border-t border-gray-200">
+      <footer id="contact" className="py-16 bg-gray-900 border-t border-gray-800">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-12 gap-8 mb-12">
             {/* Logo and Description - Left Side (Much Bigger) */}
             <div className="md:col-span-6">
-              <div className="flex items-center space-x-2 mb-6">
-                <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">M</span>
-                </div>
-                <span className="text-2xl font-bold text-gray-900">MVP Labs</span>
+              <div className="mb-6">
+                <span className="text-2xl font-bold text-white">MVP Labs</span>
               </div>
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+              <h3 className="text-3xl md:text-4xl font-bold text-white leading-tight">
                 Turn Your Idea Into a Revenue-Ready MVP in 2 Weeks
               </h3>
             </div>
@@ -746,30 +745,30 @@ export default function MVPLabsLandingPage() {
 
             {/* Pages Column - Right Side */}
             <div className="md:col-span-1.5">
-              <h4 className="font-semibold text-gray-900 mb-4">Pages</h4>
+              <h4 className="font-semibold text-white mb-4">Pages</h4>
               <ul className="space-y-3">
-                <li><button onClick={() => scrollToSection("home")} className="text-gray-600 hover:text-blue-500 text-sm transition-colors">Home</button></li>
-                <li><button onClick={() => scrollToSection("process")} className="text-gray-600 hover:text-blue-500 text-sm transition-colors">Process</button></li>
-                <li><button onClick={() => scrollToSection("portfolio")} className="text-gray-600 hover:text-blue-500 text-sm transition-colors">Projects</button></li>
-                <li><button onClick={() => scrollToSection("pricing")} className="text-gray-600 hover:text-blue-500 text-sm transition-colors">Pricing</button></li>
-                <li><button onClick={() => scrollToSection("faq")} className="text-gray-600 hover:text-blue-500 text-sm transition-colors">FAQ</button></li>
+                <li><button onClick={() => scrollToSection("home")} className="text-gray-300 hover:text-white text-base transition-colors font-medium">Home</button></li>
+                <li><button onClick={() => scrollToSection("process")} className="text-gray-300 hover:text-white text-base transition-colors font-medium">Process</button></li>
+                <li><button onClick={() => scrollToSection("portfolio")} className="text-gray-300 hover:text-white text-base transition-colors font-medium">Projects</button></li>
+                <li><button onClick={() => scrollToSection("pricing")} className="text-gray-300 hover:text-white text-base transition-colors font-medium">Pricing</button></li>
+                <li><button onClick={() => scrollToSection("faq")} className="text-gray-300 hover:text-white text-base transition-colors font-medium">FAQ</button></li>
               </ul>
             </div>
 
             {/* Legal Column - Right Side */}
             <div className="md:col-span-1.5">
-              <h4 className="font-semibold text-gray-900 mb-4">Legal</h4>
+              <h4 className="font-semibold text-white mb-4">Legal</h4>
               <ul className="space-y-3">
-                <li><a href="#" className="text-gray-600 hover:text-blue-500 text-sm transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-blue-500 text-sm transition-colors">Terms of Service</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-blue-500 text-sm transition-colors">Cookie Policy</a></li>
-                <li><span className="text-gray-600 text-sm">hello@mvplabs.com</span></li>
+                <li><a href="#" className="text-gray-300 hover:text-white text-base transition-colors font-medium">Privacy Policy</a></li>
+                <li><a href="#" className="text-gray-300 hover:text-white text-base transition-colors font-medium">Terms of Service</a></li>
+                <li><a href="#" className="text-gray-300 hover:text-white text-base transition-colors font-medium">Cookie Policy</a></li>
+                <li><span className="text-gray-300 text-base font-medium">hello@mvplabs.com</span></li>
               </ul>
             </div>
           </div>
 
-          <div className="border-t border-gray-200 pt-8">
-            <p className="text-gray-500 text-sm text-center">© 2024 MVP Labs. All rights reserved.</p>
+          <div className="border-t border-gray-800 pt-8">
+            <p className="text-gray-400 text-sm text-center">© 2025 MVP Labs. All rights reserved.</p>
           </div>
         </div>
       </footer>
