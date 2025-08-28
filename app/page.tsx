@@ -40,8 +40,8 @@ export default function MVPLabsLandingPage() {
   ]
 
   return (
-    <div className="min-h-screen w-full bg-blue-50">
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
+    <div className="min-h-screen w-full bg-white">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md">
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo - Left Side */}
           <div className="flex items-center">
@@ -94,7 +94,7 @@ export default function MVPLabsLandingPage() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200 bg-white">
+          <div className="md:hidden py-4 border-t border-gray-200 bg-white/95">
             <nav className="flex flex-col space-y-4 px-4">
               {navItems.map((item) => (
                 <button
@@ -123,38 +123,63 @@ export default function MVPLabsLandingPage() {
         )}
       </header>
 
-      <section id="home" className="pt-32 pb-20 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="text-center max-w-4xl mx-auto">
+      <section id="home" className="relative pt-32 pb-20 overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0 bg-white"></div>
+
+        <div className="relative container mx-auto px-6">
+          <div className="text-center max-w-5xl mx-auto">
+            
+            {/* Badge */}
+            <div className="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm text-blue-600 rounded-full text-sm font-medium mb-8 shadow-lg border border-blue-100">
+              <div className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></div>
+              Launch Your Startup Faster
+            </div>
   
             {/* Main Heading */}
-            <h1 className="text-6xl sm:text-7xl md:text-8xl font-black text-gray-900 mb-8 leading-tight tracking-tight" style={{fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'}}>
+            <h1 className="text-6xl sm:text-7xl md:text-8xl font-black text-gray-900 mb-8 leading-tight tracking-tight font-[var(--font-phonk)]">
               <div className="block">Launch Your MVP</div>
               <div className="block mt-2 md:mt-3">
-                in just <span className="text-blue-500">14 Days</span>, Not <span className="line-through text-blue-500">Months</span> .
+                in just <span className="text-blue-600 bg-gradient-to-r from-blue-600 to-sky-600 bg-clip-text text-transparent">14 Days</span>, Not <span className="line-through text-gray-400">Months</span> .
               </div>
             </h1>
 
             {/* Subheading */}
-            <p className="text-xl text-gray-700 mb-10 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed">
               We help founders and businesses transform ideas into investor-ready products—fast, affordable, and scalable.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <button 
                 onClick={() => scrollToSection("contact")}
-                className="px-8 py-4 text-lg bg-blue-500 text-white rounded-full font-bold hover:bg-blue-600 transition-colors duration-200 shadow-lg hover:shadow-xl"
+                className="px-8 py-4 text-lg bg-gradient-to-r from-blue-600 to-sky-600 text-white rounded-full font-bold hover:from-blue-700 hover:to-sky-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
                 style={{textShadow: '0 1px 3px rgba(0,0,0,0.2)'}}
               >
                 Book a Free Strategy Call
               </button>
               <button 
                 onClick={() => scrollToSection("pricing")}
-                className="px-8 py-4 text-lg bg-white text-blue-500 border-2 border-blue-500 rounded-full font-medium hover:bg-blue-50 transition-colors duration-200"
+                className="px-8 py-4 text-lg bg-white/90 backdrop-blur-sm text-blue-600 border-2 border-blue-200 rounded-full font-medium hover:bg-white hover:border-blue-300 transition-all duration-200 shadow-lg hover:shadow-xl"
               >
                 Start Your 14-Day MVP Now
               </button>
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="flex flex-wrap justify-center items-center gap-6 text-sm text-gray-500">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                No upfront payment
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                Money-back guarantee
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                Unlimited revisions
+              </div>
             </div>
           </div>
         </div>
@@ -597,7 +622,7 @@ export default function MVPLabsLandingPage() {
         </div>
       </section>
 
-      <section id="faq" className="py-24 bg-gray-50">
+      <section id="faq" className="py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-medium mb-5">
