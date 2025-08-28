@@ -164,7 +164,10 @@ export default function MVPLabsLandingPage() {
       <section id="process" className="py-20 bg-gray-900 relative overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="text-center mb-20">
-            <Badge className="bg-blue-500 text-white px-4 py-2 text-sm font-medium rounded-full mb-4">Our Process</Badge>
+            <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-medium mb-4">
+              <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+              Our Process
+            </div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">How We Turn Your Idea into a Launch-Ready MVP</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               You bring the idea, we turn it into something real. Here's what the 2-week journey looks like.
@@ -305,7 +308,10 @@ export default function MVPLabsLandingPage() {
       <section id="pricing" className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <Badge className="bg-blue-500 text-white px-4 py-2 text-sm font-medium rounded-full mb-4">Pricing</Badge>
+            <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-medium mb-4">
+              <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+              Pricing
+            </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Everything You Need to Actually Launch Your MVP
             </h2>
@@ -570,69 +576,130 @@ export default function MVPLabsLandingPage() {
         </div>
       </section>
 
-      <section id="faq" className="py-32 bg-gray-50">
+      <section id="faq" className="py-20 bg-white">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">A Question Left Unanswered?</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">We work with founders every day who are asking the same things. Here's what they want to know before making the leap.</p>
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-medium mb-4">
+              <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+              FAQ
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Everything you need to know about our MVP development process and services.</p>
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-4">
+            <Accordion type="single" collapsible className="space-y-6">
               {[
                 {
-                  question: "How fast can you take me from idea to launch?",
-                  answer:
-                    "Most MVPs launch in 3-5 weeks. Landing pages in 5 days. The timeline depends on scope, but we're committed to speed without sacrificing quality.",
+                  question: "How fast can you launch an MVP?",
+                  answer: (
+                    <>
+                      <p className="mb-4">Most MVPs go live in 14 days. Our process covers:</p>
+                      <ul className="space-y-2 mb-4">
+                        <li className="flex items-start">
+                          <Check className="text-green-500 mr-2 mt-1 flex-shrink-0" size={18} />
+                          <span>Defining essential features</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-green-500 mr-2 mt-1 flex-shrink-0" size={18} />
+                          <span>Building frontend and backend</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-green-500 mr-2 mt-1 flex-shrink-0" size={18} />
+                          <span>Deploying a functional, testable app</span>
+                        </li>
+                      </ul>
+                      <p>For more complex ideas, the timeline might extend slightly—but with our AI-driven workflow, you'll get speed without sacrificing quality.</p>
+                    </>
+                  ),
                 },
                 {
-                  question: "Will my product be custom-built or on a template?",
-                  answer:
-                    "Everything is custom-built for your specific needs. We don't use templates - every line of code and pixel is crafted for your unique requirements and brand.",
+                  question: "What's included in your MVP package?",
+                  answer: (
+                    <>
+                      <ul className="space-y-2 mb-4">
+                        <li className="flex items-start">
+                          <Check className="text-green-500 mr-2 mt-1 flex-shrink-0" size={18} />
+                          <span>3–4 core features (auth, dashboards, payments, etc.)</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-green-500 mr-2 mt-1 flex-shrink-0" size={18} />
+                          <span>A fully functional, hosted web app</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-green-500 mr-2 mt-1 flex-shrink-0" size={18} />
+                          <span>A responsive landing page for your product</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-green-500 mr-2 mt-1 flex-shrink-0" size={18} />
+                          <span>Minimal yet professional UI (AI-assisted for speed and polish)</span>
+                        </li>
+                      </ul>
+                      <p>Custom UI/UX design can be added on request—this adds some extra time.</p>
+                    </>
+                  ),
                 },
                 {
-                  question: "What happens after my MVP is live?",
-                  answer:
-                    "You get 4 weeks of post-launch support included. Bug fixes, user feedback implementation, and performance monitoring. After that, you can continue with our Growth Partner plan.",
+                  question: "Do you use no-code tools or custom coding?",
+                  answer: "We build everything with custom code enhanced by AI tools. While no-code platforms work for prototypes, they often struggle with scalability. Our approach ensures you get production-grade, future-proof software—without the limitations of low-code solutions.",
                 },
                 {
-                  question: "How do you decide what features go into the MVP?",
-                  answer:
-                    "We start with your users and their core problem. Through our discovery process, we identify the minimum set of features that deliver maximum value - nothing more, nothing less.",
+                  question: "What happens once the MVP is delivered?",
+                  answer: (
+                    <>
+                      <p className="mb-3">You decide the next step:</p>
+                      <ul className="space-y-2">
+                        <li className="flex items-start">
+                          <Check className="text-green-500 mr-2 mt-1 flex-shrink-0" size={18} />
+                          <span><strong>Ongoing partnership</strong>—we keep building new features, improving performance, and maintaining your product.</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="text-green-500 mr-2 mt-1 flex-shrink-0" size={18} />
+                          <span><strong>Full handoff</strong>—we give you a clean, documented codebase that any developer can work on immediately.</span>
+                        </li>
+                      </ul>
+                      <p className="mt-3">Either way, your MVP is built to scale.</p>
+                    </>
+                  ),
                 },
                 {
-                  question: "Can you also do my landing page or redesign my app?",
-                  answer:
-                    "We offer dedicated landing page builds (5 days) and app redesigns that modernize your UI without a complete rewrite. Check our pricing section for details.",
+                  question: "Can you include all the features I want?",
+                  answer: "If you have 10–15 features in mind, that's beyond an MVP. We'll help you prioritize the most critical 3–4 features so you can validate your idea quickly. Future phases can then be planned based on real user data, not assumptions.",
                 },
                 {
-                  question: "Do you work with AI features and automation?",
-                  answer:
-                    "Yes! We specialize in AI internal tools, custom chatbots, RAG databases, and workflow automation. AI is integrated thoughtfully where it adds real value.",
+                  question: "What AI tools do you use to speed up development?",
+                  answer: "We leverage AI-powered coding assistants and design accelerators to write code, automate testing, and optimize workflows. This means faster delivery without cutting corners—your product is still built with human oversight for quality and scalability.",
                 },
                 {
-                  question: "What will I actually get at the end of the project?",
-                  answer:
-                    "A fully functional, deployed product with clean code, documentation, analytics setup, and everything needed to operate independently. Plus 4 weeks of support to ensure smooth operation.",
-                },
-                {
-                  question: "How much involvement do you need from me?",
-                  answer:
-                    "Minimal but focused. One discovery call, weekly 30-minute demos, and quick feedback on key decisions. We handle the heavy lifting while keeping you informed.",
+                  question: "Do you provide ongoing support and maintenance?",
+                  answer: "Yes! After launch, you can stay on a monthly plan where we handle updates, bug fixes, and new feature development. If you prefer full control, we'll hand over the codebase with documentation for a smooth transition.",
                 },
               ].map((faq, index) => (
-                <AccordionItem
-                  key={index}
-                  value={`item-${index}`}
-                  className="bg-white border border-gray-200 rounded-lg px-8 py-2"
-                >
-                  <AccordionTrigger className="text-left font-semibold text-lg text-gray-900 hover:text-black py-6">
+                <AccordionItem key={index} value={`item-${index}`} className="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
+                  <AccordionTrigger className="text-left font-semibold text-lg text-gray-900 hover:text-blue-600 px-8 py-6 hover:bg-blue-50/50 transition-all duration-200 [&[data-state=open]]:bg-blue-50/50">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-600 text-base leading-relaxed pt-2 pb-6">{faq.answer}</AccordionContent>
+                  <AccordionContent className="px-8 pb-6 text-gray-600">
+                    {faq.answer}
+                  </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-gray-600 mb-4">Still have questions?</p>
+            <button 
+              onClick={() => {
+                const element = document.getElementById("contact")
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth" })
+                }
+              }}
+              className="px-8 py-3 bg-blue-500 text-white rounded-full font-medium hover:bg-blue-600 transition-colors duration-200 shadow-lg hover:shadow-xl"
+            >
+              Get in Touch
+            </button>
           </div>
         </div>
       </section>
