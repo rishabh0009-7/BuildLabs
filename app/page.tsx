@@ -83,8 +83,19 @@ export default function MVPLabsLandingPage() {
           backgroundRepeat: "no-repeat",
         }}
       />
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md relative">
-        <div className="container mx-auto px-6 h-16 flex items-center justify-between">
+      <header className="fixed top-0 left-0 right-0 z-[100] bg-gradient-to-r from-blue-50/95 via-white/95 to-sky-50/95 backdrop-blur-md border-b border-blue-100/50 shadow-lg shadow-blue-100/20 overflow-hidden">
+        {/* Premium Header Background Effects */}
+        <div className="absolute inset-0 opacity-30" style={{
+          background: `
+            linear-gradient(90deg, transparent 20%, rgba(59, 130, 246, 0.03) 50%, transparent 80%)
+          `,
+          animation: 'aurora 25s ease-in-out infinite'
+        }}></div>
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-0 right-10 w-16 h-16 bg-gradient-to-br from-blue-300/8 to-sky-300/5 rounded-full blur-xl animate-blob"></div>
+          <div className="absolute top-0 left-1/4 w-12 h-12 bg-gradient-to-br from-indigo-300/6 to-blue-300/4 rounded-full blur-lg animate-blob animation-delay-3000"></div>
+        </div>
+        <div className="relative container mx-auto px-6 h-16 flex items-center justify-between">
           {/* Empty space - Left Side */}
           <div></div>
 
@@ -167,25 +178,53 @@ export default function MVPLabsLandingPage() {
         )}
       </header>
 
-      <section id="home" className="relative pt-2 pb-2 overflow-hidden z-10 h-screen flex items-center justify-center">
-        {/* Enhanced Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-blue-100"></div>
+      <section id="home" className="relative pt-20 pb-2 overflow-hidden z-10 h-screen flex items-center justify-center">
+        {/* Premium Multi-layer Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-sky-100"></div>
         
-        {/* Animated Background Elements */}
+        {/* Aurora-like animated gradient overlay */}
+        <div className="absolute inset-0 opacity-60" style={{
+          background: `
+            linear-gradient(45deg, transparent 30%, rgba(59, 130, 246, 0.1) 50%, transparent 70%),
+            linear-gradient(-45deg, transparent 30%, rgba(147, 197, 253, 0.1) 50%, transparent 70%)
+          `,
+          animation: 'aurora 15s ease-in-out infinite'
+        }}></div>
+        
+        {/* Enhanced floating gradient orbs with glow */}
         <div className="absolute inset-0 overflow-hidden">
-          {/* Large gradient orb */}
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-blue-300/20 rounded-full blur-3xl animate-pulse"></div>
+          {/* Large premium orb - top right */}
+          <div className="absolute -top-32 -right-32 w-[500px] h-[500px] bg-gradient-to-br from-blue-400/40 to-sky-300/25 rounded-full blur-3xl animate-blob opacity-80"></div>
+          <div className="absolute -top-28 -right-28 w-96 h-96 bg-gradient-to-br from-indigo-300/30 to-blue-400/20 rounded-full blur-2xl animate-blob animation-delay-1000"></div>
           
-          {/* Medium gradient orb */}
-          <div className="absolute top-1/3 -left-32 w-64 h-64 bg-gradient-to-br from-blue-300/15 to-blue-400/15 rounded-full blur-2xl animate-pulse animation-delay-2000"></div>
+          {/* Medium premium orb - left */}
+          <div className="absolute top-1/5 -left-32 w-[400px] h-[400px] bg-gradient-to-br from-indigo-300/35 to-blue-400/25 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+          <div className="absolute top-1/4 -left-20 w-72 h-72 bg-gradient-to-br from-sky-300/25 to-indigo-400/20 rounded-full blur-xl animate-blob animation-delay-3000"></div>
           
+          {/* Small premium orbs - multiple */}
+          <div className="absolute bottom-20 right-1/3 w-64 h-64 bg-gradient-to-br from-sky-400/25 to-blue-300/20 rounded-full blur-2xl animate-blob animation-delay-4000"></div>
+          <div className="absolute top-1/2 right-1/5 w-32 h-32 bg-gradient-to-br from-blue-300/30 to-sky-400/25 rounded-full blur-xl animate-blob animation-delay-5000"></div>
+          <div className="absolute bottom-1/3 left-1/4 w-48 h-48 bg-gradient-to-br from-indigo-400/20 to-blue-300/15 rounded-full blur-xl animate-blob animation-delay-6000"></div>
         </div>
         
-        {/* Subtle grid pattern overlay */}
-        <div className="absolute inset-0 opacity-[0.02]" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, rgb(37 99 235) 1px, transparent 0)`,
-          backgroundSize: '40px 40px'
+        {/* Animated particle grid */}
+        <div className="absolute inset-0 opacity-[0.04]" style={{
+          backgroundImage: `
+            radial-gradient(circle at 1px 1px, rgb(59 130 246) 1px, transparent 0),
+            radial-gradient(circle at 25px 25px, rgb(147 197 253) 0.5px, transparent 0)
+          `,
+          backgroundSize: '50px 50px, 25px 25px',
+          animation: 'float 25s ease-in-out infinite'
         }}></div>
+        
+        {/* Premium gradient mesh overlays */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-50/40 to-transparent animate-pulse"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-sky-50/30 via-transparent to-blue-50/20"></div>
+        
+        {/* Subtle light rays */}
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-200/20 via-transparent to-transparent opacity-50"></div>
+        <div className="absolute top-0 left-1/3 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-sky-200/15 via-transparent to-transparent opacity-40"></div>
+        <div className="absolute top-0 right-1/3 transform translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-indigo-200/15 via-transparent to-transparent opacity-40"></div>
 
         <div className="relative container mx-auto px-6">
           <div className="text-center max-w-7xl mx-auto">
@@ -198,12 +237,9 @@ export default function MVPLabsLandingPage() {
   
             {/* Main Heading - Expanded horizontally with wider letter spacing */}
             <h1 className="text-6xl sm:text-7xl md:text-8xl font-black text-gray-900 mb-4 leading-tight tracking-wide font-[var(--font-hero)]">
-              <div className="block">Launch Your <span className="relative inline-block">
-                <span className="text-blue-600 bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent relative z-10">MVP</span>
-                <span className="absolute inset-0 bg-blue-100 rounded-lg transform -rotate-1 scale-110 opacity-30"></span>
-              </span> in</div>
+              <div className="block">Launch Your <span className="text-blue-600">MVP</span></div>
               <div className="block mt-1 md:mt-2">
-                <span className="text-blue-600 bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">Days</span>, Not <span className="line-through text-gray-400">Months</span> .
+                In <span className="text-blue-600 bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">Days</span>, Not <span className="line-through text-gray-400">Months</span> .
               </div>
             </h1>
 
@@ -339,7 +375,23 @@ export default function MVPLabsLandingPage() {
         </div>
       </section>
 
-      <section id="portfolio" className="py-20 bg-gradient-to-br from-blue-50 via-white to-sky-50 relative z-10">
+      <section id="portfolio" className="py-20 bg-gradient-to-br from-blue-50 via-white to-sky-50 relative z-10 overflow-hidden">
+        {/* Premium Background Effects */}
+        <div className="absolute inset-0 opacity-40" style={{
+          background: `
+            linear-gradient(45deg, transparent 30%, rgba(59, 130, 246, 0.05) 50%, transparent 70%),
+            linear-gradient(-45deg, transparent 30%, rgba(147, 197, 253, 0.05) 50%, transparent 70%)
+          `,
+          animation: 'aurora 20s ease-in-out infinite'
+        }}></div>
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-10 right-10 w-64 h-64 bg-gradient-to-br from-blue-300/15 to-sky-300/10 rounded-full blur-2xl animate-blob"></div>
+          <div className="absolute bottom-20 left-10 w-48 h-48 bg-gradient-to-br from-indigo-300/10 to-blue-300/8 rounded-full blur-xl animate-blob animation-delay-3000"></div>
+        </div>
+        <div className="absolute inset-0 opacity-[0.02]" style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgb(59 130 246) 1px, transparent 0)`,
+          backgroundSize: '40px 40px'
+        }}></div>
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">What We've Built</h2>
@@ -521,7 +573,23 @@ export default function MVPLabsLandingPage() {
         </div>
       </section>
 
-      <section id="pricing" className="py-20 bg-gradient-to-br from-blue-50 via-white to-sky-50 relative z-10">
+      <section id="pricing" className="py-20 bg-gradient-to-br from-blue-50 via-white to-sky-50 relative z-10 overflow-hidden">
+        {/* Premium Background Effects */}
+        <div className="absolute inset-0 opacity-40" style={{
+          background: `
+            linear-gradient(45deg, transparent 30%, rgba(59, 130, 246, 0.05) 50%, transparent 70%),
+            linear-gradient(-45deg, transparent 30%, rgba(147, 197, 253, 0.05) 50%, transparent 70%)
+          `,
+          animation: 'aurora 18s ease-in-out infinite'
+        }}></div>
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-1/4 w-72 h-72 bg-gradient-to-br from-sky-300/12 to-blue-300/8 rounded-full blur-2xl animate-blob animation-delay-2000"></div>
+          <div className="absolute bottom-10 right-1/3 w-56 h-56 bg-gradient-to-br from-blue-300/10 to-indigo-300/8 rounded-full blur-xl animate-blob animation-delay-4000"></div>
+        </div>
+        <div className="absolute inset-0 opacity-[0.02]" style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgb(59 130 246) 1px, transparent 0)`,
+          backgroundSize: '45px 45px'
+        }}></div>
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-medium mb-4">
@@ -537,13 +605,13 @@ export default function MVPLabsLandingPage() {
 
             {/* Toggle Buttons */}
             <div className="flex justify-center mb-12">
-              <div className="bg-gray-100 p-1 rounded-full flex">
+              <div className="bg-white/80 backdrop-blur-sm p-1 rounded-full flex border border-blue-100 shadow-lg">
                 <button
                   onClick={() => setPricingMode('mvp')}
                   className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                     pricingMode === 'mvp'
                       ? 'bg-blue-500 text-white shadow-lg'
-                      : 'text-gray-600 hover:text-gray-900'
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-blue-50'
                   }`}
                 >
                   MVP Development
@@ -553,7 +621,7 @@ export default function MVPLabsLandingPage() {
                   className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                     pricingMode === 'maintenance'
                       ? 'bg-blue-500 text-white shadow-lg'
-                      : 'text-gray-600 hover:text-gray-900'
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-blue-50'
                   }`}
                 >
                   Existing App Maintenance
@@ -862,7 +930,23 @@ export default function MVPLabsLandingPage() {
         </div>
       </section>
 
-      <section id="faq" className="py-24 bg-white relative z-10">
+      <section id="faq" className="py-24 bg-gradient-to-br from-blue-50 via-white to-sky-50 relative z-10 overflow-hidden">
+        {/* Premium Background Effects */}
+        <div className="absolute inset-0 opacity-30" style={{
+          background: `
+            linear-gradient(45deg, transparent 30%, rgba(59, 130, 246, 0.04) 50%, transparent 70%),
+            linear-gradient(-45deg, transparent 30%, rgba(147, 197, 253, 0.04) 50%, transparent 70%)
+          `,
+          animation: 'aurora 22s ease-in-out infinite'
+        }}></div>
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 right-20 w-80 h-80 bg-gradient-to-br from-indigo-300/8 to-sky-300/6 rounded-full blur-3xl animate-blob animation-delay-1000"></div>
+          <div className="absolute bottom-1/4 left-20 w-64 h-64 bg-gradient-to-br from-blue-300/8 to-indigo-300/6 rounded-full blur-2xl animate-blob animation-delay-5000"></div>
+        </div>
+        <div className="absolute inset-0 opacity-[0.015]" style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgb(59 130 246) 1px, transparent 0)`,
+          backgroundSize: '50px 50px'
+        }}></div>
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-medium mb-5">
@@ -874,8 +958,8 @@ export default function MVPLabsLandingPage() {
           </div>
 
           <div className="max-w-6xl mx-auto">
-            <Card className="p-10 bg-white shadow-xl rounded-3xl border border-gray-100">
-              <Accordion type="single" collapsible className="space-y-6">
+            <Card className="p-10 bg-white/90 backdrop-blur-sm shadow-xl rounded-3xl border border-blue-100">
+              <Accordion type="single" collapsible className="space-y-6" defaultValue="item-0">
               {[
                 {
                   question: "How fast can you launch an MVP?",
@@ -962,11 +1046,11 @@ export default function MVPLabsLandingPage() {
                   answer: "Yes! After launch, you can stay on a monthly plan where we handle updates, bug fixes, and new feature development. If you prefer full control, we'll hand over the codebase with documentation for a smooth transition.",
                 },
               ].map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`} className="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
-                  <AccordionTrigger className="text-left font-semibold text-lg text-gray-900 hover:text-blue-600 px-8 py-6 hover:bg-blue-50/50 transition-all duration-200 [&[data-state=open]]:bg-blue-50/50">
+                <AccordionItem key={index} value={`item-${index}`} className="bg-white/80 backdrop-blur-sm border border-blue-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
+                  <AccordionTrigger className="text-left font-semibold text-lg text-gray-900 hover:text-blue-600 px-8 py-6 hover:bg-blue-50/50 transition-all duration-200 [&[data-state=open]]:bg-blue-50/50 [&>svg]:transition-transform [&>svg]:duration-200">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="px-8 pb-6 text-gray-600">
+                  <AccordionContent className="px-8 pb-6 pt-2 text-gray-600 data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
