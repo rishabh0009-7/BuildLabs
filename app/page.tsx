@@ -66,7 +66,7 @@ export default function MVPLabsLandingPage() {
   ]
 
   return (
-    <div className="min-h-screen w-full relative bg-white">
+    <div className="min-h-screen w-full relative bg-gradient-to-br from-blue-50 via-white to-blue-100">
       {/* Cool Blue Glow Top */}
       <div
         className="absolute inset-0 z-0"
@@ -75,7 +75,7 @@ export default function MVPLabsLandingPage() {
           backgroundImage: `
             radial-gradient(
               circle at top center,
-              rgba(70, 130, 180, 0.5),
+              rgba(37, 99, 235, 0.5),
               transparent 70%
             )
           `,
@@ -85,34 +85,32 @@ export default function MVPLabsLandingPage() {
       />
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md relative">
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
-          {/* Logo - Left Side */}
-          <div className="flex items-center">
-            <span className="text-xl font-bold text-gray-900">MVP Labs</span>
-          </div>
+          {/* Empty space - Left Side */}
+          <div></div>
 
           {/* Navigation - Center */}
           <nav className="hidden md:flex items-center space-x-8">
-            <button onClick={() => scrollToSection("home")} className="text-gray-600 hover:text-gray-900 font-medium relative group transition-colors duration-200">
+            <button onClick={() => scrollToSection("home")} className="text-gray-800 hover:text-blue-600 font-semibold relative group transition-colors duration-200">
               Home
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-300"></span>
             </button>
-            <button onClick={() => scrollToSection("process")} className="text-gray-600 hover:text-gray-900 font-medium relative group transition-colors duration-200">
+            <button onClick={() => scrollToSection("process")} className="text-gray-800 hover:text-blue-600 font-semibold relative group transition-colors duration-200">
               Process
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-300"></span>
             </button>
-            <button onClick={() => scrollToSection("portfolio")} className="text-gray-600 hover:text-gray-900 font-medium relative group transition-colors duration-200">
+            <button onClick={() => scrollToSection("portfolio")} className="text-gray-800 hover:text-blue-600 font-semibold relative group transition-colors duration-200">
               Project
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-300"></span>
             </button>
-            <button onClick={() => scrollToSection("why-choose-us")} className="text-gray-600 hover:text-gray-900 font-medium relative group transition-colors duration-200">
+            <button onClick={() => scrollToSection("why-choose-us")} className="text-gray-800 hover:text-blue-600 font-semibold relative group transition-colors duration-200">
               Why Choose Us
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-300"></span>
             </button>
-            <button onClick={() => scrollToSection("pricing")} className="text-gray-600 hover:text-gray-900 font-medium relative group transition-colors duration-200">
+            <button onClick={() => scrollToSection("pricing")} className="text-gray-800 hover:text-blue-600 font-semibold relative group transition-colors duration-200">
               Pricing
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-300"></span>
             </button>
-            <button onClick={() => scrollToSection("faq")} className="text-gray-600 hover:text-gray-900 font-medium relative group transition-colors duration-200">
+            <button onClick={() => scrollToSection("faq")} className="text-gray-800 hover:text-blue-600 font-semibold relative group transition-colors duration-200">
               FAQ
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-300"></span>
             </button>
@@ -149,7 +147,7 @@ export default function MVPLabsLandingPage() {
                     scrollToSection(item.url.substring(1))
                     setIsMenuOpen(false)
                   }}
-                  className="text-left text-gray-900 font-medium py-2 px-4 rounded hover:bg-gray-100 transition-colors duration-200"
+                  className="text-left text-gray-800 font-semibold py-2 px-4 rounded hover:bg-gray-100 transition-colors duration-200"
                 >
                   {item.name}
                 </button>
@@ -169,29 +167,48 @@ export default function MVPLabsLandingPage() {
         )}
       </header>
 
-      <section id="home" className="relative pt-20 pb-12 overflow-hidden z-10 min-h-screen flex items-center">
-        {/* Background */}
-        <div className="absolute inset-0 bg-white"></div>
+      <section id="home" className="relative pt-2 pb-2 overflow-hidden z-10 h-screen flex items-center justify-center">
+        {/* Enhanced Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-blue-100"></div>
+        
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Large gradient orb */}
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-blue-300/20 rounded-full blur-3xl animate-pulse"></div>
+          
+          {/* Medium gradient orb */}
+          <div className="absolute top-1/3 -left-32 w-64 h-64 bg-gradient-to-br from-blue-300/15 to-blue-400/15 rounded-full blur-2xl animate-pulse animation-delay-2000"></div>
+          
+        </div>
+        
+        {/* Subtle grid pattern overlay */}
+        <div className="absolute inset-0 opacity-[0.02]" style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgb(37 99 235) 1px, transparent 0)`,
+          backgroundSize: '40px 40px'
+        }}></div>
 
         <div className="relative container mx-auto px-6">
-          <div className="text-center max-w-5xl mx-auto">
+          <div className="text-center max-w-7xl mx-auto">
             
-            {/* Badge */}
-            <div className="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm text-blue-600 rounded-full text-sm font-medium mb-6 shadow-lg border border-blue-100">
+            {/* Badge - Positioned at absolute top with reduced spacing */}
+            <div className="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm text-blue-600 rounded-full text-sm font-medium mb-8 shadow-lg border border-blue-100">
               <div className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></div>
               Launch Your Startup Faster
             </div>
   
-            {/* Main Heading */}
-            <h1 className="text-6xl sm:text-7xl md:text-8xl font-black text-gray-900 mb-6 leading-tight tracking-tight font-[var(--font-phonk)]">
-              <div className="block">Launch Your MVP</div>
+            {/* Main Heading - Expanded horizontally with wider letter spacing */}
+            <h1 className="text-6xl sm:text-7xl md:text-8xl font-black text-gray-900 mb-4 leading-tight tracking-wide font-[var(--font-hero)]">
+              <div className="block">Launch Your <span className="relative inline-block">
+                <span className="text-blue-600 bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent relative z-10">MVP</span>
+                <span className="absolute inset-0 bg-blue-100 rounded-lg transform -rotate-1 scale-110 opacity-30"></span>
+              </span> in</div>
               <div className="block mt-1 md:mt-2">
-                in just <span className="text-blue-600 bg-gradient-to-r from-blue-600 to-sky-600 bg-clip-text text-transparent">14 Days</span>, Not <span className="line-through text-gray-400">Months</span> .
+                <span className="text-blue-600 bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">Days</span>, Not <span className="line-through text-gray-400">Months</span> .
               </div>
             </h1>
 
-            {/* Subheading */}
-            <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
+            {/* Subheading - Reduced spacing */}
+            <p className="text-lg text-gray-700 mb-6 max-w-3xl mx-auto leading-relaxed">
               We help founders and businesses transform ideas into investor-ready products—fast, affordable, and scalable.
             </p>
 
@@ -199,7 +216,7 @@ export default function MVPLabsLandingPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
               <button 
                 onClick={() => window.open('https://cal.com/rishabhbuildsmvp/30min?overlayCalendar=true', '_blank')}
-                className="px-8 py-4 text-lg bg-gradient-to-r from-blue-600 to-sky-600 text-white rounded-full font-bold hover:from-blue-700 hover:to-sky-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
+                className="px-8 py-4 text-lg bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-full font-bold hover:from-blue-700 hover:to-blue-600 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
                 style={{textShadow: '0 1px 3px rgba(0,0,0,0.2)'}}
               >
                 Book a Free Strategy Call
@@ -208,22 +225,22 @@ export default function MVPLabsLandingPage() {
                 onClick={() => window.open('https://cal.com/rishabhbuildsmvp/30min?overlayCalendar=true', '_blank')}
                 className="px-8 py-4 text-lg bg-white/90 backdrop-blur-sm text-blue-600 border-2 border-blue-200 rounded-full font-medium hover:bg-white hover:border-blue-300 transition-all duration-200 shadow-lg hover:shadow-xl"
               >
-                Start Your 14-Day MVP Now
+                Start Your MVP Now
               </button>
             </div>
 
-            {/* Trust Indicators */}
-            <div className="flex flex-wrap justify-center items-center gap-4 text-sm text-gray-500">
+            {/* Trust Indicators - Increased spacing */}
+            <div className="flex flex-wrap justify-center items-center gap-4 text-sm text-gray-500 mb-16">
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
                 No upfront payment
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
                 Money-back guarantee
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
                 Unlimited revisions
               </div>
             </div>
@@ -264,7 +281,7 @@ export default function MVPLabsLandingPage() {
               {
                 step: "Step 03",
                 title: "Build Sprint", 
-                description: "We execute the code. You'll get a fully functional wireframe and an MVP in 10-14 days ready for users to signup.",
+                description: "We execute the code. You'll get a fully functional wireframe and an MVP ready for users to signup within weeks, not months.",
                 position: "left"
               },
               {
@@ -322,7 +339,7 @@ export default function MVPLabsLandingPage() {
         </div>
       </section>
 
-      <section id="portfolio" className="py-20 bg-white relative z-10">
+      <section id="portfolio" className="py-20 bg-gradient-to-br from-blue-50 via-white to-sky-50 relative z-10">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">What We've Built</h2>
@@ -458,7 +475,7 @@ export default function MVPLabsLandingPage() {
               {
                 icon: Rocket,
                 title: "Lightning Fast Delivery",
-                description: "14-day MVP delivery guaranteed. We use AI-powered development to move at startup speed without compromising quality."
+                description: "Fast MVP delivery guaranteed. We use AI-powered development to move at startup speed without compromising quality."
               },
               {
                 icon: Code,
@@ -504,7 +521,7 @@ export default function MVPLabsLandingPage() {
         </div>
       </section>
 
-      <section id="pricing" className="py-20 bg-white relative z-10">
+      <section id="pricing" className="py-20 bg-gradient-to-br from-blue-50 via-white to-sky-50 relative z-10">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-medium mb-4">
@@ -864,18 +881,18 @@ export default function MVPLabsLandingPage() {
                   question: "How fast can you launch an MVP?",
                   answer: (
                     <>
-                      <p className="mb-4">Most MVPs go live in 14 days. Our process covers:</p>
+                      <p className="mb-4">Most MVPs go live within weeks, not months. Our process covers:</p>
                       <ul className="space-y-2 mb-4">
                         <li className="flex items-start">
-                          <Check className="text-green-500 mr-2 mt-1 flex-shrink-0" size={18} />
+                          <Check className="text-blue-500 mr-2 mt-1 flex-shrink-0" size={18} />
                           <span>Defining essential features</span>
                         </li>
                         <li className="flex items-start">
-                          <Check className="text-green-500 mr-2 mt-1 flex-shrink-0" size={18} />
+                          <Check className="text-blue-500 mr-2 mt-1 flex-shrink-0" size={18} />
                           <span>Building frontend and backend</span>
                         </li>
                         <li className="flex items-start">
-                          <Check className="text-green-500 mr-2 mt-1 flex-shrink-0" size={18} />
+                          <Check className="text-blue-500 mr-2 mt-1 flex-shrink-0" size={18} />
                           <span>Deploying a functional, testable app</span>
                         </li>
                       </ul>
@@ -889,19 +906,19 @@ export default function MVPLabsLandingPage() {
                     <>
                       <ul className="space-y-2 mb-4">
                         <li className="flex items-start">
-                          <Check className="text-green-500 mr-2 mt-1 flex-shrink-0" size={18} />
+                          <Check className="text-blue-500 mr-2 mt-1 flex-shrink-0" size={18} />
                           <span>3–4 core features (auth, dashboards, payments, etc.)</span>
                         </li>
                         <li className="flex items-start">
-                          <Check className="text-green-500 mr-2 mt-1 flex-shrink-0" size={18} />
+                          <Check className="text-blue-500 mr-2 mt-1 flex-shrink-0" size={18} />
                           <span>A fully functional, hosted web app</span>
                         </li>
                         <li className="flex items-start">
-                          <Check className="text-green-500 mr-2 mt-1 flex-shrink-0" size={18} />
+                          <Check className="text-blue-500 mr-2 mt-1 flex-shrink-0" size={18} />
                           <span>A responsive landing page for your product</span>
                         </li>
                         <li className="flex items-start">
-                          <Check className="text-green-500 mr-2 mt-1 flex-shrink-0" size={18} />
+                          <Check className="text-blue-500 mr-2 mt-1 flex-shrink-0" size={18} />
                           <span>Minimal yet professional UI (AI-assisted for speed and polish)</span>
                         </li>
                       </ul>
@@ -920,11 +937,11 @@ export default function MVPLabsLandingPage() {
                       <p className="mb-3">You decide the next step:</p>
                       <ul className="space-y-2">
                         <li className="flex items-start">
-                          <Check className="text-green-500 mr-2 mt-1 flex-shrink-0" size={18} />
+                          <Check className="text-blue-500 mr-2 mt-1 flex-shrink-0" size={18} />
                           <span><strong>Ongoing partnership</strong>—we keep building new features, improving performance, and maintaining your product.</span>
                         </li>
                         <li className="flex items-start">
-                          <Check className="text-green-500 mr-2 mt-1 flex-shrink-0" size={18} />
+                          <Check className="text-blue-500 mr-2 mt-1 flex-shrink-0" size={18} />
                           <span><strong>Full handoff</strong>—we give you a clean, documented codebase that any developer can work on immediately.</span>
                         </li>
                       </ul>
