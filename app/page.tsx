@@ -40,6 +40,7 @@ import { NavBar } from "@/components/ui/tubelight-navbar";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { PricingCards } from "@/components/ui/pricing-cards";
 import Globe from "@/components/ui/globe";
+import { InfiniteSlider } from "@/components/core/infinite-slider";
 
 // Counter component for animated numbers
 const AnimatedCounter = ({
@@ -93,7 +94,6 @@ export default function MVPLabsLandingPage() {
   const navItems = [
     { name: "Home", url: "#home", icon: Home },
     { name: "Portfolio", url: "#portfolio", icon: Briefcase },
-    { name: "Why Choose Us", url: "#why-choose-us", icon: Star },
     { name: "Pricing", url: "#pricing", icon: FileText },
     { name: "FAQ", url: "#faq", icon: User },
     { name: "Contact", url: "#contact", icon: Phone },
@@ -115,13 +115,7 @@ export default function MVPLabsLandingPage() {
               Home
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
             </button>
-            <button
-              onClick={() => scrollToSection("process")}
-              className="text-gray-800 hover:text-orange-600 font-semibold relative group transition-colors duration-200"
-            >
-              Process
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
-            </button>
+
             <button
               onClick={() => scrollToSection("portfolio")}
               className="text-gray-800 hover:text-orange-600 font-semibold relative group transition-colors duration-200"
@@ -129,13 +123,15 @@ export default function MVPLabsLandingPage() {
               Project
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
             </button>
+
             <button
-              onClick={() => scrollToSection("why-choose-us")}
+              onClick={() => scrollToSection("process")}
               className="text-gray-800 hover:text-orange-600 font-semibold relative group transition-colors duration-200"
             >
-              Why Choose Us
+              Our Process
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
             </button>
+
             <button
               onClick={() => scrollToSection("pricing")}
               className="text-gray-800 hover:text-orange-600 font-semibold relative group transition-colors duration-200"
@@ -236,17 +232,20 @@ export default function MVPLabsLandingPage() {
 
             {/* Left side - Content */}
             <div className="text-left max-w-4xl">
+              {/* Hero Badge */}
+              <div className="inline-flex items-center px-4 py-2 bg-gray-900 text-white rounded-full text-sm font-medium mb-6">
+                <div className="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
+                THIS MONTH: 2 BUILD SLOTS · $3,497 FIXED
+              </div>
               {/* Main Heading - Left aligned */}
               <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-gray-900 mb-4 leading-tight tracking-wide font-[var(--font-hero)]">
                 <div className="block">
                   Launch Your <span className="text-[#FF6B35]">MVP</span>
                 </div>
                 <div className="block mt-1 md:mt-2">
-                  <span className="ml-8">In{" "}
-                  <span className="text-[#FF6B35]">
-                    Days
-                  </span>{" "}
-                  ,</span>
+                  <span className="ml-8">
+                    In <span className="text-[#FF6B35]">Days</span> ,
+                  </span>
                   <br />
                   Not <span className="line-through text-gray-400">Months</span>
                 </div>
@@ -318,57 +317,129 @@ export default function MVPLabsLandingPage() {
         </div>
       </section>
 
-      <section
-        id="process"
-        className="py-20 bg-orange-500 relative overflow-hidden z-10"
-      >
+      <section className="py-20 bg-gray-50 relative z-10">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-20">
+          <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 bg-orange-50 text-orange-600 rounded-full text-sm font-medium mb-4">
               <div className="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
-              Our Process
+              Why Choose Us
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              How We Turn Your Idea into a Launch-Ready MVP
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Why Work With Us?
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              You bring the idea, we turn it into something real. Here's what
-              the 2-week journey looks like.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              We're not just developers—we're startup partners who understand
+              the urgency of getting to market fast with a product that works.
             </p>
           </div>
 
-          <div className="relative max-w-4xl mx-auto">
-            {/* Connecting Line */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 p-8 text-center group">
+              <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Rocket className="w-10 h-10 text-orange-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Speed</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Launch your MVP in as little as 4–6 weeks.
+              </p>
+            </Card>
+
+            <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 p-8 text-center group">
+              <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Check className="w-10 h-10 text-orange-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                Affordability
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Transparent pricing, no hidden costs.
+              </p>
+            </Card>
+
+            <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 p-8 text-center group">
+              <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Star className="w-10 h-10 text-orange-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                Expert Team
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Developers, designers, and product strategists who understand
+                startups.
+              </p>
+            </Card>
+
+            <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 p-8 text-center group">
+              <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Code className="w-10 h-10 text-orange-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Scalable</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Built with modern tech to grow with your business.
+              </p>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="process"
+        className="py-20 bg-gray-900 relative z-10 overflow-hidden"
+      >
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-4 py-2 bg-orange-500/20 text-orange-400 rounded-full text-sm font-medium mb-4">
+              <div className="w-2 h-2 bg-orange-400 rounded-full mr-2"></div>
+              Our Process
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-orange-400 mb-4">
+              How It Works
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              From idea to launch in just a few weeks. Here's our proven process
+              that gets your MVP to market fast.
+            </p>
+          </div>
+
+          <div className="relative max-w-6xl mx-auto">
+            {/* Central Flow Line */}
             <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-orange-500/30 transform -translate-x-1/2 hidden md:block"></div>
 
             {[
               {
                 step: "Step 01",
-                title: "Kickoff Call",
+                title: "Discovery Call",
                 description:
-                  "We dive into your idea, goals and user needs — and by the end of the call, we'll understand what we're building and how we'll build it.",
+                  "We dive deep into your idea, goals, and user needs. By the end of this call, we'll have a clear understanding of what we're building and how we'll build it.",
                 position: "left",
               },
               {
                 step: "Step 02",
-                title: "MVP Blueprint",
+                title: "Design & Planning",
                 description:
-                  "We define what's in (and what's out). You'll get a fully functional wireframe directly into what we're going to build.",
+                  "We create wireframes and define the MVP scope. You'll get a visual blueprint of exactly what we're going to build, ensuring we're aligned on every detail.",
                 position: "right",
               },
               {
                 step: "Step 03",
-                title: "Build Sprint",
+                title: "Development Sprint",
                 description:
-                  "We execute the code. You'll get a fully functional wireframe and an MVP ready for users to signup within weeks, not months.",
+                  "Our team builds your MVP using modern technologies. You'll get regular updates and can provide feedback throughout the development process.",
                 position: "left",
               },
               {
                 step: "Step 04",
-                title: "Launch Day",
+                title: "Testing & Refinement",
                 description:
-                  "You go live with your support and success tools, post-launch fixes, and hands-on help if you want to keep building.",
+                  "We thoroughly test every feature and refine based on your feedback. Quality assurance ensures your MVP is ready for real users.",
                 position: "right",
+              },
+              {
+                step: "Step 05",
+                title: "Launch & Deploy",
+                description:
+                  "Your MVP goes live with full deployment, hosting, and launch support. You're ready to start collecting user feedback and growing your business.",
+                position: "left",
               },
             ].map((step, index) => {
               const ref = useRef(null);
@@ -431,16 +502,16 @@ export default function MVPLabsLandingPage() {
                     }`}
                   >
                     <Card className="bg-gray-800 border border-gray-700 hover:border-orange-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/10">
-                      <CardContent className="p-6">
+                      <CardContent className="p-8">
                         <div className="mb-4">
                           <Badge className="bg-orange-500/20 text-orange-400 px-3 py-1 text-xs font-medium rounded-full mb-3">
                             {step.step}
                           </Badge>
-                          <h3 className="text-xl font-bold text-white mb-3">
+                          <h3 className="text-2xl font-bold text-orange-400 mb-4">
                             {step.title}
                           </h3>
                         </div>
-                        <p className="text-gray-300 text-sm leading-relaxed">
+                        <p className="text-gray-300 text-base leading-relaxed">
                           {step.description}
                         </p>
                       </CardContent>
@@ -449,6 +520,11 @@ export default function MVPLabsLandingPage() {
                 </motion.div>
               );
             })}
+
+            {/* End Triangle */}
+            <div className="flex justify-center mt-8">
+              <div className="w-0 h-0 border-l-8 border-r-8 border-t-8 border-transparent border-t-orange-500"></div>
+            </div>
           </div>
         </div>
       </section>
@@ -459,6 +535,10 @@ export default function MVPLabsLandingPage() {
       >
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 bg-orange-50 text-orange-600 rounded-full text-sm font-medium mb-4">
+              <div className="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
+              Our Projects
+            </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               What We've Built
             </h2>
@@ -469,218 +549,169 @@ export default function MVPLabsLandingPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {[
-              {
-                name: "TripGuide",
-                category: "Travel App",
-                description:
-                  "A smart travel planning app that helps users discover destinations, plan itineraries, and book accommodations seamlessly — making travel planning effortless and enjoyable.",
-                image: "/ai-ecommerce-dashboard-interface.png",
-              },
-              {
-                name: "PostKit",
-                category: "Web App",
-                description:
-                  "An AI-powered social media management platform that helps creators and small businesses plan, create, and schedule content across all their platforms — from one unified dashboard.",
-                image: "/chatbot-platform-interface.png",
-              },
-              {
-                name: "EventSync",
-                category: "Mobile App",
-                description:
-                  "A comprehensive event management app that helps organizers create, promote, and manage events seamlessly with ticketing, attendee management, and real-time analytics.",
-                image: "/real-estate-app-interface.png",
-              },
-              {
-                name: "FormSnap",
-                category: "Web App",
-                description:
-                  "A simple form automation tool that lets users create smart forms, collect responses, and send automated emails — all without writing a single line of code.",
-                image: "/social-community-app-interface.png",
-              },
-              {
-                name: "HostSync",
-                category: "Mobile App",
-                description:
-                  "A property and guest management app that helps property owners develop positive routines, track daily progress, and build lasting habits with intuitive design and motivational features.",
-                image: "/ai-ecommerce-dashboard-interface.png",
-              },
-              {
-                name: "SellScale",
-                category: "Web App",
-                description:
-                  "A comprehensive sales automation platform that helps teams identify, automate, and optimize sales processes, track leads, analyze performance, and scale their business.",
-                image: "/chatbot-platform-interface.png",
-              },
-            ].map((project, index) => (
-              <Card
-                key={index}
-                className="bg-white border border-gray-200 hover:shadow-lg transition-shadow duration-300"
-              >
+          <div className="mb-12">
+            <InfiniteSlider speedOnHover={10} gap={24}>
+              <Card className="bg-white border border-gray-200 hover:shadow-lg transition-shadow duration-300 w-[300px] flex-shrink-0">
                 <div className="aspect-video bg-gray-100 rounded-t-lg overflow-hidden">
                   <img
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.name}
+                    src="/ai-ecommerce-dashboard-interface.png"
+                    alt="TripGuide - Travel App"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-2 mb-2">
                     <h3 className="text-xl font-bold text-gray-900">
-                      {project.name}
+                      TripGuide
                     </h3>
                     <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1">
-                      {project.category}
+                      Travel App
                     </Badge>
                   </div>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    {project.description}
+                    A smart travel planning app that helps users discover
+                    destinations, plan itineraries, and book accommodations
+                    seamlessly.
                   </p>
                 </CardContent>
               </Card>
-            ))}
-          </div>
 
-          <div className="text-center">
-            <button className="px-6 py-3 bg-orange-500 text-white rounded-full font-medium hover:bg-orange-600 transition-colors duration-200">
-              Show More Projects
-            </button>
+              <Card className="bg-white border border-gray-200 hover:shadow-lg transition-shadow duration-300 w-[300px] flex-shrink-0">
+                <div className="aspect-video bg-gray-100 rounded-t-lg overflow-hidden">
+                  <img
+                    src="/chatbot-platform-interface.png"
+                    alt="PostKit - Web App"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <div className="flex items-center space-x-2 mb-2">
+                    <h3 className="text-xl font-bold text-gray-900">PostKit</h3>
+                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1">
+                      Web App
+                    </Badge>
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    An AI-powered social media management platform that helps
+                    creators and small businesses plan, create, and schedule
+                    content.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white border border-gray-200 hover:shadow-lg transition-shadow duration-300 w-[300px] flex-shrink-0">
+                <div className="aspect-video bg-gray-100 rounded-t-lg overflow-hidden">
+                  <img
+                    src="/real-estate-app-interface.png"
+                    alt="EventSync - Mobile App"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <div className="flex items-center space-x-2 mb-2">
+                    <h3 className="text-xl font-bold text-gray-900">
+                      EventSync
+                    </h3>
+                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1">
+                      Mobile App
+                    </Badge>
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    A comprehensive event management app that helps organizers
+                    create, promote, and manage events seamlessly.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white border border-gray-200 hover:shadow-lg transition-shadow duration-300 w-[300px] flex-shrink-0">
+                <div className="aspect-video bg-gray-100 rounded-t-lg overflow-hidden">
+                  <img
+                    src="/social-community-app-interface.png"
+                    alt="FormSnap - Web App"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <div className="flex items-center space-x-2 mb-2">
+                    <h3 className="text-xl font-bold text-gray-900">
+                      FormSnap
+                    </h3>
+                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1">
+                      Web App
+                    </Badge>
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    A simple form automation tool that lets users create smart
+                    forms, collect responses, and send automated emails.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white border border-gray-200 hover:shadow-lg transition-shadow duration-300 w-[300px] flex-shrink-0">
+                <div className="aspect-video bg-gray-100 rounded-t-lg overflow-hidden">
+                  <img
+                    src="/ai-ecommerce-dashboard-interface.png"
+                    alt="HostSync - Mobile App"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <div className="flex items-center space-x-2 mb-2">
+                    <h3 className="text-xl font-bold text-gray-900">
+                      HostSync
+                    </h3>
+                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1">
+                      Mobile App
+                    </Badge>
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    A property and guest management app that helps property
+                    owners develop positive routines and track daily progress.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white border border-gray-200 hover:shadow-lg transition-shadow duration-300 w-[300px] flex-shrink-0">
+                <div className="aspect-video bg-gray-100 rounded-t-lg overflow-hidden">
+                  <img
+                    src="/chatbot-platform-interface.png"
+                    alt="SellScale - Web App"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <div className="flex items-center space-x-2 mb-2">
+                    <h3 className="text-xl font-bold text-gray-900">
+                      SellScale
+                    </h3>
+                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1">
+                      Web App
+                    </Badge>
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    A comprehensive sales automation platform that helps teams
+                    identify, automate, and optimize sales processes.
+                  </p>
+                </CardContent>
+              </Card>
+            </InfiniteSlider>
           </div>
         </div>
       </section>
 
-      <section
-        id="why-choose-us"
-        className="py-20 bg-orange-500 relative overflow-hidden z-10"
-      >
+      {/* Inspirational Text Section */}
+      <section className="py-20 bg-gradient-to-br from-orange-50 to-orange-100 relative z-10">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center px-4 py-2 bg-orange-50 text-orange-600 rounded-full text-sm font-medium mb-4">
-              <div className="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
-              Why Choose Us
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Why MVP Labs is Your Best Choice
+          <div className="text-center max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight">
+              Your idea deserves more than{" "}
+              <span className="text-gray-600">just a prototype.</span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              We're not just developers—we're startup partners who understand
-              the urgency of getting to market fast with a product that works.
-            </p>
-          </div>
-
-          {/* Stats Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-center"
-            >
-              <div className="text-5xl md:text-6xl font-black text-orange-400 mb-4">
-                <AnimatedCounter end={30} />+
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">
-                Projects Completed
-              </h3>
-              <p className="text-gray-400">
-                MVPs launched and validated in the market
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-center"
-            >
-              <div className="text-5xl md:text-6xl font-black text-orange-400 mb-4">
-                <AnimatedCounter end={10} />+
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">
-                Happy Clients
-              </h3>
-              <p className="text-gray-400">
-                Founders who trusted us with their vision
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-center"
-            >
-              <div className="text-5xl md:text-6xl font-black text-orange-400 mb-4">
-                <AnimatedCounter end={4} />+
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">
-                Years of Experience
-              </h3>
-              <p className="text-gray-400">
-                Building products that scale and succeed
-              </p>
-            </motion.div>
-          </div>
-
-          {/* Features Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Rocket,
-                title: "Lightning Fast Delivery",
-                description:
-                  "Fast MVP delivery guaranteed. We use AI-powered development to move at startup speed without compromising quality.",
-              },
-              {
-                icon: Code,
-                title: "Production-Ready Code",
-                description:
-                  "No shortcuts, no technical debt. Every line of code is written to scale from day one with your growing user base.",
-              },
-              {
-                icon: Heart,
-                title: "Founder-First Approach",
-                description:
-                  "We think like founders, not just developers. Every decision is made with your business goals and user needs in mind.",
-              },
-              {
-                icon: Star,
-                title: "Proven Track Record",
-                description:
-                  "30+ successful MVPs launched, with founders raising funding and acquiring customers within months of launch.",
-              },
-              {
-                icon: MessageCircle,
-                title: "Unlimited Revisions",
-                description:
-                  "We don't stop until you're 100% satisfied. Your success is our success, and we'll iterate until we get it right.",
-              },
-              {
-                icon: Palette,
-                title: "Modern Tech Stack",
-                description:
-                  "Built with the latest technologies that investors and technical teams recognize and respect.",
-              },
-            ].map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-orange-500/50 transition-all duration-300"
-              >
-                <div className="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center mb-4">
-                  <feature.icon className="w-6 h-6 text-orange-400" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  {feature.description}
-                </p>
-              </motion.div>
-            ))}
+            <h3 className="text-4xl md:text-6xl font-bold leading-tight">
+              <span className="bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 bg-clip-text text-transparent">
+                We turn visions into validated MVPs.
+              </span>
+            </h3>
           </div>
         </div>
       </section>
@@ -733,229 +764,460 @@ export default function MVPLabsLandingPage() {
 
           {/* MVP Development Plans */}
           {pricingMode === "mvp" && (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12">
-              {[
-                {
-                  name: "Landing Page",
-                  price: "$599",
-                  period: "USD",
-                  features: [
-                    "Custom responsive landing page",
-                    "SEO-ready design",
-                    "Smooth animations",
-                    "Delivered in 7 days",
-                    "Unlimited revisions until satisfied",
-                  ],
-                  buttonText: "Start Your Project →",
-                  recommended: false,
-                },
-                {
-                  name: "Complete MVP",
-                  price: "$1,999",
-                  period: "USD",
-                  features: [
-                    "Full MVP with custom UI",
-                    "API integration",
-                    "Backend setup",
-                    "2–4 weeks delivery",
-                    "Unlimited revisions until satisfied",
-                  ],
-                  buttonText: "Start Your Project →",
-                  recommended: true,
-                },
-                {
-                  name: "Custom Solution",
-                  price: "$2,999+",
-                  period: "USD",
-                  features: [
-                    "Fully tailored solution",
-                    "Advanced features",
-                    "Scaling-ready architecture",
-                    "Timelines based on requirements",
-                    "Dedicated project manager",
-                  ],
-                  buttonText: "Start Your Project →",
-                  recommended: false,
-                },
-              ].map((plan, index) => (
-                <Card
-                  key={index}
-                  className={`relative p-8 bg-white hover:shadow-xl transition-all duration-300 group ${
-                    plan.recommended
-                      ? "border-2 border-orange-500 shadow-lg scale-105"
-                      : "border border-gray-200 hover:border-orange-300"
-                  }`}
-                >
-                  {plan.recommended && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <Badge className="bg-orange-500 text-white px-4 py-2 text-sm font-medium rounded-full">
-                        Recommended
-                      </Badge>
+            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+              {/* Left Card - Black */}
+              <Card className="relative p-8 bg-gray-900 border border-gray-700 hover:shadow-xl transition-all duration-300 group">
+                <CardContent className="p-0">
+                  <div className="text-center mb-8">
+                    <h3 className="text-2xl font-bold text-white mb-4">
+                      Landing Page
+                    </h3>
+                    <div className="flex items-baseline justify-center space-x-1">
+                      <span className="text-4xl font-bold text-white">
+                        $599
+                      </span>
+                      <span className="text-gray-300 text-lg">USD</span>
                     </div>
-                  )}
+                  </div>
 
-                  <CardContent className="p-0">
-                    <div className="text-center mb-8">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                        {plan.name}
-                      </h3>
-                      <div className="flex items-baseline justify-center space-x-1">
-                        <span className="text-4xl font-bold text-gray-900">
-                          {plan.price}
+                  <div className="mb-8">
+                    <ul className="space-y-4">
+                      <li className="flex items-start">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-orange-500">
+                          <Check className="h-3 w-3 text-white" />
+                        </div>
+                        <span className="text-sm leading-relaxed text-gray-300">
+                          Custom responsive landing page
                         </span>
-                        <span className="text-gray-500 text-lg">
-                          {plan.period}
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-orange-500">
+                          <Check className="h-3 w-3 text-white" />
+                        </div>
+                        <span className="text-sm leading-relaxed text-gray-300">
+                          SEO-ready design
                         </span>
-                      </div>
-                    </div>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-orange-500">
+                          <Check className="h-3 w-3 text-white" />
+                        </div>
+                        <span className="text-sm leading-relaxed text-gray-300">
+                          Smooth animations
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-orange-500">
+                          <Check className="h-3 w-3 text-white" />
+                        </div>
+                        <span className="text-sm leading-relaxed text-gray-300">
+                          Delivered in 7 days
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-orange-500">
+                          <Check className="h-3 w-3 text-white" />
+                        </div>
+                        <span className="text-sm leading-relaxed text-gray-300">
+                          Unlimited revisions until satisfied
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
 
-                    <div className="mb-8">
-                      <ul className="space-y-4">
-                        {plan.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-start">
-                            <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-orange-500">
-                              <Check className="h-3 w-3 text-white" />
-                            </div>
-                            <span className="text-sm leading-relaxed text-gray-700">
-                              {feature}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                  <button
+                    onClick={() => {
+                      const element = document.getElementById("contact");
+                      if (element) {
+                        element.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
+                    className="w-full py-4 px-6 rounded-full font-semibold transition-all duration-200 group-hover:scale-105 bg-white text-gray-900 hover:bg-gray-100 shadow-lg hover:shadow-xl"
+                  >
+                    Start Your Project →
+                  </button>
+                </CardContent>
+              </Card>
 
-                    <button
-                      onClick={() => {
-                        const element = document.getElementById("contact");
-                        if (element) {
-                          element.scrollIntoView({ behavior: "smooth" });
-                        }
-                      }}
-                      className={`w-full py-4 px-6 rounded-full font-semibold transition-all duration-200 group-hover:scale-105 ${
-                        plan.recommended
-                          ? "bg-orange-500 text-white hover:bg-orange-600 shadow-lg hover:shadow-xl"
-                          : "bg-white text-orange-500 border-2 border-orange-500 hover:bg-orange-50 hover:border-orange-600"
-                      }`}
-                    >
-                      {plan.buttonText}
-                    </button>
-                  </CardContent>
-                </Card>
-              ))}
+              {/* Center Card - Orange */}
+              <Card className="relative p-8 bg-orange-500 border border-orange-400 hover:shadow-xl transition-all duration-300 group scale-105">
+                <CardContent className="p-0">
+                  <div className="text-center mb-8">
+                    <h3 className="text-2xl font-bold text-white mb-4">
+                      Complete MVP
+                    </h3>
+                    <div className="flex items-baseline justify-center space-x-1">
+                      <span className="text-4xl font-bold text-white">
+                        $1,999
+                      </span>
+                      <span className="text-orange-100 text-lg">USD</span>
+                    </div>
+                  </div>
+
+                  <div className="mb-8">
+                    <ul className="space-y-4">
+                      <li className="flex items-start">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-white">
+                          <Check className="h-3 w-3 text-orange-500" />
+                        </div>
+                        <span className="text-sm leading-relaxed text-white">
+                          Full MVP with custom UI
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-white">
+                          <Check className="h-3 w-3 text-orange-500" />
+                        </div>
+                        <span className="text-sm leading-relaxed text-white">
+                          API integration
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-white">
+                          <Check className="h-3 w-3 text-orange-500" />
+                        </div>
+                        <span className="text-sm leading-relaxed text-white">
+                          Backend setup
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-white">
+                          <Check className="h-3 w-3 text-orange-500" />
+                        </div>
+                        <span className="text-sm leading-relaxed text-white">
+                          2–4 weeks delivery
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-white">
+                          <Check className="h-3 w-3 text-orange-500" />
+                        </div>
+                        <span className="text-sm leading-relaxed text-white">
+                          Unlimited revisions until satisfied
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <button
+                    onClick={() => {
+                      const element = document.getElementById("contact");
+                      if (element) {
+                        element.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
+                    className="w-full py-4 px-6 rounded-full font-semibold transition-all duration-200 group-hover:scale-105 bg-white text-orange-500 hover:bg-gray-100 shadow-lg hover:shadow-xl"
+                  >
+                    Start Your Project →
+                  </button>
+                </CardContent>
+              </Card>
+
+              {/* Right Card - Black */}
+              <Card className="relative p-8 bg-gray-900 border border-gray-700 hover:shadow-xl transition-all duration-300 group">
+                <CardContent className="p-0">
+                  <div className="text-center mb-8">
+                    <h3 className="text-2xl font-bold text-white mb-4">
+                      Custom Solution
+                    </h3>
+                    <div className="flex items-baseline justify-center space-x-1">
+                      <span className="text-4xl font-bold text-white">
+                        $2,999+
+                      </span>
+                      <span className="text-gray-300 text-lg">USD</span>
+                    </div>
+                  </div>
+
+                  <div className="mb-8">
+                    <ul className="space-y-4">
+                      <li className="flex items-start">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-orange-500">
+                          <Check className="h-3 w-3 text-white" />
+                        </div>
+                        <span className="text-sm leading-relaxed text-gray-300">
+                          Fully tailored solution
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-orange-500">
+                          <Check className="h-3 w-3 text-white" />
+                        </div>
+                        <span className="text-sm leading-relaxed text-gray-300">
+                          Advanced features
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-orange-500">
+                          <Check className="h-3 w-3 text-white" />
+                        </div>
+                        <span className="text-sm leading-relaxed text-gray-300">
+                          Scaling-ready architecture
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-orange-500">
+                          <Check className="h-3 w-3 text-white" />
+                        </div>
+                        <span className="text-sm leading-relaxed text-gray-300">
+                          Timelines based on requirements
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-orange-500">
+                          <Check className="h-3 w-3 text-white" />
+                        </div>
+                        <span className="text-sm leading-relaxed text-gray-300">
+                          Dedicated project manager
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <button
+                    onClick={() => {
+                      const element = document.getElementById("contact");
+                      if (element) {
+                        element.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
+                    className="w-full py-4 px-6 rounded-full font-semibold transition-all duration-200 group-hover:scale-105 bg-white text-gray-900 hover:bg-gray-100 shadow-lg hover:shadow-xl"
+                  >
+                    Start Your Project →
+                  </button>
+                </CardContent>
+              </Card>
             </div>
           )}
 
           {/* Maintenance Plans */}
           {pricingMode === "maintenance" && (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12">
-              {[
-                {
-                  name: "Basic Plan",
-                  price: "$399",
-                  period: "month",
-                  features: [
-                    "Bug fixes",
-                    "Minor feature additions",
-                    "Performance improvements",
-                    "Security updates",
-                    "Email support",
-                  ],
-                  buttonText: "Start Your Project →",
-                  recommended: false,
-                },
-                {
-                  name: "Standard Plan",
-                  price: "$799",
-                  period: "month",
-                  features: [
-                    "Everything in Basic",
-                    "Major feature additions",
-                    "Priority support",
-                    "Monthly performance reports",
-                    "Code optimization",
-                  ],
-                  buttonText: "Start Your Project →",
-                  recommended: true,
-                },
-                {
-                  name: "Premium Plan",
-                  price: "$1,199",
-                  period: "month",
-                  features: [
-                    "Everything in Standard",
-                    "24/7 support",
-                    "Custom feature roadmap",
-                    "Monthly health reports",
-                    "Dedicated developer",
-                  ],
-                  buttonText: "Start Your Project →",
-                  recommended: false,
-                },
-              ].map((plan, index) => (
-                <Card
-                  key={index}
-                  className={`relative p-8 bg-white hover:shadow-xl transition-all duration-300 group ${
-                    plan.recommended
-                      ? "border-2 border-orange-500 shadow-lg scale-105"
-                      : "border border-gray-200 hover:border-orange-300"
-                  }`}
-                >
-                  {plan.recommended && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <Badge className="bg-orange-500 text-white px-4 py-2 text-sm font-medium rounded-full">
-                        Recommended
-                      </Badge>
+            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+              {/* Left Card - Black */}
+              <Card className="relative p-8 bg-gray-900 border border-gray-700 hover:shadow-xl transition-all duration-300 group">
+                <CardContent className="p-0">
+                  <div className="text-center mb-8">
+                    <h3 className="text-2xl font-bold text-white mb-4">
+                      Basic Plan
+                    </h3>
+                    <div className="flex items-baseline justify-center space-x-1">
+                      <span className="text-4xl font-bold text-white">
+                        $399
+                      </span>
+                      <span className="text-gray-300 text-lg">month</span>
                     </div>
-                  )}
+                  </div>
 
-                  <CardContent className="p-0">
-                    <div className="text-center mb-8">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                        {plan.name}
-                      </h3>
-                      <div className="flex items-baseline justify-center space-x-1">
-                        <span className="text-4xl font-bold text-gray-900">
-                          {plan.price}
+                  <div className="mb-8">
+                    <ul className="space-y-4">
+                      <li className="flex items-start">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-orange-500">
+                          <Check className="h-3 w-3 text-white" />
+                        </div>
+                        <span className="text-sm leading-relaxed text-gray-300">
+                          Bug fixes
                         </span>
-                        <span className="text-gray-500 text-lg">
-                          {plan.period}
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-orange-500">
+                          <Check className="h-3 w-3 text-white" />
+                        </div>
+                        <span className="text-sm leading-relaxed text-gray-300">
+                          Minor feature additions
                         </span>
-                      </div>
-                    </div>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-orange-500">
+                          <Check className="h-3 w-3 text-white" />
+                        </div>
+                        <span className="text-sm leading-relaxed text-gray-300">
+                          Performance improvements
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-orange-500">
+                          <Check className="h-3 w-3 text-white" />
+                        </div>
+                        <span className="text-sm leading-relaxed text-gray-300">
+                          Security updates
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-orange-500">
+                          <Check className="h-3 w-3 text-white" />
+                        </div>
+                        <span className="text-sm leading-relaxed text-gray-300">
+                          Email support
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
 
-                    <div className="mb-8">
-                      <ul className="space-y-4">
-                        {plan.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-start">
-                            <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-orange-500">
-                              <Check className="h-3 w-3 text-white" />
-                            </div>
-                            <span className="text-sm leading-relaxed text-gray-700">
-                              {feature}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                  <button
+                    onClick={() => {
+                      const element = document.getElementById("contact");
+                      if (element) {
+                        element.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
+                    className="w-full py-4 px-6 rounded-full font-semibold transition-all duration-200 group-hover:scale-105 bg-white text-gray-900 hover:bg-gray-100 shadow-lg hover:shadow-xl"
+                  >
+                    Start Your Project →
+                  </button>
+                </CardContent>
+              </Card>
 
-                    <button
-                      onClick={() => {
-                        const element = document.getElementById("contact");
-                        if (element) {
-                          element.scrollIntoView({ behavior: "smooth" });
-                        }
-                      }}
-                      className={`w-full py-4 px-6 rounded-full font-semibold transition-all duration-200 group-hover:scale-105 ${
-                        plan.recommended
-                          ? "bg-orange-500 text-white hover:bg-orange-600 shadow-lg hover:shadow-xl"
-                          : "bg-white text-orange-500 border-2 border-orange-500 hover:bg-orange-50 hover:border-orange-600"
-                      }`}
-                    >
-                      {plan.buttonText}
-                    </button>
-                  </CardContent>
-                </Card>
-              ))}
+              {/* Center Card - Orange */}
+              <Card className="relative p-8 bg-orange-500 border border-orange-400 hover:shadow-xl transition-all duration-300 group scale-105">
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <Badge className="bg-orange-500 text-white px-4 py-2 text-sm font-medium rounded-full">
+                    Recommended
+                  </Badge>
+                </div>
+                <CardContent className="p-0">
+                  <div className="text-center mb-8">
+                    <h3 className="text-2xl font-bold text-white mb-4">
+                      Standard Plan
+                    </h3>
+                    <div className="flex items-baseline justify-center space-x-1">
+                      <span className="text-4xl font-bold text-white">
+                        $799
+                      </span>
+                      <span className="text-orange-100 text-lg">month</span>
+                    </div>
+                  </div>
+
+                  <div className="mb-8">
+                    <ul className="space-y-4">
+                      <li className="flex items-start">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-white">
+                          <Check className="h-3 w-3 text-orange-500" />
+                        </div>
+                        <span className="text-sm leading-relaxed text-white">
+                          Everything in Basic
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-white">
+                          <Check className="h-3 w-3 text-orange-500" />
+                        </div>
+                        <span className="text-sm leading-relaxed text-white">
+                          Major feature additions
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-white">
+                          <Check className="h-3 w-3 text-orange-500" />
+                        </div>
+                        <span className="text-sm leading-relaxed text-white">
+                          Priority support
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-white">
+                          <Check className="h-3 w-3 text-orange-500" />
+                        </div>
+                        <span className="text-sm leading-relaxed text-white">
+                          Monthly performance reports
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-white">
+                          <Check className="h-3 w-3 text-orange-500" />
+                        </div>
+                        <span className="text-sm leading-relaxed text-white">
+                          Code optimization
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <button
+                    onClick={() => {
+                      const element = document.getElementById("contact");
+                      if (element) {
+                        element.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
+                    className="w-full py-4 px-6 rounded-full font-semibold transition-all duration-200 group-hover:scale-105 bg-white text-orange-500 hover:bg-gray-100 shadow-lg hover:shadow-xl"
+                  >
+                    Start Your Project →
+                  </button>
+                </CardContent>
+              </Card>
+
+              {/* Right Card - Black */}
+              <Card className="relative p-8 bg-gray-900 border border-gray-700 hover:shadow-xl transition-all duration-300 group">
+                <CardContent className="p-0">
+                  <div className="text-center mb-8">
+                    <h3 className="text-2xl font-bold text-white mb-4">
+                      Premium Plan
+                    </h3>
+                    <div className="flex items-baseline justify-center space-x-1">
+                      <span className="text-4xl font-bold text-white">
+                        $1,199
+                      </span>
+                      <span className="text-gray-300 text-lg">month</span>
+                    </div>
+                  </div>
+
+                  <div className="mb-8">
+                    <ul className="space-y-4">
+                      <li className="flex items-start">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-orange-500">
+                          <Check className="h-3 w-3 text-white" />
+                        </div>
+                        <span className="text-sm leading-relaxed text-gray-300">
+                          Everything in Standard
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-orange-500">
+                          <Check className="h-3 w-3 text-white" />
+                        </div>
+                        <span className="text-sm leading-relaxed text-gray-300">
+                          24/7 support
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-orange-500">
+                          <Check className="h-3 w-3 text-white" />
+                        </div>
+                        <span className="text-sm leading-relaxed text-gray-300">
+                          Custom feature roadmap
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-orange-500">
+                          <Check className="h-3 w-3 text-white" />
+                        </div>
+                        <span className="text-sm leading-relaxed text-gray-300">
+                          Monthly health reports
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-orange-500">
+                          <Check className="h-3 w-3 text-white" />
+                        </div>
+                        <span className="text-sm leading-relaxed text-gray-300">
+                          Dedicated developer
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <button
+                    onClick={() => {
+                      const element = document.getElementById("contact");
+                      if (element) {
+                        element.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
+                    className="w-full py-4 px-6 rounded-full font-semibold transition-all duration-200 group-hover:scale-105 bg-white text-gray-900 hover:bg-gray-100 shadow-lg hover:shadow-xl"
+                  >
+                    Start Your Project →
+                  </button>
+                </CardContent>
+              </Card>
             </div>
           )}
 
@@ -980,109 +1242,12 @@ export default function MVPLabsLandingPage() {
       </section>
 
       <section
-        id="remote"
-        className="py-20 bg-orange-500 relative overflow-hidden z-10"
-      >
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center px-4 py-2 bg-orange-50 text-orange-600 rounded-full text-sm font-medium mb-4">
-              <div className="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
-              We Work Worldwide
-            </div>
-          </div>
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left side - Content */}
-            <div className="space-y-8">
-              <div className="space-y-6">
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                  Global Collaboration,{" "}
-                  <span className="text-orange-400">Zero Boundaries</span>
-                </h2>
-                <p className="text-xl text-gray-300 leading-relaxed">
-                  We collaborate with clients from every corner of the world.
-                  Distance doesn't limit innovation—our fully remote approach
-                  means we can deliver exceptional MVPs no matter where you're
-                  located.
-                </p>
-              </div>
-
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Map className="w-6 h-6 text-orange-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-2">
-                      Worldwide Reach
-                    </h3>
-                    <p className="text-gray-300">
-                      From Silicon Valley to Singapore, we've built MVPs for
-                      clients across 6 continents.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <MessageCircle className="w-6 h-6 text-orange-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-2">
-                      Seamless Communication
-                    </h3>
-                    <p className="text-gray-300">
-                      Real-time collaboration tools and regular check-ins keep
-                      you connected throughout the process.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Rocket className="w-6 h-6 text-orange-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-2">
-                      Location Independent
-                    </h3>
-                    <p className="text-gray-300">
-                      Your location doesn't determine your access to world-class
-                      MVP development.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-4">
-                <button
-                  onClick={() =>
-                    window.open(
-                      "https://cal.com/rishabhbuildsmvp/30min?overlayCalendar=true",
-                      "_blank"
-                    )
-                  }
-                  className="px-8 py-4 bg-orange-500 text-white rounded-xl font-semibold hover:bg-orange-600 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                >
-                  Let's Build Together →
-                </button>
-              </div>
-            </div>
-
-            {/* Right side - Globe */}
-            <div className="relative flex items-center justify-center">
-              <Globe />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
         id="faq"
-        className="py-24 bg-white relative z-10 overflow-hidden"
+        className="py-24 bg-gradient-to-br from-gray-50 to-orange-50 relative z-10 overflow-hidden"
       >
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center px-4 py-2 bg-orange-50 text-orange-600 rounded-full text-sm font-medium mb-5">
+            <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 text-orange-600 rounded-full text-sm font-medium mb-5">
               <div className="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
               FAQ
             </div>
@@ -1096,7 +1261,7 @@ export default function MVPLabsLandingPage() {
           </div>
 
           <div className="max-w-6xl mx-auto">
-            <Card className="p-10 bg-white/90 backdrop-blur-sm shadow-xl rounded-3xl border border-orange-100">
+            <Card className="p-12 bg-white/95 backdrop-blur-sm shadow-2xl rounded-3xl border border-orange-200/50 hover:shadow-orange-500/10 transition-all duration-300">
               <Accordion
                 type="single"
                 collapsible
@@ -1252,12 +1417,12 @@ export default function MVPLabsLandingPage() {
                   <AccordionItem
                     key={index}
                     value={`item-${index}`}
-                    className="bg-white/80 backdrop-blur-sm border border-orange-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
+                    className="bg-white/90 backdrop-blur-sm border border-orange-200/50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
                   >
-                    <AccordionTrigger className="text-left font-semibold text-lg text-gray-900 hover:text-orange-600 px-8 py-6 hover:bg-orange-50/50 transition-all duration-200 [&[data-state=open]]:bg-orange-50/50 [&>svg]:transition-transform [&>svg]:duration-200">
+                    <AccordionTrigger className="text-left font-semibold text-xl text-gray-900 hover:text-orange-600 px-8 py-8 hover:bg-orange-50/30 transition-all duration-300 [&[data-state=open]]:bg-orange-50/30 [&>svg]:transition-transform [&>svg]:duration-300 group-hover:scale-[1.02]">
                       {faq.question}
                     </AccordionTrigger>
-                    <AccordionContent className="px-8 pb-6 pt-2 text-gray-600 data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
+                    <AccordionContent className="px-8 pb-8 pt-4 text-gray-700 text-lg leading-relaxed data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
                       {faq.answer}
                     </AccordionContent>
                   </AccordionItem>
