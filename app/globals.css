@@ -146,3 +146,7 @@
 .animation-delay-6000 {
   animation-delay: 6s;
 }
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
