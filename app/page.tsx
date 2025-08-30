@@ -550,148 +550,246 @@ export default function MVPLabsLandingPage() {
           </div>
 
           <div className="mb-12">
-            <InfiniteSlider speedOnHover={10} gap={24}>
-              <Card className="bg-white border border-gray-200 hover:shadow-lg transition-shadow duration-300 w-[300px] flex-shrink-0">
-                <div className="aspect-video bg-gray-100 rounded-t-lg overflow-hidden">
-                  <img
-                    src="/ai-ecommerce-dashboard-interface.png"
-                    alt="TripGuide - Travel App"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <div className="flex items-center space-x-2 mb-2">
-                    <h3 className="text-xl font-bold text-gray-900">
-                      TripGuide
-                    </h3>
-                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1">
+            <InfiniteSlider speedOnHover={10} gap={32}>
+              {/* TripGuide Card */}
+              <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 w-[350px] flex-shrink-0 group hover:scale-105">
+                <div className="relative">
+                  <div className="aspect-video bg-gray-100 rounded-t-xl overflow-hidden">
+                    <img
+                      src="/ai-ecommerce-dashboard-interface.png"
+                      alt="TripGuide - Travel App"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="absolute top-4 left-4">
+                    <Badge className="bg-orange-500 text-white text-xs px-3 py-1 rounded-full font-medium">
                       Travel App
                     </Badge>
                   </div>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    A smart travel planning app that helps users discover
-                    destinations, plan itineraries, and book accommodations
-                    seamlessly.
-                  </p>
+                </div>
+                <CardContent className="p-8">
+                  <div className="mb-4">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                      TripGuide
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                      A smart travel planning app that helps users discover
+                      destinations, plan itineraries, and book accommodations
+                      seamlessly.
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
+                      React Native
+                    </Badge>
+                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
+                      Node.js
+                    </Badge>
+                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
+                      MongoDB
+                    </Badge>
+                  </div>
                 </CardContent>
               </Card>
 
-              <Card className="bg-white border border-gray-200 hover:shadow-lg transition-shadow duration-300 w-[300px] flex-shrink-0">
-                <div className="aspect-video bg-gray-100 rounded-t-lg overflow-hidden">
-                  <img
-                    src="/chatbot-platform-interface.png"
-                    alt="PostKit - Web App"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <div className="flex items-center space-x-2 mb-2">
-                    <h3 className="text-xl font-bold text-gray-900">PostKit</h3>
-                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1">
+              {/* PostKit Card */}
+              <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 w-[350px] flex-shrink-0 group hover:scale-105">
+                <div className="relative">
+                  <div className="aspect-video bg-gray-100 rounded-t-xl overflow-hidden">
+                    <img
+                      src="/chatbot-platform-interface.png"
+                      alt="PostKit - Web App"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="absolute top-4 left-4">
+                    <Badge className="bg-orange-500 text-white text-xs px-3 py-1 rounded-full font-medium">
                       Web App
                     </Badge>
                   </div>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    An AI-powered social media management platform that helps
-                    creators and small businesses plan, create, and schedule
-                    content.
-                  </p>
+                </div>
+                <CardContent className="p-8">
+                  <div className="mb-4">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                      PostKit
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                      An AI-powered social media management platform that helps
+                      creators and small businesses plan, create, and schedule
+                      content.
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
+                      Next.js
+                    </Badge>
+                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
+                      TypeScript
+                    </Badge>
+                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
+                      PostgreSQL
+                    </Badge>
+                  </div>
                 </CardContent>
               </Card>
 
-              <Card className="bg-white border border-gray-200 hover:shadow-lg transition-shadow duration-300 w-[300px] flex-shrink-0">
-                <div className="aspect-video bg-gray-100 rounded-t-lg overflow-hidden">
-                  <img
-                    src="/real-estate-app-interface.png"
-                    alt="EventSync - Mobile App"
-                    className="w-full h-full object-cover"
-                  />
+              {/* EventSync Card */}
+              <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 w-[350px] flex-shrink-0 group hover:scale-105">
+                <div className="relative">
+                  <div className="aspect-video bg-gray-100 rounded-t-xl overflow-hidden">
+                    <img
+                      src="/real-estate-app-interface.png"
+                      alt="EventSync - Mobile App"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="absolute top-4 left-4">
+                    <Badge className="bg-orange-500 text-white text-xs px-3 py-1 rounded-full font-medium">
+                      Mobile App
+                    </Badge>
+                  </div>
                 </div>
-                <CardContent className="p-6">
-                  <div className="flex items-center space-x-2 mb-2">
-                    <h3 className="text-xl font-bold text-gray-900">
+                <CardContent className="p-8">
+                  <div className="mb-4">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
                       EventSync
                     </h3>
-                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1">
-                      Mobile App
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                      A comprehensive event management app that helps organizers
+                      create, promote, and manage events seamlessly.
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
+                      Flutter
+                    </Badge>
+                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
+                      Firebase
+                    </Badge>
+                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
+                      Dart
                     </Badge>
                   </div>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    A comprehensive event management app that helps organizers
-                    create, promote, and manage events seamlessly.
-                  </p>
                 </CardContent>
               </Card>
 
-              <Card className="bg-white border border-gray-200 hover:shadow-lg transition-shadow duration-300 w-[300px] flex-shrink-0">
-                <div className="aspect-video bg-gray-100 rounded-t-lg overflow-hidden">
-                  <img
-                    src="/social-community-app-interface.png"
-                    alt="FormSnap - Web App"
-                    className="w-full h-full object-cover"
-                  />
+              {/* FormSnap Card */}
+              <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 w-[350px] flex-shrink-0 group hover:scale-105">
+                <div className="relative">
+                  <div className="aspect-video bg-gray-100 rounded-t-xl overflow-hidden">
+                    <img
+                      src="/social-community-app-interface.png"
+                      alt="FormSnap - Web App"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="absolute top-4 left-4">
+                    <Badge className="bg-orange-500 text-white text-xs px-3 py-1 rounded-full font-medium">
+                      Web App
+                    </Badge>
+                  </div>
                 </div>
-                <CardContent className="p-6">
-                  <div className="flex items-center space-x-2 mb-2">
-                    <h3 className="text-xl font-bold text-gray-900">
+                <CardContent className="p-8">
+                  <div className="mb-4">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
                       FormSnap
                     </h3>
-                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1">
-                      Web App
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                      A simple form automation tool that lets users create smart
+                      forms, collect responses, and send automated emails.
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
+                      React
+                    </Badge>
+                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
+                      Express.js
+                    </Badge>
+                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
+                      MySQL
                     </Badge>
                   </div>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    A simple form automation tool that lets users create smart
-                    forms, collect responses, and send automated emails.
-                  </p>
                 </CardContent>
               </Card>
 
-              <Card className="bg-white border border-gray-200 hover:shadow-lg transition-shadow duration-300 w-[300px] flex-shrink-0">
-                <div className="aspect-video bg-gray-100 rounded-t-lg overflow-hidden">
-                  <img
-                    src="/ai-ecommerce-dashboard-interface.png"
-                    alt="HostSync - Mobile App"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <div className="flex items-center space-x-2 mb-2">
-                    <h3 className="text-xl font-bold text-gray-900">
-                      HostSync
-                    </h3>
-                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1">
+              {/* HostSync Card */}
+              <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 w-[350px] flex-shrink-0 group hover:scale-105">
+                <div className="relative">
+                  <div className="aspect-video bg-gray-100 rounded-t-xl overflow-hidden">
+                    <img
+                      src="/ai-ecommerce-dashboard-interface.png"
+                      alt="HostSync - Mobile App"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="absolute top-4 left-4">
+                    <Badge className="bg-orange-500 text-white text-xs px-3 py-1 rounded-full font-medium">
                       Mobile App
                     </Badge>
                   </div>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    A property and guest management app that helps property
-                    owners develop positive routines and track daily progress.
-                  </p>
+                </div>
+                <CardContent className="p-8">
+                  <div className="mb-4">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                      HostSync
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                      A property and guest management app that helps property
+                      owners develop positive routines and track daily progress.
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
+                      React Native
+                    </Badge>
+                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
+                      GraphQL
+                    </Badge>
+                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
+                      AWS
+                    </Badge>
+                  </div>
                 </CardContent>
               </Card>
 
-              <Card className="bg-white border border-gray-200 hover:shadow-lg transition-shadow duration-300 w-[300px] flex-shrink-0">
-                <div className="aspect-video bg-gray-100 rounded-t-lg overflow-hidden">
-                  <img
-                    src="/chatbot-platform-interface.png"
-                    alt="SellScale - Web App"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <div className="flex items-center space-x-2 mb-2">
-                    <h3 className="text-xl font-bold text-gray-900">
-                      SellScale
-                    </h3>
-                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1">
+              {/* SellScale Card */}
+              <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 w-[350px] flex-shrink-0 group hover:scale-105">
+                <div className="relative">
+                  <div className="aspect-video bg-gray-100 rounded-t-xl overflow-hidden">
+                    <img
+                      src="/chatbot-platform-interface.png"
+                      alt="SellScale - Web App"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="absolute top-4 left-4">
+                    <Badge className="bg-orange-500 text-white text-xs px-3 py-1 rounded-full font-medium">
                       Web App
                     </Badge>
                   </div>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    A comprehensive sales automation platform that helps teams
-                    identify, automate, and optimize sales processes.
-                  </p>
+                </div>
+                <CardContent className="p-8">
+                  <div className="mb-4">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                      SellScale
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                      A comprehensive sales automation platform that helps teams
+                      identify, automate, and optimize sales processes.
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
+                      Vue.js
+                    </Badge>
+                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
+                      Python
+                    </Badge>
+                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
+                      Redis
+                    </Badge>
+                  </div>
                 </CardContent>
               </Card>
             </InfiniteSlider>
