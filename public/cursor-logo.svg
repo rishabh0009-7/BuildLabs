@@ -1,0 +1,12 @@
+<svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+  <!-- Black background rectangle -->
+  <rect width="120" height="40" rx="4" fill="#000000"/>
+  <!-- White 3D cube icon -->
+  <g transform="translate(8, 8)">
+    <path d="M12 2 L20 6 L12 10 L4 6 Z" fill="#ffffff"/>
+    <path d="M4 6 L4 14 L12 18 L12 10 Z" fill="#cccccc"/>
+    <path d="M12 10 L12 18 L20 14 L20 6 Z" fill="#e6e6e6"/>
+  </g>
+  <!-- CURSOR text -->
+  <text x="32" y="26" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#ffffff">CURSOR</text>
+</svg>

@@ -12,7 +12,7 @@
   --color-card-foreground: #111827;
   --color-popover: #ffffff;
   --color-popover-foreground: #111827;
-  --color-primary: #2563eb;
+  --color-primary: #ea580c;
   --color-primary-foreground: #ffffff;
   --color-secondary: #f3f4f6;
   --color-secondary-foreground: #111827;
@@ -24,7 +24,7 @@
   --color-destructive-foreground: #ffffff;
   --color-border: #e5e7eb;
   --color-input: #e5e7eb;
-  --color-ring: #1e3a8a;
+  --color-ring: #c2410c;
   --radius: 0.5rem;
 
   --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite alternate;
