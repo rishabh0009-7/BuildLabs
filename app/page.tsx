@@ -239,11 +239,11 @@ export default function MVPLabsLandingPage() {
               {/* Main Heading - Left aligned */}
               <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-gray-900 mb-4 leading-tight tracking-wide font-[var(--font-hero)]">
                 <div className="block">
-                  Launch Your <span className="text-orange-600">MVP</span>
+                  Launch Your <span className="text-[#FF6B35]">MVP</span>
                 </div>
                 <div className="block mt-1 md:mt-2">
                   <span className="ml-8">In{" "}
-                  <span className="text-orange-600 bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent">
+                  <span className="text-[#FF6B35]">
                     Days
                   </span>{" "}
                   ,</span>
@@ -267,7 +267,7 @@ export default function MVPLabsLandingPage() {
                       "_blank"
                     )
                   }
-                  className="px-8 py-4 text-lg bg-gradient-to-r from-orange-600 to-orange-500 text-white rounded-full font-bold hover:from-orange-700 hover:to-orange-600 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
+                  className="px-8 py-4 text-lg bg-[#FF6B35] text-white rounded-full font-bold hover:bg-[#E55A2B] transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
                   style={{ textShadow: "0 1px 3px rgba(0,0,0,0.2)" }}
                 >
                   Book a Free Strategy Call
