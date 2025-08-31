@@ -238,13 +238,8 @@ export default function MVPLabsLandingPage() {
               <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-gray-900 mb-4 leading-tight tracking-wide font-[var(--font-hero)]">
                 <div className="block">
                   Launch Your <span className="text-[#FF6B35]">MVP</span>
-                </div>
-                <div className="block mt-1 md:mt-2">
-                  <span className="ml-8">
-                    In <span className="text-[#FF6B35]">Days</span> ,
-                  </span>
                   <br />
-                  Not <span className="line-through text-gray-400">Months</span>
+                  In <span className="text-[#FF6B35]">Days</span>, Not <span className="line-through text-gray-400">Months</span>
                 </div>
               </h1>
 
@@ -592,13 +587,13 @@ export default function MVPLabsLandingPage() {
               </CardContent>
             </Card>
 
-            {/* Curely Card */}
+            {/* Spensibly Card */}
             <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 group hover:scale-105">
               <div className="relative">
                 <div className="aspect-video rounded-t-xl overflow-hidden">
                   <img
                     src="/Dashboard.png"
-                    alt="Curely - Analytics Dashboard"
+                    alt="Spensibly - Financial Management SaaS Dashboard"
                     className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
@@ -606,14 +601,14 @@ export default function MVPLabsLandingPage() {
               <CardContent className="p-6">
                 <div className="flex items-center mb-2">
                   <h3 className="text-xl font-bold text-gray-800">
-                    Curely
+                    Spensibly
                   </h3>
                   <Badge className="ml-2 bg-orange-100 text-orange-800 text-xs px-2.5 py-1 rounded-full font-semibold">
-                    Analytics Dashboard
+                    SaaS Dashboard
                   </Badge>
                 </div>
                 <p className="text-gray-700 text-sm leading-relaxed font-medium">
-                  An advanced analytics dashboard for healthcare professionals. Curely provides administrators and doctors with real-time insights into patient data, appointment scheduling, and operational efficiency, enabling data-driven decisions to improve patient care.
+                  Spensibly is a comprehensive SaaS dashboard for financial management. It offers real-time expense tracking, budget automation, and insightful analytics to help businesses control spending and optimize financial health. With an intuitive interface, it simplifies complex financial data, making it accessible for teams to manage budgets collaboratively and make informed decisions.
                 </p>
               </CardContent>
             </Card>

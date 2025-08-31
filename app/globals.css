@@ -163,3 +163,17 @@
 .animate-scroll {
   animation: scroll linear infinite;
 }
+
+/* Responsive styles for mobile */
+@media (max-width: 1023px) {
+  #home {
+    height: auto;
+    padding-top: 8rem; /* Adjust for header */
+    padding-bottom: 4rem;
+  }
+
+  #home .lg\:hidden {
+    order: -1; /* Move image to the top */
+    margin-bottom: 2rem;
+  }
+}
