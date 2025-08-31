@@ -128,8 +128,10 @@ export default function MVPLabsLandingPage() {
     <div className="min-h-screen w-full relative bg-white">
       <header className="fixed top-0 left-0 right-0 z-[100] bg-white/95 backdrop-blur-md border-b border-gray-200/50 shadow-lg overflow-hidden">
         <div className="relative container mx-auto px-6 h-16 flex items-center justify-between">
-          {/* Empty space - Left Side */}
-          <div></div>
+          <div className="flex items-center space-x-2">
+            <img src="/logo.png" alt="BuildLabs Logo" className="h-8 w-auto" />
+            <span className="font-bold text-xl text-gray-800">BuildLabs</span>
+          </div>
 
           {/* Navigation - Center */}
           <nav className="hidden md:flex items-center space-x-8">
