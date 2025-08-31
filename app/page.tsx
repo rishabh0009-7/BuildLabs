@@ -33,6 +33,10 @@ import {
   Briefcase,
   FileText,
   Phone,
+  Zap,
+  DollarSign,
+  Users,
+  TrendingUp,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
@@ -328,7 +332,7 @@ export default function MVPLabsLandingPage() {
               Why Work With Us?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're not just developers—we're startup partners who understand
+              We're not just developers - we're startup partners who understand
               the urgency of getting to market fast with a product that works.
             </p>
           </div>
@@ -336,17 +340,17 @@ export default function MVPLabsLandingPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 p-8 text-center group">
               <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Rocket className="w-10 h-10 text-orange-600" />
+                <Zap className="w-10 h-10 text-orange-600" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Speed</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Launch your MVP in as little as 4–6 weeks.
+                Launch your MVP in as little as 2-3 weeks.
               </p>
             </Card>
 
             <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 p-8 text-center group">
               <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Check className="w-10 h-10 text-orange-600" />
+                <DollarSign className="w-10 h-10 text-orange-600" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">
                 Affordability
@@ -358,7 +362,7 @@ export default function MVPLabsLandingPage() {
 
             <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 p-8 text-center group">
               <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Star className="w-10 h-10 text-orange-600" />
+                <Users className="w-10 h-10 text-orange-600" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">
                 Expert Team
@@ -371,11 +375,11 @@ export default function MVPLabsLandingPage() {
 
             <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 p-8 text-center group">
               <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Code className="w-10 h-10 text-orange-600" />
+                <TrendingUp className="w-10 h-10 text-orange-600" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Scalable</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Built with modern tech to grow with your business.
+                Built with modern tech and tools  to grow with your business.
               </p>
             </Card>
           </div>
@@ -633,85 +637,6 @@ export default function MVPLabsLandingPage() {
                 </CardContent>
               </Card>
 
-              {/* EventSync Card */}
-              <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 w-[350px] flex-shrink-0 group hover:scale-105">
-                <div className="relative">
-                  <div className="aspect-video bg-gray-100 rounded-t-xl overflow-hidden">
-                    <img
-                      src="/real-estate-app-interface.png"
-                      alt="EventSync - Mobile App"
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="absolute top-4 left-4">
-                    <Badge className="bg-orange-500 text-white text-xs px-3 py-1 rounded-full font-medium">
-                      Mobile App
-                    </Badge>
-                  </div>
-                </div>
-                <CardContent className="p-8">
-                  <div className="mb-4">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                      EventSync
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                      A comprehensive event management app that helps organizers
-                      create, promote, and manage events seamlessly.
-                    </p>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
-                      Flutter
-                    </Badge>
-                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
-                      Firebase
-                    </Badge>
-                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
-                      Dart
-                    </Badge>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* FormSnap Card */}
-              <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 w-[350px] flex-shrink-0 group hover:scale-105">
-                <div className="relative">
-                  <div className="aspect-video bg-gray-100 rounded-t-xl overflow-hidden">
-                    <img
-                      src="/social-community-app-interface.png"
-                      alt="FormSnap - Web App"
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="absolute top-4 left-4">
-                    <Badge className="bg-orange-500 text-white text-xs px-3 py-1 rounded-full font-medium">
-                      Web App
-                    </Badge>
-                  </div>
-                </div>
-                <CardContent className="p-8">
-                  <div className="mb-4">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                      FormSnap
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                      A simple form automation tool that lets users create smart
-                      forms, collect responses, and send automated emails.
-                    </p>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
-                      React
-                    </Badge>
-                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
-                      Express.js
-                    </Badge>
-                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
-                      MySQL
-                    </Badge>
-                  </div>
-                </CardContent>
-              </Card>
 
               {/* HostSync Card */}
               <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 w-[350px] flex-shrink-0 group hover:scale-105">
