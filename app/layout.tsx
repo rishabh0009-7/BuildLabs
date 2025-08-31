@@ -36,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${phonk.variable}`}>
-      <body className={`${geistSans.variable} ${geistMono.variable} ${phonk.variable} font-sans antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${phonk.variable} font-sans antialiased bg-[#FFF2E0]`}>
         {children}
       </body>
     </html>

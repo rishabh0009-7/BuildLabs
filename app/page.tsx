@@ -128,13 +128,6 @@ export default function MVPLabsLandingPage() {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
             </button>
 
-            <button
-              onClick={() => scrollToSection("process")}
-              className="text-gray-800 hover:text-orange-600 font-semibold relative group transition-colors duration-200"
-            >
-              Our Process
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
-            </button>
 
             <button
               onClick={() => scrollToSection("pricing")}
@@ -321,214 +314,118 @@ export default function MVPLabsLandingPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50 relative z-10">
+
+      <section
+        id="why-us"
+        className="py-20 bg-[#101828] relative z-10 overflow-hidden"
+      >
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center px-4 py-2 bg-orange-50 text-orange-600 rounded-full text-sm font-medium mb-4">
-              <div className="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
+            <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 text-orange-400 rounded-full text-sm font-medium mb-4">
               Why Choose Us
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Why Work With Us?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               We're not just developers - we're startup partners who understand
               the urgency of getting to market fast with a product that works.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 p-8 text-center group">
-              <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Zap className="w-10 h-10 text-orange-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Speed</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Launch your MVP in as little as 2-3 weeks.
-              </p>
-            </Card>
-
-            <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 p-8 text-center group">
-              <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <DollarSign className="w-10 h-10 text-orange-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
-                Affordability
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Transparent pricing, no hidden costs.
-              </p>
-            </Card>
-
-            <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 p-8 text-center group">
-              <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Users className="w-10 h-10 text-orange-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
-                Expert Team
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Developers, designers, and product strategists who understand
-                startups.
-              </p>
-            </Card>
-
-            <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 p-8 text-center group">
-              <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <TrendingUp className="w-10 h-10 text-orange-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Scalable</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Built with modern tech and tools  to grow with your business.
-              </p>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="process"
-        className="py-20 bg-gray-900 relative z-10 overflow-hidden"
-      >
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center px-4 py-2 bg-orange-500/20 text-orange-400 rounded-full text-sm font-medium mb-4">
-              <div className="w-2 h-2 bg-orange-400 rounded-full mr-2"></div>
-              Our Process
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-orange-400 mb-4">
-              How It Works
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              From idea to launch in just a few weeks. Here's our proven process
-              that gets your MVP to market fast.
-            </p>
-          </div>
-
-          <div className="relative max-w-6xl mx-auto">
-            {/* Central Flow Line */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-orange-500/30 transform -translate-x-1/2 hidden md:block"></div>
-
-            {[
-              {
-                step: "Step 01",
-                title: "Discovery Call",
-                description:
-                  "We dive deep into your idea, goals, and user needs. By the end of this call, we'll have a clear understanding of what we're building and how we'll build it.",
-                position: "left",
-              },
-              {
-                step: "Step 02",
-                title: "Design & Planning",
-                description:
-                  "We create wireframes and define the MVP scope. You'll get a visual blueprint of exactly what we're going to build, ensuring we're aligned on every detail.",
-                position: "right",
-              },
-              {
-                step: "Step 03",
-                title: "Development Sprint",
-                description:
-                  "Our team builds your MVP using modern technologies. You'll get regular updates and can provide feedback throughout the development process.",
-                position: "left",
-              },
-              {
-                step: "Step 04",
-                title: "Testing & Refinement",
-                description:
-                  "We thoroughly test every feature and refine based on your feedback. Quality assurance ensures your MVP is ready for real users.",
-                position: "right",
-              },
-              {
-                step: "Step 05",
-                title: "Launch & Deploy",
-                description:
-                  "Your MVP goes live with full deployment, hosting, and launch support. You're ready to start collecting user feedback and growing your business.",
-                position: "left",
-              },
-            ].map((step, index) => {
-              const ref = useRef(null);
-              const isInView = useInView(ref, { once: true, amount: 0.3 });
-
-              return (
-                <motion.div
-                  key={index}
-                  ref={ref}
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={
-                    isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }
-                  }
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
-                  className={`relative flex items-center mb-16 ${
-                    step.position === "right" ? "md:flex-row-reverse" : ""
-                  }`}
-                >
-                  {/* Step Number Circle */}
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={isInView ? { scale: 1 } : { scale: 0 }}
-                    transition={{
-                      duration: 0.5,
-                      delay: index * 0.2 + 0.2,
-                      type: "spring",
-                      stiffness: 100,
-                    }}
-                    className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center z-10 hidden md:flex"
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                whileHover={{ y: -10, transition: { duration: 0.3 } }}
+              >
+                <Card className="bg-gray-900/50 border border-gray-800 hover:shadow-xl transition-all duration-300 p-8 text-center group h-full hover:bg-orange-500">
+                  <motion.div 
+                    className="w-20 h-20 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors duration-300"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 10 }}
                   >
-                    <span className="text-white font-bold text-sm">
-                      {index + 1}
-                    </span>
+                    <Zap className="w-10 h-10 text-orange-400 group-hover:text-white transition-colors duration-300" />
                   </motion.div>
+                  <h3 className="text-xl font-bold text-orange-400 mb-4 group-hover:text-white transition-colors duration-300">Speed</h3>
+                  <p className="text-gray-400 text-base leading-relaxed group-hover:text-white transition-colors duration-300">
+                    Launch your MVP in as little as 2-3 weeks.
+                  </p>
+                </Card>
+              </motion.div>
 
-                  {/* Card */}
-                  <motion.div
-                    initial={{
-                      x: step.position === "right" ? 100 : -100,
-                      opacity: 0,
-                    }}
-                    animate={
-                      isInView
-                        ? { x: 0, opacity: 1 }
-                        : {
-                            x: step.position === "right" ? 100 : -100,
-                            opacity: 0,
-                          }
-                    }
-                    transition={{
-                      duration: 0.5,
-                      delay: index * 0.2 + 0.3,
-                      type: "spring",
-                      stiffness: 100,
-                    }}
-                    className={`w-full md:w-5/12 ${
-                      step.position === "right"
-                        ? "md:mr-auto md:ml-0"
-                        : "md:ml-auto md:mr-0"
-                    }`}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                whileHover={{ y: -10, transition: { duration: 0.3 } }}
+              >
+                <Card className="bg-gray-900/50 border border-gray-800 hover:shadow-xl transition-all duration-300 p-8 text-center group h-full hover:bg-orange-500">
+                  <motion.div 
+                    className="w-20 h-20 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors duration-300"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 10 }}
                   >
-                    <Card className="bg-gray-800 border border-gray-700 hover:border-orange-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/10">
-                      <CardContent className="p-8">
-                        <div className="mb-4">
-                          <Badge className="bg-orange-500/20 text-orange-400 px-3 py-1 text-xs font-medium rounded-full mb-3">
-                            {step.step}
-                          </Badge>
-                          <h3 className="text-2xl font-bold text-orange-400 mb-4">
-                            {step.title}
-                          </h3>
-                        </div>
-                        <p className="text-gray-300 text-base leading-relaxed">
-                          {step.description}
-                        </p>
-                      </CardContent>
-                    </Card>
+                    <DollarSign className="w-10 h-10 text-orange-400 group-hover:text-white transition-colors duration-300" />
                   </motion.div>
-                </motion.div>
-              );
-            })}
+                  <h3 className="text-xl font-bold text-orange-400 mb-4 group-hover:text-white transition-colors duration-300">
+                    Affordability
+                  </h3>
+                  <p className="text-gray-400 text-base leading-relaxed group-hover:text-white transition-colors duration-300">
+                    Transparent pricing, no hidden costs.
+                  </p>
+                </Card>
+              </motion.div>
 
-            {/* End Triangle */}
-            <div className="flex justify-center mt-8">
-              <div className="w-0 h-0 border-l-8 border-r-8 border-t-8 border-transparent border-t-orange-500"></div>
-            </div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                whileHover={{ y: -10, transition: { duration: 0.3 } }}
+              >
+                <Card className="bg-gray-900/50 border border-gray-800 hover:shadow-xl transition-all duration-300 p-8 text-center group h-full hover:bg-orange-500">
+                  <motion.div 
+                    className="w-20 h-20 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors duration-300"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+                  >
+                    <Users className="w-10 h-10 text-orange-400 group-hover:text-white transition-colors duration-300" />
+                  </motion.div>
+                  <h3 className="text-xl font-bold text-orange-400 mb-4 group-hover:text-white transition-colors duration-300">
+                    Expert Team
+                  </h3>
+                  <p className="text-gray-400 text-base leading-relaxed group-hover:text-white transition-colors duration-300">
+                    Developers, designers, and product strategists who understand
+                    startups.
+                  </p>
+                </Card>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                whileHover={{ y: -10, transition: { duration: 0.3 } }}
+              >
+                <Card className="bg-gray-900/50 border border-gray-800 hover:shadow-xl transition-all duration-300 p-8 text-center group h-full hover:bg-orange-500">
+                  <motion.div 
+                    className="w-20 h-20 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors duration-300"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+                  >
+                    <TrendingUp className="w-10 h-10 text-orange-400 group-hover:text-white transition-colors duration-300" />
+                  </motion.div>
+                  <h3 className="text-xl font-bold text-orange-400 mb-4 group-hover:text-white transition-colors duration-300">Scalable</h3>
+                  <p className="text-gray-400 text-base leading-relaxed group-hover:text-white transition-colors duration-300">
+                    Built with modern tech and tools to grow with your business.
+                  </p>
+                </Card>
+              </motion.div>
           </div>
         </div>
       </section>
@@ -537,14 +434,14 @@ export default function MVPLabsLandingPage() {
         id="portfolio"
         className="py-20 bg-white relative z-10 overflow-hidden"
       >
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-12">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 bg-orange-50 text-orange-600 rounded-full text-sm font-medium mb-4">
               <div className="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
               Our Projects
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              What We've Built
+              Our Recent Work
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               These apps all started as nothing but an idea. We turned them into
@@ -553,191 +450,184 @@ export default function MVPLabsLandingPage() {
             </p>
           </div>
 
-          <div className="mb-12">
-            <InfiniteSlider speedOnHover={10} gap={32}>
-              {/* TripGuide Card */}
-              <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 w-[350px] flex-shrink-0 group hover:scale-105">
-                <div className="relative">
-                  <div className="aspect-video bg-gray-100 rounded-t-xl overflow-hidden">
-                    <img
-                      src="/ai-ecommerce-dashboard-interface.png"
-                      alt="TripGuide - Travel App"
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="absolute top-4 left-4">
-                    <Badge className="bg-orange-500 text-white text-xs px-3 py-1 rounded-full font-medium">
-                      Travel App
-                    </Badge>
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Travista Card */}
+            <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 group hover:scale-105">
+              <div className="relative">
+                <div className="aspect-video rounded-t-xl overflow-hidden">
+                  <img
+                    src="/Travista.png"
+                    alt="Travista - AI Travel App"
+                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                  />
                 </div>
-                <CardContent className="p-8">
-                  <div className="mb-4">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                      TripGuide
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                      A smart travel planning app that helps users discover
-                      destinations, plan itineraries, and book accommodations
-                      seamlessly.
-                    </p>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
-                      React Native
-                    </Badge>
-                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
-                      Node.js
-                    </Badge>
-                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
-                      MongoDB
-                    </Badge>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* PostKit Card */}
-              <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 w-[350px] flex-shrink-0 group hover:scale-105">
-                <div className="relative">
-                  <div className="aspect-video bg-gray-100 rounded-t-xl overflow-hidden">
-                    <img
-                      src="/chatbot-platform-interface.png"
-                      alt="PostKit - Web App"
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="absolute top-4 left-4">
-                    <Badge className="bg-orange-500 text-white text-xs px-3 py-1 rounded-full font-medium">
-                      Web App
-                    </Badge>
-                  </div>
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center mb-2">
+                  <h3 className="text-xl font-bold text-gray-800">
+                    Travista
+                  </h3>
+                  <Badge className="ml-2 bg-orange-100 text-orange-800 text-xs px-2.5 py-1 rounded-full font-semibold">
+                    AI Travel App
+                  </Badge>
                 </div>
-                <CardContent className="p-8">
-                  <div className="mb-4">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                      PostKit
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                      An AI-powered social media management platform that helps
-                      creators and small businesses plan, create, and schedule
-                      content.
-                    </p>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
-                      Next.js
-                    </Badge>
-                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
-                      TypeScript
-                    </Badge>
-                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
-                      PostgreSQL
-                    </Badge>
-                  </div>
-                </CardContent>
-              </Card>
+                <p className="text-gray-700 text-sm leading-relaxed font-medium">
+                  A modern, responsive AI-powered travel web app that helps users discover destinations, plan trips, and get smart recommendations for vacations. It features an intuitive interface, personalized itineraries, and real-time travel alerts to ensure a seamless journey from start to finish.
+                </p>
+              </CardContent>
+            </Card>
 
-
-              {/* HostSync Card */}
-              <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 w-[350px] flex-shrink-0 group hover:scale-105">
-                <div className="relative">
-                  <div className="aspect-video bg-gray-100 rounded-t-xl overflow-hidden">
-                    <img
-                      src="/ai-ecommerce-dashboard-interface.png"
-                      alt="HostSync - Mobile App"
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="absolute top-4 left-4">
-                    <Badge className="bg-orange-500 text-white text-xs px-3 py-1 rounded-full font-medium">
-                      Mobile App
-                    </Badge>
-                  </div>
+            {/* BlackPulse Card */}
+            <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 group hover:scale-105">
+              <div className="relative">
+                <div className="aspect-video rounded-t-xl overflow-hidden">
+                  <img
+                    src="/BlackPulse.png"
+                    alt="BlackPulse - AI Marketing Agency"
+                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                  />
                 </div>
-                <CardContent className="p-8">
-                  <div className="mb-4">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                      HostSync
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                      A property and guest management app that helps property
-                      owners develop positive routines and track daily progress.
-                    </p>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
-                      React Native
-                    </Badge>
-                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
-                      GraphQL
-                    </Badge>
-                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
-                      AWS
-                    </Badge>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* SellScale Card */}
-              <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 w-[350px] flex-shrink-0 group hover:scale-105">
-                <div className="relative">
-                  <div className="aspect-video bg-gray-100 rounded-t-xl overflow-hidden">
-                    <img
-                      src="/chatbot-platform-interface.png"
-                      alt="SellScale - Web App"
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="absolute top-4 left-4">
-                    <Badge className="bg-orange-500 text-white text-xs px-3 py-1 rounded-full font-medium">
-                      Web App
-                    </Badge>
-                  </div>
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center mb-2">
+                  <h3 className="text-xl font-bold text-gray-800">
+                    BlackPulse
+                  </h3>
+                  <Badge className="ml-2 bg-orange-100 text-orange-800 text-xs px-2.5 py-1 rounded-full font-semibold">
+                    AI Marketing
+                  </Badge>
                 </div>
-                <CardContent className="p-8">
-                  <div className="mb-4">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                      SellScale
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                      A comprehensive sales automation platform that helps teams
-                      identify, automate, and optimize sales processes.
-                    </p>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
-                      Vue.js
-                    </Badge>
-                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
-                      Python
-                    </Badge>
-                    <Badge className="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded-full border border-orange-200">
-                      Redis
-                    </Badge>
-                  </div>
-                </CardContent>
-              </Card>
-            </InfiniteSlider>
+                <p className="text-gray-700 text-sm leading-relaxed font-medium">
+                  BlackPulse is an AI-powered marketing agency that helps brands scale smarter. We use advanced artificial intelligence to analyze data, predict trends, and craft campaigns that resonate with the right audience at the right time. From strategy to execution, we combine human creativity with machine intelligence to deliver marketing that’s faster, sharper, and more effective.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* InvoiceAi Card */}
+            <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 group hover:scale-105">
+              <div className="relative">
+                <div className="aspect-video rounded-t-xl overflow-hidden">
+                  <img
+                    src="/InvoiceAi.png"
+                    alt="InvoiceAi - AI Invoice Generator"
+                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center mb-2">
+                  <h3 className="text-xl font-bold text-gray-800">
+                    InvoiceAi
+                  </h3>
+                  <Badge className="ml-2 bg-orange-100 text-orange-800 text-xs px-2.5 py-1 rounded-full font-semibold">
+                    AI Invoice App
+                  </Badge>
+                </div>
+                <p className="text-gray-700 text-sm leading-relaxed font-medium">
+                  Create, customize, and download beautiful invoices instantly with support for multiple currencies and professional templates. This tool streamlines your billing process with automated reminders, payment tracking, and insightful analytics, helping you get paid faster and manage your finances effortlessly.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* SyncAi Card */}
+            <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 group hover:scale-105">
+              <div className="relative">
+                <div className="aspect-video rounded-t-xl overflow-hidden">
+                  <img
+                    src="/SyncAi.png"
+                    alt="SyncAi - AI CRM"
+                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center mb-2">
+                  <h3 className="text-xl font-bold text-gray-800">
+                    SyncAi
+                  </h3>
+                  <Badge className="ml-2 bg-orange-100 text-orange-800 text-xs px-2.5 py-1 rounded-full font-semibold">
+                    AI CRM
+                  </Badge>
+                </div>
+                <p className="text-gray-700 text-sm leading-relaxed font-medium mb-4">
+                  A modern AI-powered CRM that offers robust client management, proposal tracking, a real-time analytics dashboard, and intelligent business insights to streamline your sales workflow and boost productivity.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <Badge className="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full border border-gray-200">
+                    React
+                  </Badge>
+                  <Badge className="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full border border-gray-200">
+                    TypeScript
+                  </Badge>
+                  <Badge className="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full border border-gray-200">
+                    Supabase
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* BotCraft Card */}
+            <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 group hover:scale-105">
+              <div className="relative">
+                <div className="aspect-video rounded-t-xl overflow-hidden">
+                  <img
+                    src="/BotCraft.png"
+                    alt="BotCraft - AI Chatbot"
+                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center mb-2">
+                  <h3 className="text-xl font-bold text-gray-800">
+                    BotCraft
+                  </h3>
+                  <Badge className="ml-2 bg-orange-100 text-orange-800 text-xs px-2.5 py-1 rounded-full font-semibold">
+                    AI Chatbot
+                  </Badge>
+                </div>
+                <p className="text-gray-700 text-sm leading-relaxed font-medium">
+                  A cutting-edge multimodal AI chatbot that understands and responds to text, images, and voice. BotCraft offers a natural, human-like conversational experience, making it perfect for customer support, interactive learning, and personalized assistance.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Fake Project Card 2 */}
+            <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 group hover:scale-105">
+              <div className="relative">
+                <div className="aspect-video bg-gray-100 rounded-t-xl overflow-hidden">
+                  <img
+                    src="/chatbot-platform-interface.png"
+                    alt="Placeholder Project 2"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center mb-2">
+                  <h3 className="text-xl font-bold text-gray-800">
+                    Project Beta
+                  </h3>
+                  <Badge className="ml-2 bg-orange-100 text-orange-800 text-xs px-2.5 py-1 rounded-full font-semibold">
+                    In Development
+                  </Badge>
+                </div>
+                <p className="text-gray-700 text-sm leading-relaxed font-medium">
+                  Another exciting project is in the works. Stay tuned for updates on our progress.
+                </p>
+              </CardContent>
+            </Card>
+
+          </div>
+
+          <div className="text-center mt-12">
+            <button className="px-6 py-3 bg-orange-500 text-white rounded-full font-bold hover:bg-orange-600 transition-colors duration-200 shadow-lg hover:shadow-xl text-base group">
+              See More <span className="inline-block transform group-hover:translate-x-1 transition-transform duration-200">&rarr;</span>
+            </button>
           </div>
         </div>
       </section>
 
-      {/* Inspirational Text Section */}
-      <section className="py-20 bg-gradient-to-br from-orange-50 to-orange-100 relative z-10">
-        <div className="container mx-auto px-6">
-          <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight">
-              Your idea deserves more than{" "}
-              <span className="text-gray-600">just a prototype.</span>
-            </h2>
-            <h3 className="text-4xl md:text-6xl font-bold leading-tight">
-              <span className="bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 bg-clip-text text-transparent">
-                We turn visions into validated MVPs.
-              </span>
-            </h3>
-          </div>
-        </div>
-      </section>
 
       <section
         id="pricing"
