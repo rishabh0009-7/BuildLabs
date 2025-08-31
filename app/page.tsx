@@ -95,6 +95,27 @@ export default function MVPLabsLandingPage() {
     setIsMenuOpen(false);
   };
 
+  const testimonials = [
+    {
+      quote: "InvoiceAI has been a game-changer for our freelance business. What used to take hours of manual work now takes minutes. The templates are professional, and the automated reminders have drastically improved our cash flow.",
+      name: "Ajay Sharma",
+      title: "Founder, InvoiceAI",
+      project: "InvoiceAI",
+    },
+    {
+      quote: "The insights we've gained from BlackPulse are incredible. Their AI-driven approach to marketing helped us identify and target our ideal customer profile with an accuracy we never thought possible. Our campaign ROI has skyrocketed.",
+      name: "Mark Robin",
+      title: "CTO, BlackPulse",
+      project: "BlackPulse",
+    },
+    {
+      quote: "We were drowning in spreadsheets before SyncAI. Now, our entire sales workflow is streamlined in one place. The real-time analytics dashboard gives us a clear view of our pipeline, and the team loves how intuitive it is.",
+      name: "Alex Klassen",
+      title: "Co-founder, SyncAI",
+      project: "SyncAI",
+    },
+  ];
+
   const navItems = [
     { name: "Home", url: "#home", icon: Home },
     { name: "Portfolio", url: "#portfolio", icon: Briefcase },
@@ -621,6 +642,38 @@ export default function MVPLabsLandingPage() {
             </button>
           </div>
         </div>
+      </section>
+
+      <section id="testimonials" className="py-20 bg-gray-50 relative z-10 overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 bg-orange-100 text-orange-600 rounded-full text-sm font-medium mb-4">
+              <Star className="w-4 h-4 mr-2" />
+              Testimonials
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">We partner with founders to turn great ideas into even better products.</p>
+          </div>
+        </div>
+
+        <InfiniteSlider speedOnHover={40}>
+          {[...testimonials, ...testimonials].map((testimonial, index) => (
+            <Card key={index} className="w-[380px] max-w-sm flex-shrink-0 bg-white border border-gray-200 shadow-lg rounded-xl p-6">
+              <CardContent className="p-0">
+                <p className="text-gray-700 mb-6 leading-relaxed font-medium">"{testimonial.quote}"</p>
+                <div className="flex items-center">
+                  <div className="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center mr-4">
+                    <span className="text-xl font-bold text-orange-500">{testimonial.name.charAt(0)}</span>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-800">{testimonial.name}</h4>
+                    <p className="text-sm text-gray-500">{testimonial.title}</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </InfiniteSlider>
       </section>
 
 
