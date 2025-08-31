@@ -468,7 +468,7 @@ export default function MVPLabsLandingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* BotCraft Card */}
-            <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 group hover:scale-105">
+            <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-500 ease-in-out group hover:scale-105">
               <div className="relative">
                 <div className="aspect-video rounded-t-xl overflow-hidden">
                   <img
@@ -494,7 +494,7 @@ export default function MVPLabsLandingPage() {
             </Card>
 
             {/* BlackPulse Card */}
-            <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 group hover:scale-105">
+            <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-500 ease-in-out group hover:scale-105">
               <div className="relative">
                 <div className="aspect-video rounded-t-xl overflow-hidden">
                   <img
@@ -520,7 +520,7 @@ export default function MVPLabsLandingPage() {
             </Card>
 
             {/* InvoiceAi Card */}
-            <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 group hover:scale-105">
+            <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-500 ease-in-out group hover:scale-105">
               <div className="relative">
                 <div className="aspect-video rounded-t-xl overflow-hidden">
                   <img
@@ -546,7 +546,7 @@ export default function MVPLabsLandingPage() {
             </Card>
 
             {/* SyncAi Card */}
-            <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 group hover:scale-105">
+            <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-500 ease-in-out group hover:scale-105">
               <div className="relative">
                 <div className="aspect-video rounded-t-xl overflow-hidden">
                   <img
@@ -583,7 +583,7 @@ export default function MVPLabsLandingPage() {
             </Card>
 
             {/* Travista Card */}
-            <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 group hover:scale-105">
+            <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-500 ease-in-out group hover:scale-105">
               <div className="relative">
                 <div className="aspect-video rounded-t-xl overflow-hidden">
                   <img
@@ -609,7 +609,7 @@ export default function MVPLabsLandingPage() {
             </Card>
 
             {/* Spensibly Card */}
-            <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 group hover:scale-105">
+            <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-500 ease-in-out group hover:scale-105">
               <div className="relative">
                 <div className="aspect-video rounded-t-xl overflow-hidden">
                   <img
