@@ -451,13 +451,13 @@ export default function MVPLabsLandingPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Travista Card */}
+            {/* BotCraft Card */}
             <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 group hover:scale-105">
               <div className="relative">
                 <div className="aspect-video rounded-t-xl overflow-hidden">
                   <img
-                    src="/Travista.png"
-                    alt="Travista - AI Travel App"
+                    src="/BotCraft.png"
+                    alt="BotCraft - AI Chatbot"
                     className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
@@ -465,14 +465,14 @@ export default function MVPLabsLandingPage() {
               <CardContent className="p-6">
                 <div className="flex items-center mb-2">
                   <h3 className="text-xl font-bold text-gray-800">
-                    Travista
+                    BotCraft
                   </h3>
                   <Badge className="ml-2 bg-orange-100 text-orange-800 text-xs px-2.5 py-1 rounded-full font-semibold">
-                    AI Travel App
+                    AI Chatbot
                   </Badge>
                 </div>
                 <p className="text-gray-700 text-sm leading-relaxed font-medium">
-                  A modern, responsive AI-powered travel web app that helps users discover destinations, plan trips, and get smart recommendations for vacations. It features an intuitive interface, personalized itineraries, and real-time travel alerts to ensure a seamless journey from start to finish.
+                  A cutting-edge multimodal AI chatbot that understands and responds to text, images, and voice. BotCraft offers a natural, human-like conversational experience, making it perfect for customer support, interactive learning, and personalized assistance.
                 </p>
               </CardContent>
             </Card>
@@ -566,13 +566,13 @@ export default function MVPLabsLandingPage() {
               </CardContent>
             </Card>
 
-            {/* BotCraft Card */}
+            {/* Travista Card */}
             <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 group hover:scale-105">
               <div className="relative">
                 <div className="aspect-video rounded-t-xl overflow-hidden">
                   <img
-                    src="/BotCraft.png"
-                    alt="BotCraft - AI Chatbot"
+                    src="/Travista.png"
+                    alt="Travista - AI Travel App"
                     className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
@@ -580,40 +580,40 @@ export default function MVPLabsLandingPage() {
               <CardContent className="p-6">
                 <div className="flex items-center mb-2">
                   <h3 className="text-xl font-bold text-gray-800">
-                    BotCraft
+                    Travista
                   </h3>
                   <Badge className="ml-2 bg-orange-100 text-orange-800 text-xs px-2.5 py-1 rounded-full font-semibold">
-                    AI Chatbot
+                    AI Travel App
                   </Badge>
                 </div>
                 <p className="text-gray-700 text-sm leading-relaxed font-medium">
-                  A cutting-edge multimodal AI chatbot that understands and responds to text, images, and voice. BotCraft offers a natural, human-like conversational experience, making it perfect for customer support, interactive learning, and personalized assistance.
+                  A modern, responsive AI-powered travel web app that helps users discover destinations, plan trips, and get smart recommendations for vacations. It features an intuitive interface, personalized itineraries, and real-time travel alerts to ensure a seamless journey from start to finish.
                 </p>
               </CardContent>
             </Card>
 
-            {/* Fake Project Card 2 */}
+            {/* Curely Card */}
             <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 group hover:scale-105">
               <div className="relative">
-                <div className="aspect-video bg-gray-100 rounded-t-xl overflow-hidden">
+                <div className="aspect-video rounded-t-xl overflow-hidden">
                   <img
-                    src="/chatbot-platform-interface.png"
-                    alt="Placeholder Project 2"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    src="/Dashboard.png"
+                    alt="Curely - Analytics Dashboard"
+                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
               </div>
               <CardContent className="p-6">
                 <div className="flex items-center mb-2">
                   <h3 className="text-xl font-bold text-gray-800">
-                    Project Beta
+                    Curely
                   </h3>
                   <Badge className="ml-2 bg-orange-100 text-orange-800 text-xs px-2.5 py-1 rounded-full font-semibold">
-                    In Development
+                    Analytics Dashboard
                   </Badge>
                 </div>
                 <p className="text-gray-700 text-sm leading-relaxed font-medium">
-                  Another exciting project is in the works. Stay tuned for updates on our progress.
+                  An advanced analytics dashboard for healthcare professionals. Curely provides administrators and doctors with real-time insights into patient data, appointment scheduling, and operational efficiency, enabling data-driven decisions to improve patient care.
                 </p>
               </CardContent>
             </Card>
