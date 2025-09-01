@@ -347,13 +347,7 @@ export default function BuildLabsLandingPage() {
           </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                whileHover={{ y: -10, transition: { duration: 0.3 } }}
-              >
+              <div>
                 <Card className="bg-gray-900/50 border border-gray-800 hover:shadow-xl transition-all duration-300 p-8 text-center group h-full hover:bg-orange-500">
                   <motion.div 
                     className="w-20 h-20 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors duration-300"
@@ -367,15 +361,9 @@ export default function BuildLabsLandingPage() {
                     Launch your MVP in as little as 2-3 weeks.
                   </p>
                 </Card>
-              </motion.div>
+              </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                whileHover={{ y: -10, transition: { duration: 0.3 } }}
-              >
+              <div>
                 <Card className="bg-gray-900/50 border border-gray-800 hover:shadow-xl transition-all duration-300 p-8 text-center group h-full hover:bg-orange-500">
                   <motion.div 
                     className="w-20 h-20 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors duration-300"
@@ -391,15 +379,9 @@ export default function BuildLabsLandingPage() {
                     Transparent pricing, no hidden costs.
                   </p>
                 </Card>
-              </motion.div>
+              </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                whileHover={{ y: -10, transition: { duration: 0.3 } }}
-              >
+              <div>
                 <Card className="bg-gray-900/50 border border-gray-800 hover:shadow-xl transition-all duration-300 p-8 text-center group h-full hover:bg-orange-500">
                   <motion.div 
                     className="w-20 h-20 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors duration-300"
@@ -416,15 +398,9 @@ export default function BuildLabsLandingPage() {
                     startups.
                   </p>
                 </Card>
-              </motion.div>
+              </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                whileHover={{ y: -10, transition: { duration: 0.3 } }}
-              >
+              <div>
                 <Card className="bg-gray-900/50 border border-gray-800 hover:shadow-xl transition-all duration-300 p-8 text-center group h-full hover:bg-orange-500">
                   <motion.div 
                     className="w-20 h-20 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors duration-300"
@@ -438,7 +414,7 @@ export default function BuildLabsLandingPage() {
                     Built with modern tech and tools to grow with your business.
                   </p>
                 </Card>
-              </motion.div>
+              </div>
           </div>
         </div>
       </section>
