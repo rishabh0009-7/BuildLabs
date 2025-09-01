@@ -769,7 +769,7 @@ export default function BuildLabsLandingPage() {
                           <Check className="h-3 w-3 text-white" />
                         </div>
                         <span className="text-sm leading-relaxed text-gray-300">
-                          Delivered in 7 days
+                          Delivered in 3-4 days
                         </span>
                       </li>
                       <li className="flex items-start">
