@@ -168,7 +168,7 @@ export default function BuildLabsLandingPage() {
             <button
               onClick={() =>
                 window.open(
-                  "https://cal.com/rishabhbuildsmvp/30min?overlayCalendar=true",
+                  "https://cal.com/buildlabs/30min",
                   "_blank"
                 )
               }
@@ -211,7 +211,7 @@ export default function BuildLabsLandingPage() {
               <button
                 onClick={() => {
                   window.open(
-                    "https://cal.com/rishabhbuildsmvp/30min?overlayCalendar=true",
+                    "https://cal.com/buildlabs/30min",
                     "_blank"
                   );
                   setIsMenuOpen(false);
@@ -272,7 +272,7 @@ export default function BuildLabsLandingPage() {
                 <button
                   onClick={() =>
                     window.open(
-                      "https://cal.com/rishabhbuildsmvp/30min?overlayCalendar=true",
+                      "https://cal.com/buildlabs/30min",
                       "_blank"
                     )
                   }
@@ -284,7 +284,7 @@ export default function BuildLabsLandingPage() {
                 <button
                   onClick={() =>
                     window.open(
-                      "https://cal.com/rishabhbuildsmvp/30min?overlayCalendar=true",
+                      "https://cal.com/buildlabs/30min",
                       "_blank"
                     )
                   }
@@ -784,12 +784,12 @@ export default function BuildLabsLandingPage() {
                   </div>
 
                   <button
-                    onClick={() => {
-                      const element = document.getElementById("contact");
-                      if (element) {
-                        element.scrollIntoView({ behavior: "smooth" });
-                      }
-                    }}
+                    onClick={() =>
+                      window.open(
+                        "https://cal.com/buildlabs/30min",
+                        "_blank"
+                      )
+                    }
                     className="w-full py-4 px-6 rounded-full font-semibold transition-all duration-200 group-hover:scale-105 bg-white text-gray-900 hover:bg-gray-100 shadow-lg hover:shadow-xl"
                   >
                     Start Your Project →
@@ -858,12 +858,12 @@ export default function BuildLabsLandingPage() {
                   </div>
 
                   <button
-                    onClick={() => {
-                      const element = document.getElementById("contact");
-                      if (element) {
-                        element.scrollIntoView({ behavior: "smooth" });
-                      }
-                    }}
+                    onClick={() =>
+                      window.open(
+                        "https://cal.com/buildlabs/30min",
+                        "_blank"
+                      )
+                    }
                     className="w-full py-4 px-6 rounded-full font-semibold transition-all duration-200 group-hover:scale-105 bg-white text-orange-500 hover:bg-gray-100 shadow-lg hover:shadow-xl"
                   >
                     Start Your Project →
@@ -932,12 +932,12 @@ export default function BuildLabsLandingPage() {
                   </div>
 
                   <button
-                    onClick={() => {
-                      const element = document.getElementById("contact");
-                      if (element) {
-                        element.scrollIntoView({ behavior: "smooth" });
-                      }
-                    }}
+                    onClick={() =>
+                      window.open(
+                        "https://cal.com/buildlabs/30min",
+                        "_blank"
+                      )
+                    }
                     className="w-full py-4 px-6 rounded-full font-semibold transition-all duration-200 group-hover:scale-105 bg-white text-gray-900 hover:bg-gray-100 shadow-lg hover:shadow-xl"
                   >
                     Start Your Project →
@@ -1011,12 +1011,12 @@ export default function BuildLabsLandingPage() {
                   </div>
 
                   <button
-                    onClick={() => {
-                      const element = document.getElementById("contact");
-                      if (element) {
-                        element.scrollIntoView({ behavior: "smooth" });
-                      }
-                    }}
+                    onClick={() =>
+                      window.open(
+                        "https://cal.com/buildlabs/30min",
+                        "_blank"
+                      )
+                    }
                     className="w-full py-4 px-6 rounded-full font-semibold transition-all duration-200 group-hover:scale-105 bg-white text-gray-900 hover:bg-gray-100 shadow-lg hover:shadow-xl"
                   >
                     Start Your Project →
@@ -1090,12 +1090,12 @@ export default function BuildLabsLandingPage() {
                   </div>
 
                   <button
-                    onClick={() => {
-                      const element = document.getElementById("contact");
-                      if (element) {
-                        element.scrollIntoView({ behavior: "smooth" });
-                      }
-                    }}
+                    onClick={() =>
+                      window.open(
+                        "https://cal.com/buildlabs/30min",
+                        "_blank"
+                      )
+                    }
                     className="w-full py-4 px-6 rounded-full font-semibold transition-all duration-200 group-hover:scale-105 bg-white text-orange-500 hover:bg-gray-100 shadow-lg hover:shadow-xl"
                   >
                     Start Your Project →
@@ -1164,12 +1164,12 @@ export default function BuildLabsLandingPage() {
                   </div>
 
                   <button
-                    onClick={() => {
-                      const element = document.getElementById("contact");
-                      if (element) {
-                        element.scrollIntoView({ behavior: "smooth" });
-                      }
-                    }}
+                    onClick={() =>
+                      window.open(
+                        "https://cal.com/buildlabs/30min",
+                        "_blank"
+                      )
+                    }
                     className="w-full py-4 px-6 rounded-full font-semibold transition-all duration-200 group-hover:scale-105 bg-white text-gray-900 hover:bg-gray-100 shadow-lg hover:shadow-xl"
                   >
                     Start Your Project →
@@ -1184,12 +1184,12 @@ export default function BuildLabsLandingPage() {
             <p className="text-gray-600 text-sm">
               Need a custom solution?{" "}
               <button
-                onClick={() => {
-                  const element = document.getElementById("contact");
-                  if (element) {
-                    element.scrollIntoView({ behavior: "smooth" });
-                  }
-                }}
+                onClick={() =>
+                  window.open(
+                    "https://cal.com/buildlabs/30min",
+                    "_blank"
+                  )
+                }
                 className="text-orange-500 hover:text-orange-600 font-medium"
               >
                 Contact us for personalized pricing.
@@ -1393,7 +1393,7 @@ export default function BuildLabsLandingPage() {
             <button
               onClick={() =>
                 window.open(
-                  "https://cal.com/rishabhbuildsmvp/30min?overlayCalendar=true",
+                  "https://cal.com/buildlabs/30min",
                   "_blank"
                 )
               }

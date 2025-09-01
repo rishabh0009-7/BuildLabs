@@ -87,9 +87,12 @@
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) rotate(0deg);
   }
+
   50% {
     transform: translateY(-10px) rotate(1deg);
   }
@@ -99,16 +102,20 @@
   0% {
     background-position: -200% 0;
   }
+
   100% {
     background-position: 200% 0;
   }
 }
 
 @keyframes glow {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.5;
     transform: scale(1);
   }
+
   50% {
     opacity: 0.8;
     transform: scale(1.05);
@@ -155,6 +162,7 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -168,12 +176,14 @@
 @media (max-width: 1023px) {
   #home {
     height: auto;
-    padding-top: 8rem; /* Adjust for header */
+    padding-top: 8rem;
+    /* Adjust for header */
     padding-bottom: 4rem;
   }
 
   #home .lg\:hidden {
-    order: -1; /* Move image to the top */
+    order: -1;
+    /* Move image to the top */
     margin-bottom: 2rem;
   }
 }
