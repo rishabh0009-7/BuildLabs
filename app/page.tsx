@@ -76,7 +76,7 @@ const AnimatedCounter = ({
   return <span ref={ref}>{count}</span>;
 };
 
-export default function MVPLabsLandingPage() {
+export default function BuildLabsLandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [pricingMode, setPricingMode] = useState<"mvp" | "maintenance">("mvp");
@@ -118,7 +118,9 @@ export default function MVPLabsLandingPage() {
 
   const navItems = [
     { name: "Home", url: "#home", icon: Home },
+    { name: "Why Choose Us", url: "#why-us", icon: Users },
     { name: "Portfolio", url: "#portfolio", icon: Briefcase },
+    { name: "Testimonials", url: "#testimonials", icon: Star },
     { name: "Pricing", url: "#pricing", icon: FileText },
     { name: "FAQ", url: "#faq", icon: User },
     { name: "Contact", url: "#contact", icon: Phone },
@@ -128,41 +130,34 @@ export default function MVPLabsLandingPage() {
     <div className="min-h-screen w-full relative bg-white">
       <header className="fixed top-0 left-0 right-0 z-[100] bg-white/95 backdrop-blur-md border-b border-gray-200/50 shadow-lg overflow-hidden">
         <div className="relative container mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center space-x-2">
+                    <a href="/" className="flex items-center space-x-2">
             <img src="/logo.png" alt="BuildLabs Logo" className="h-8 w-auto" />
             <span className="font-bold text-xl text-gray-800">BuildLabs</span>
-          </div>
+          </a>
 
           {/* Navigation - Center */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <button
-              onClick={() => scrollToSection("home")}
-              className="text-gray-800 hover:text-orange-600 font-semibold relative group transition-colors duration-200"
-            >
+          <nav className="hidden md:flex items-center space-x-6">
+            <button onClick={() => scrollToSection("home")} className="text-gray-800 hover:text-orange-600 font-semibold relative group transition-colors duration-200">
               Home
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
             </button>
-
-            <button
-              onClick={() => scrollToSection("portfolio")}
-              className="text-gray-800 hover:text-orange-600 font-semibold relative group transition-colors duration-200"
-            >
-              Project
+            <button onClick={() => scrollToSection("why-us")} className="text-gray-800 hover:text-orange-600 font-semibold relative group transition-colors duration-200">
+              Why Choose Us
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
             </button>
-
-
-            <button
-              onClick={() => scrollToSection("pricing")}
-              className="text-gray-800 hover:text-orange-600 font-semibold relative group transition-colors duration-200"
-            >
+            <button onClick={() => scrollToSection("portfolio")} className="text-gray-800 hover:text-orange-600 font-semibold relative group transition-colors duration-200">
+              Portfolio
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
+            </button>
+            <button onClick={() => scrollToSection("testimonials")} className="text-gray-800 hover:text-orange-600 font-semibold relative group transition-colors duration-200">
+              Testimonials
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
+            </button>
+            <button onClick={() => scrollToSection("pricing")} className="text-gray-800 hover:text-orange-600 font-semibold relative group transition-colors duration-200">
               Pricing
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
             </button>
-            <button
-              onClick={() => scrollToSection("faq")}
-              className="text-gray-800 hover:text-orange-600 font-semibold relative group transition-colors duration-200"
-            >
+            <button onClick={() => scrollToSection("faq")} className="text-gray-800 hover:text-orange-600 font-semibold relative group transition-colors duration-200">
               FAQ
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
             </button>
@@ -233,7 +228,7 @@ export default function MVPLabsLandingPage() {
 
       <section
         id="home"
-        className="relative pt-20 pb-2 overflow-hidden z-10 h-screen flex items-center justify-center"
+        className="relative pt-20 pb-2 overflow-hidden z-10 h-screen flex items-center justify-center bg-white"
       >
         <div className="relative container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center h-full">
@@ -1229,7 +1224,6 @@ export default function MVPLabsLandingPage() {
                 type="single"
                 collapsible
                 className="space-y-6"
-                defaultValue="item-0"
               >
                 {[
                   {
@@ -1397,12 +1391,12 @@ export default function MVPLabsLandingPage() {
           <div className="text-center mt-12">
             <p className="text-gray-600 mb-4">Still have questions?</p>
             <button
-              onClick={() => {
-                const element = document.getElementById("contact");
-                if (element) {
-                  element.scrollIntoView({ behavior: "smooth" });
-                }
-              }}
+              onClick={() =>
+                window.open(
+                  "https://cal.com/rishabhbuildsmvp/30min?overlayCalendar=true",
+                  "_blank"
+                )
+              }
               className="px-8 py-3 bg-orange-500 text-white rounded-full font-medium hover:bg-orange-600 transition-colors duration-200 shadow-lg hover:shadow-xl"
             >
               Get in Touch
@@ -1420,10 +1414,10 @@ export default function MVPLabsLandingPage() {
             {/* Logo and Description - Left Side (Much Bigger) */}
             <div className="md:col-span-6">
               <div className="mb-6">
-                <span className="text-2xl font-bold text-white">MVP Labs</span>
+                <span className="text-2xl font-bold text-white">BuildLabs</span>
               </div>
               <h3 className="text-3xl md:text-4xl font-bold text-white leading-tight">
-                Turn Your Idea Into a Revenue-Ready MVP in 2 Weeks
+                Turn Your Idea Into a Revenue-Ready MVP in 2-3 Weeks
               </h3>
             </div>
 
@@ -1507,7 +1501,7 @@ export default function MVPLabsLandingPage() {
                 </li>
                 <li>
                   <span className="text-gray-300 text-base font-medium">
-                    hello@mvplabs.com
+                    hello@buildlabs.com
                   </span>
                 </li>
               </ul>
@@ -1516,7 +1510,7 @@ export default function MVPLabsLandingPage() {
 
           <div className="border-t border-gray-800 pt-8">
             <p className="text-gray-400 text-sm text-center">
-              © 2025 MVP Labs. All rights reserved.
+              © 2025 BuildLabs. All rights reserved.
             </p>
           </div>
         </div>

@@ -23,7 +23,7 @@ const phonk = Black_Ops_One({
 })
 
 export const metadata: Metadata = {
-  title: "MVP Labs - Build Your MVP Before the Market Moves",
+  title: "BuildLabs - Build Your MVP Before the Market Moves",
   description:
     "From idea to launch in just 3-5 weeks. We design, develop, and deliver real, working MVPs your users can start using from day one.",
   generator: "v0.app",
@@ -36,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${phonk.variable}`}>
-      <body className={`${geistSans.variable} ${geistMono.variable} ${phonk.variable} font-sans antialiased bg-[#FFF2E0]`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${phonk.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>
