@@ -38,6 +38,7 @@ import {
   Users,
   TrendingUp,
 } from "lucide-react";
+import { HeroGeometric } from "@/components/ui/shape-landing-hero";
 import { Button } from "@/components/ui/button";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { NavBar } from "@/components/ui/tubelight-navbar";
@@ -97,19 +98,22 @@ export default function BuildLabsLandingPage() {
 
   const testimonials = [
     {
-      quote: "InvoiceAI has been a game-changer for our freelance business. What used to take hours of manual work now takes minutes. The templates are professional, and the automated reminders have drastically improved our cash flow.",
+      quote:
+        "InvoiceAI has been a game-changer for our freelance business. What used to take hours of manual work now takes minutes. The templates are professional, and the automated reminders have drastically improved our cash flow.",
       name: "Ajay Sharma",
       title: "Founder, InvoiceAI",
       project: "InvoiceAI",
     },
     {
-      quote: "The insights we've gained from BlackPulse are incredible. Their AI-driven approach to marketing helped us identify and target our ideal customer profile with an accuracy we never thought possible. Our campaign ROI has skyrocketed.",
+      quote:
+        "The insights we've gained from BlackPulse are incredible. Their AI-driven approach to marketing helped us identify and target our ideal customer profile with an accuracy we never thought possible. Our campaign ROI has skyrocketed.",
       name: "Mark Robin",
       title: "CTO, BlackPulse",
       project: "BlackPulse",
     },
     {
-      quote: "We were drowning in spreadsheets before SyncAI. Now, our entire sales workflow is streamlined in one place. The real-time analytics dashboard gives us a clear view of our pipeline, and the team loves how intuitive it is.",
+      quote:
+        "We were drowning in spreadsheets before SyncAI. Now, our entire sales workflow is streamlined in one place. The real-time analytics dashboard gives us a clear view of our pipeline, and the team loves how intuitive it is.",
       name: "Alex Klassen",
       title: "Co-founder, SyncAI",
       project: "SyncAI",
@@ -126,399 +130,213 @@ export default function BuildLabsLandingPage() {
     { name: "Contact", url: "#contact", icon: Phone },
   ];
 
+  const projects = [
+    {
+      title: "BotCraft",
+      image: "/BotCraft.png",
+      description:
+        "A cutting-edge multimodal AI chatbot that understands and responds to text, images, and voice. BotCraft offers a natural, human-like conversational experience, making it perfect for customer support, interactive learning, and personalized assistance.",
+      tags: ["AI Chatbot", "React", "Node.js", "OpenAI"],
+    },
+    {
+      title: "BlackPulse",
+      image: "/BlackPulse.png",
+      description:
+        "A comprehensive AI-powered marketing platform that automates content creation, social media management, and campaign optimization. BlackPulse helps businesses scale their marketing efforts with intelligent automation and data-driven insights.",
+      tags: ["AI Marketing", "Vue.js", "Python", "Figma"],
+    },
+    {
+      title: "SyncAI",
+      image: "/SyncAi.png",
+      description:
+        "An intelligent data synchronization platform that uses AI to seamlessly connect and sync data across multiple systems. SyncAI ensures data consistency, reduces manual work, and provides real-time insights across your entire tech stack.",
+      tags: ["Data Sync", "TypeScript", "PostgreSQL", "Modern"],
+    },
+    {
+      title: "Travista",
+      image: "/Travista.png",
+      description:
+        "A modern travel booking platform that combines AI-powered recommendations with seamless booking experiences. Travista helps users discover, plan, and book their perfect trips with personalized suggestions and competitive pricing.",
+      tags: ["Travel Platform", "Next.js", "MongoDB", "Stripe"],
+    },
+    {
+      title: "InvoiceAI",
+      image: "/InvoiceAi.png",
+      description:
+        "An intelligent invoice generation platform that automates billing processes with AI. InvoiceAI creates professional invoices, tracks payments, and provides insights to help businesses manage their finances more efficiently.",
+      tags: ["AI Invoice", "React", "Express", "Stripe"],
+    },
+    {
+      title: "Dashboard",
+      image: "/Dashboard.png",
+      description:
+        "A comprehensive analytics dashboard that provides real-time insights and data visualization. This platform helps businesses make data-driven decisions with interactive charts, customizable reports, and advanced filtering capabilities.",
+      tags: ["Analytics", "D3.js", "Python", "Modern"],
+    },
+  ];
+
   return (
-    <div className="min-h-screen w-full relative bg-white">
-      <header className="fixed top-0 left-0 right-0 z-[100] bg-white/95 backdrop-blur-md border-b border-gray-200/50 shadow-lg overflow-hidden">
-        <div className="relative container mx-auto px-6 h-16 flex items-center justify-between">
-                    <a href="/" className="flex items-center space-x-2">
-            <img src="/logo.png" alt="BuildLabs Logo" className="h-8 w-auto" />
-            <span className="font-bold text-xl text-gray-800">BuildLabs</span>
-          </a>
+    <div className="min-h-screen w-full relative bg-black scroll-smooth">
+      <HeroGeometric
+        badge="BuildLabs"
+        title1="Launch Your MVP"
+        title2="In Just 21 Days"
+      >
+        {/* Header */}
+        <header className="fixed top-0 left-0 right-0 z-[100] bg-transparent">
+          <div className="relative container mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/" className="flex items-center space-x-2">
+              <span className="font-bold text-xl text-white">BuildLabs</span>
+            </a>
 
-          {/* Navigation - Center */}
-          <nav className="hidden md:flex items-center space-x-6">
-            <button onClick={() => scrollToSection("home")} className="text-gray-800 hover:text-orange-600 font-semibold relative group transition-colors duration-200">
-              Home
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
-            </button>
-            <button onClick={() => scrollToSection("why-us")} className="text-gray-800 hover:text-orange-600 font-semibold relative group transition-colors duration-200">
-              Why Choose Us
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
-            </button>
-            <button onClick={() => scrollToSection("portfolio")} className="text-gray-800 hover:text-orange-600 font-semibold relative group transition-colors duration-200">
-              Portfolio
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
-            </button>
-            <button onClick={() => scrollToSection("testimonials")} className="text-gray-800 hover:text-orange-600 font-semibold relative group transition-colors duration-200">
-              Testimonials
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
-            </button>
-            <button onClick={() => scrollToSection("pricing")} className="text-gray-800 hover:text-orange-600 font-semibold relative group transition-colors duration-200">
-              Pricing
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
-            </button>
-            <button onClick={() => scrollToSection("faq")} className="text-gray-800 hover:text-orange-600 font-semibold relative group transition-colors duration-200">
-              FAQ
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
-            </button>
-          </nav>
-
-          {/* CTA Button - Right Side */}
-          <div className="hidden md:block">
-            <button
-              onClick={() =>
-                window.open(
-                  "https://cal.com/buildlabs/30min",
-                  "_blank"
-                )
-              }
-              className="px-6 py-2 bg-orange-500 text-white rounded-full font-bold hover:bg-orange-600 transition-colors duration-200 shadow-lg hover:shadow-xl"
-              style={{ textShadow: "0 1px 2px rgba(0,0,0,0.1)" }}
-            >
-              Book a Call →
-            </button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
-          </button>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200 bg-white/95">
-            <nav className="flex flex-col space-y-4 px-4">
-              {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => {
-                    scrollToSection(item.url.substring(1));
-                    setIsMenuOpen(false);
-                  }}
-                  className="text-left text-gray-800 font-semibold py-2 px-4 rounded hover:bg-gray-100 transition-colors duration-200"
-                >
-                  {item.name}
-                </button>
-              ))}
+            {/* CTA Button - Right Side */}
+            <div className="hidden md:block">
               <button
-                onClick={() => {
-                  window.open(
-                    "https://cal.com/buildlabs/30min",
-                    "_blank"
-                  );
-                  setIsMenuOpen(false);
-                }}
-                className="w-full mt-2 px-6 py-2 bg-orange-500 text-white rounded-full font-bold transition-colors duration-200 hover:bg-orange-600 shadow-lg"
+                onClick={() =>
+                  window.open("https://cal.com/buildlabs/30min", "_blank")
+                }
+                className="px-6 py-2 bg-black text-white border-2 border-white rounded-full font-bold transition-colors duration-200 shadow-lg hover:shadow-xl"
                 style={{ textShadow: "0 1px 2px rgba(0,0,0,0.1)" }}
               >
-                Book a Call
+                Book a Call →
               </button>
-            </nav>
-          </div>
-        )}
-      </header>
-
-      <section
-        id="home"
-        className="relative pt-20 pb-2 overflow-hidden z-10 h-screen flex items-center justify-center bg-white"
-      >
-        <div className="relative container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center h-full">
-            {/* Mobile Hero Image - Shows on smaller screens */}
-            <div className="lg:hidden flex items-center justify-center mb-8">
-              <img
-                src="/herosection.jpg"
-                alt="Hero section illustration"
-                className="w-full max-w-7xl h-auto object-contain"
-                style={{
-                  mixBlendMode: "multiply",
-                  filter: "none",
-                }}
-              />
-            </div>
-
-            {/* Left side - Content */}
-            <div className="text-left max-w-4xl">
-              {/* Hero Badge */}
-              <div className="inline-flex items-center px-4 py-2 bg-gray-900 text-white rounded-full text-sm font-medium mb-6">
-                <div className="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
-                THIS MONTH: 3 BUILD SLOTS · $2000 FIXED
-              </div>
-              {/* Main Heading - Left aligned */}
-              <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-gray-900 mb-4 leading-tight tracking-wide font-[var(--font-hero)]">
-                <div className="block">
-                  Launch Your <span className="text-[#FF6B35]">MVP</span>
-                  <br />
-                  In <span className="text-[#FF6B35]">Days</span>, Not <span className="line-through text-gray-400">Months</span>
-                </div>
-              </h1>
-
-              {/* Subheading */}
-              <p className="text-lg text-gray-700 mb-6 max-w-2xl leading-relaxed">
-                We help founders and businesses transform ideas into
-                investor-ready products—fast, affordable, and scalable.
-              </p>
-
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 mb-6">
-                <button
-                  onClick={() =>
-                    window.open(
-                      "https://cal.com/buildlabs/30min",
-                      "_blank"
-                    )
-                  }
-                  className="px-8 py-4 text-lg bg-[#FF6B35] text-white rounded-full font-bold hover:bg-[#E55A2B] transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
-                  style={{ textShadow: "0 1px 3px rgba(0,0,0,0.2)" }}
-                >
-                  Book a Free Strategy Call
-                </button>
-                <button
-                  onClick={() =>
-                    window.open(
-                      "https://cal.com/buildlabs/30min",
-                      "_blank"
-                    )
-                  }
-                  className="px-8 py-4 text-lg bg-white/90 backdrop-blur-sm text-orange-600 border-2 border-orange-200 rounded-full font-medium hover:bg-white hover:border-orange-300 transition-all duration-200 shadow-lg hover:shadow-xl"
-                >
-                  Start Your MVP Now
-                </button>
-              </div>
-
-              {/* Trust Indicators */}
-              <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                  No upfront payment
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                  Money-back guarantee
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                  Unlimited revisions
-                </div>
-              </div>
-            </div>
-
-            {/* Right side - Hero Image */}
-            <div className="hidden lg:flex items-center justify-center">
-              <img
-                src="/herosection.jpg"
-                alt="Hero section illustration"
-                className="w-full max-w-8xl h-auto object-contain"
-                style={{
-                  mixBlendMode: "multiply",
-                  filter: "none",
-                }}
-              />
             </div>
           </div>
-        </div>
-      </section>
+        </header>
 
+        {/* Custom Content */}
+        <motion.div
+          custom={3}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 0.8,
+              delay: 1.1,
+              ease: [0.25, 0.4, 0.25, 1],
+            },
+          }}
+          className="mt-8 transform transition-all duration-500 ease-out"
+        >
+          {/* Subheading */}
+          <p className="text-xl md:text-2xl text-white/60 mb-10 max-w-3xl mx-auto leading-relaxed">
+            We help founders and businesses transform ideas into investor-ready
+            products—fast, affordable, and scalable.
+          </p>
 
-      <section
-        id="why-us"
-        className="py-20 bg-[#101828] relative z-10 overflow-hidden"
-      >
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 text-orange-400 rounded-full text-sm font-medium mb-4">
-              Why Choose Us
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-6 mb-8 justify-center">
+            <button
+              onClick={() =>
+                window.open("https://cal.com/buildlabs/30min", "_blank")
+              }
+              className="px-8 py-4 text-lg bg-white text-black border-2 border-white rounded-full font-bold hover:bg-gray-100 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 ease-out"
+              style={{ textShadow: "0 2px 4px rgba(0,0,0,0.3)" }}
+            >
+              Book a Spot →
+            </button>
+            <button
+              onClick={() =>
+                window.open("https://cal.com/buildlabs/30min", "_blank")
+              }
+              className="px-8 py-4 text-lg bg-black text-white border-2 border-white rounded-full font-bold transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 ease-out"
+              style={{ textShadow: "0 2px 4px rgba(0,0,0,0.1)" }}
+            >
+              Start Your MVP Now
+            </button>
+          </div>
+
+          {/* Guarantees */}
+          <div className="flex flex-wrap items-center justify-center gap-8 text-lg text-white/60">
+            <div className="flex items-center gap-3">
+              <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+              No upfront payment
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Why Work With Us?
-            </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              We're not just developers - we're startup partners who understand
-              the urgency of getting to market fast with a product that works.
-            </p>
+            <div className="flex items-center gap-3">
+              <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+              Money-back guarantee
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+              Unlimited revisions
+            </div>
           </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div>
-                <Card className="bg-gray-900/50 border border-gray-800 hover:shadow-xl transition-all duration-300 p-8 text-center group h-full hover:bg-orange-500">
-                  <motion.div 
-                    className="w-20 h-20 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors duration-300"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-                  >
-                    <Zap className="w-10 h-10 text-orange-400 group-hover:text-white transition-colors duration-300" />
-                  </motion.div>
-                  <h3 className="text-xl font-bold text-orange-400 mb-4 group-hover:text-white transition-colors duration-300">Speed</h3>
-                  <p className="text-gray-400 text-base leading-relaxed group-hover:text-white transition-colors duration-300">
-                    Launch your MVP in as little as 2-3 weeks.
-                  </p>
-                </Card>
-              </div>
-
-              <div>
-                <Card className="bg-gray-900/50 border border-gray-800 hover:shadow-xl transition-all duration-300 p-8 text-center group h-full hover:bg-orange-500">
-                  <motion.div 
-                    className="w-20 h-20 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors duration-300"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-                  >
-                    <DollarSign className="w-10 h-10 text-orange-400 group-hover:text-white transition-colors duration-300" />
-                  </motion.div>
-                  <h3 className="text-xl font-bold text-orange-400 mb-4 group-hover:text-white transition-colors duration-300">
-                    Affordability
-                  </h3>
-                  <p className="text-gray-400 text-base leading-relaxed group-hover:text-white transition-colors duration-300">
-                    Transparent pricing, no hidden costs.
-                  </p>
-                </Card>
-              </div>
-
-              <div>
-                <Card className="bg-gray-900/50 border border-gray-800 hover:shadow-xl transition-all duration-300 p-8 text-center group h-full hover:bg-orange-500">
-                  <motion.div 
-                    className="w-20 h-20 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors duration-300"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-                  >
-                    <Users className="w-10 h-10 text-orange-400 group-hover:text-white transition-colors duration-300" />
-                  </motion.div>
-                  <h3 className="text-xl font-bold text-orange-400 mb-4 group-hover:text-white transition-colors duration-300">
-                    Expert Team
-                  </h3>
-                  <p className="text-gray-400 text-base leading-relaxed group-hover:text-white transition-colors duration-300">
-                    Developers, designers, and product strategists who understand
-                    startups.
-                  </p>
-                </Card>
-              </div>
-
-              <div>
-                <Card className="bg-gray-900/50 border border-gray-800 hover:shadow-xl transition-all duration-300 p-8 text-center group h-full hover:bg-orange-500">
-                  <motion.div 
-                    className="w-20 h-20 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors duration-300"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-                  >
-                    <TrendingUp className="w-10 h-10 text-orange-400 group-hover:text-white transition-colors duration-300" />
-                  </motion.div>
-                  <h3 className="text-xl font-bold text-orange-400 mb-4 group-hover:text-white transition-colors duration-300">Scalable</h3>
-                  <p className="text-gray-400 text-base leading-relaxed group-hover:text-white transition-colors duration-300">
-                    Built with modern tech and tools to grow with your business.
-                  </p>
-                </Card>
-              </div>
-          </div>
-        </div>
-      </section>
+        </motion.div>
+      </HeroGeometric>
 
       <section
         id="portfolio"
-        className="py-20 bg-white relative z-10 overflow-hidden"
+        className="py-20 bg-black relative z-10 overflow-hidden"
       >
         <div className="container mx-auto px-12">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center px-4 py-2 bg-orange-50 text-orange-600 rounded-full text-sm font-medium mb-4">
-              <div className="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
+            <div className="inline-flex items-center px-4 py-2 bg-gray-800 text-white rounded-full text-sm font-medium mb-4 border border-white/20">
+              <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
               Our Projects
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Our Recent Work
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               These apps all started as nothing but an idea. We turned them into
               real tools used by customers, shown to investors, and shipped to
               market.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* BotCraft Card */}
-            <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-500 ease-in-out group hover:scale-105">
-              <div className="relative">
-                <div className="aspect-video rounded-t-xl overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {projects.map((project, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group relative overflow-hidden rounded-2xl bg-gray-900 border border-gray-800 hover:border-gray-700 transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-2xl"
+              >
+                {/* Project Image */}
+                <div className="relative aspect-video overflow-hidden">
                   <img
-                    src="/BotCraft.png"
-                    alt="BotCraft - AI Chatbot"
-                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                   />
-                </div>
-              </div>
-              <CardContent className="p-6">
-                <div className="flex items-center mb-2">
-                  <h3 className="text-xl font-bold text-gray-800">
-                    BotCraft
-                  </h3>
-                  <Badge className="ml-2 bg-orange-100 text-orange-800 text-xs px-2.5 py-1 rounded-full font-semibold">
-                    AI Chatbot
-                  </Badge>
-                </div>
-                <p className="text-gray-700 text-sm leading-relaxed font-medium">
-                  A cutting-edge multimodal AI chatbot that understands and responds to text, images, and voice. BotCraft offers a natural, human-like conversational experience, making it perfect for customer support, interactive learning, and personalized assistance.
-                </p>
-              </CardContent>
-            </Card>
 
-            {/* BlackPulse Card */}
-            <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-500 ease-in-out group hover:scale-105">
-              <div className="relative">
-                <div className="aspect-video rounded-t-xl overflow-hidden">
-                  <img
-                    src="/BlackPulse.png"
-                    alt="BlackPulse - AI Marketing Agency"
-                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-              </div>
-              <CardContent className="p-6">
-                <div className="flex items-center mb-2">
-                  <h3 className="text-xl font-bold text-gray-800">
-                    BlackPulse
-                  </h3>
-                  <Badge className="ml-2 bg-orange-100 text-orange-800 text-xs px-2.5 py-1 rounded-full font-semibold">
-                    AI Marketing
-                  </Badge>
-                </div>
-                <p className="text-gray-700 text-sm leading-relaxed font-medium">
-                  BlackPulse is an AI-powered marketing agency that helps brands scale smarter. We use advanced artificial intelligence to analyze data, predict trends, and craft campaigns that resonate with the right audience at the right time. From strategy to execution, we combine human creativity with machine intelligence to deliver marketing that’s faster, sharper, and more effective.
-                </p>
-              </CardContent>
-            </Card>
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out">
+                    <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                      <h3 className="text-2xl font-bold text-white mb-3">
+                        {project.title}
+                      </h3>
+                      <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                        {project.description}
+                      </p>
 
-            {/* InvoiceAi Card */}
-            <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-500 ease-in-out group hover:scale-105">
-              <div className="relative">
-                <div className="aspect-video rounded-t-xl overflow-hidden">
-                  <img
-                    src="/InvoiceAi.png"
-                    alt="InvoiceAi - AI Invoice Generator"
-                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
-                  />
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-2">
+                        {project.tags.map((tag, tagIndex) => (
+                          <span
+                            key={tagIndex}
+                            className="px-3 py-1 bg-white/10 text-white text-xs rounded-full border border-white/20 backdrop-blur-sm"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <CardContent className="p-6">
-                <div className="flex items-center mb-2">
-                  <h3 className="text-xl font-bold text-gray-800">
-                    InvoiceAi
-                  </h3>
-                  <Badge className="ml-2 bg-orange-100 text-orange-800 text-xs px-2.5 py-1 rounded-full font-semibold">
-                    AI Invoice App
-                  </Badge>
-                </div>
-                <p className="text-gray-700 text-sm leading-relaxed font-medium">
-                  Create, customize, and download beautiful invoices instantly with support for multiple currencies and professional templates. This tool streamlines your billing process with automated reminders, payment tracking, and insightful analytics, helping you get paid faster and manage your finances effortlessly.
-                </p>
-              </CardContent>
-            </Card>
 
-            {/* SyncAi Card */}
+                {/* Default Content (visible when not hovering) */}
+                <div className="p-6 group-hover:opacity-0 transition-opacity duration-300">
+                  <h3 className="text-xl font-bold text-white mb-2">
+                    {project.title}
+                  </h3>
+                </div>
+              </motion.div>
+            ))}
+
             <Card className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-500 ease-in-out group hover:scale-105">
               <div className="relative">
                 <div className="aspect-video rounded-t-xl overflow-hidden">
@@ -531,15 +349,16 @@ export default function BuildLabsLandingPage() {
               </div>
               <CardContent className="p-6">
                 <div className="flex items-center mb-2">
-                  <h3 className="text-xl font-bold text-gray-800">
-                    SyncAi
-                  </h3>
+                  <h3 className="text-xl font-bold text-gray-800">SyncAi</h3>
                   <Badge className="ml-2 bg-orange-100 text-orange-800 text-xs px-2.5 py-1 rounded-full font-semibold">
                     AI CRM
                   </Badge>
                 </div>
                 <p className="text-gray-700 text-sm leading-relaxed font-medium mb-4">
-                  A modern AI-powered CRM that offers robust client management, proposal tracking, a real-time analytics dashboard, and intelligent business insights to streamline your sales workflow and boost productivity.
+                  A modern AI-powered CRM that offers robust client management,
+                  proposal tracking, a real-time analytics dashboard, and
+                  intelligent business insights to streamline your sales
+                  workflow and boost productivity.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <Badge className="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full border border-gray-200">
@@ -568,15 +387,17 @@ export default function BuildLabsLandingPage() {
               </div>
               <CardContent className="p-6">
                 <div className="flex items-center mb-2">
-                  <h3 className="text-xl font-bold text-gray-800">
-                    Travista
-                  </h3>
+                  <h3 className="text-xl font-bold text-gray-800">Travista</h3>
                   <Badge className="ml-2 bg-orange-100 text-orange-800 text-xs px-2.5 py-1 rounded-full font-semibold">
                     AI Travel App
                   </Badge>
                 </div>
                 <p className="text-gray-700 text-sm leading-relaxed font-medium">
-                  A modern, responsive AI-powered travel web app that helps users discover destinations, plan trips, and get smart recommendations for vacations. It features an intuitive interface, personalized itineraries, and real-time travel alerts to ensure a seamless journey from start to finish.
+                  A modern, responsive AI-powered travel web app that helps
+                  users discover destinations, plan trips, and get smart
+                  recommendations for vacations. It features an intuitive
+                  interface, personalized itineraries, and real-time travel
+                  alerts to ensure a seamless journey from start to finish.
                 </p>
               </CardContent>
             </Card>
@@ -594,52 +415,75 @@ export default function BuildLabsLandingPage() {
               </div>
               <CardContent className="p-6">
                 <div className="flex items-center mb-2">
-                  <h3 className="text-xl font-bold text-gray-800">
-                    Spensibly
-                  </h3>
+                  <h3 className="text-xl font-bold text-gray-800">Spensibly</h3>
                   <Badge className="ml-2 bg-orange-100 text-orange-800 text-xs px-2.5 py-1 rounded-full font-semibold">
                     SaaS Dashboard
                   </Badge>
                 </div>
                 <p className="text-gray-700 text-sm leading-relaxed font-medium">
-                  Spensibly is a comprehensive SaaS dashboard for financial management. It offers real-time expense tracking, budget automation, and insightful analytics to help businesses control spending and optimize financial health. With an intuitive interface, it simplifies complex financial data, making it accessible for teams to manage budgets collaboratively and make informed decisions.
+                  Spensibly is a comprehensive SaaS dashboard for financial
+                  management. It offers real-time expense tracking, budget
+                  automation, and insightful analytics to help businesses
+                  control spending and optimize financial health. With an
+                  intuitive interface, it simplifies complex financial data,
+                  making it accessible for teams to manage budgets
+                  collaboratively and make informed decisions.
                 </p>
               </CardContent>
             </Card>
-
           </div>
 
           <div className="text-center mt-12">
             <button className="px-6 py-3 bg-orange-500 text-white rounded-full font-bold hover:bg-orange-600 transition-colors duration-200 shadow-lg hover:shadow-xl text-base group">
-              See More <span className="inline-block transform group-hover:translate-x-1 transition-transform duration-200">&rarr;</span>
+              See More{" "}
+              <span className="inline-block transform group-hover:translate-x-1 transition-transform duration-200">
+                &rarr;
+              </span>
             </button>
           </div>
         </div>
       </section>
 
-      <section id="testimonials" className="py-20 bg-gray-50 relative z-10 overflow-hidden">
+      <section
+        id="testimonials"
+        className="py-20 bg-black relative z-10 overflow-hidden"
+      >
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 bg-orange-100 text-orange-600 rounded-full text-sm font-medium mb-4">
               <Star className="w-4 h-4 mr-2" />
               Testimonials
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">We partner with founders to turn great ideas into even better products.</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              What Our Clients Say
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              We partner with founders to turn great ideas into even better
+              products.
+            </p>
           </div>
         </div>
 
         <InfiniteSlider speedOnHover={40}>
           {[...testimonials, ...testimonials].map((testimonial, index) => (
-            <Card key={index} className="w-[380px] max-w-sm flex-shrink-0 bg-white border border-gray-200 shadow-lg rounded-xl p-6">
+            <Card
+              key={index}
+              className="w-[380px] max-w-sm flex-shrink-0 bg-white border border-gray-200 shadow-lg rounded-xl p-6"
+            >
               <CardContent className="p-0">
-                <p className="text-gray-700 mb-6 leading-relaxed font-medium">"{testimonial.quote}"</p>
+                <p className="text-gray-700 mb-6 leading-relaxed font-medium">
+                  "{testimonial.quote}"
+                </p>
                 <div className="flex items-center">
                   <div className="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center mr-4">
-                    <span className="text-xl font-bold text-orange-500">{testimonial.name.charAt(0)}</span>
+                    <span className="text-xl font-bold text-orange-500">
+                      {testimonial.name.charAt(0)}
+                    </span>
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-800">{testimonial.name}</h4>
+                    <h4 className="font-bold text-gray-800">
+                      {testimonial.name}
+                    </h4>
                     <p className="text-sm text-gray-500">{testimonial.title}</p>
                   </div>
                 </div>
@@ -649,10 +493,9 @@ export default function BuildLabsLandingPage() {
         </InfiniteSlider>
       </section>
 
-
       <section
         id="pricing"
-        className="py-20 bg-white relative z-10 overflow-hidden"
+        className="py-20 bg-black relative z-10 overflow-hidden"
       >
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
@@ -761,10 +604,7 @@ export default function BuildLabsLandingPage() {
 
                   <button
                     onClick={() =>
-                      window.open(
-                        "https://cal.com/buildlabs/30min",
-                        "_blank"
-                      )
+                      window.open("https://cal.com/buildlabs/30min", "_blank")
                     }
                     className="w-full py-4 px-6 rounded-full font-semibold transition-all duration-200 group-hover:scale-105 bg-white text-gray-900 hover:bg-gray-100 shadow-lg hover:shadow-xl"
                   >
@@ -835,10 +675,7 @@ export default function BuildLabsLandingPage() {
 
                   <button
                     onClick={() =>
-                      window.open(
-                        "https://cal.com/buildlabs/30min",
-                        "_blank"
-                      )
+                      window.open("https://cal.com/buildlabs/30min", "_blank")
                     }
                     className="w-full py-4 px-6 rounded-full font-semibold transition-all duration-200 group-hover:scale-105 bg-white text-orange-500 hover:bg-gray-100 shadow-lg hover:shadow-xl"
                   >
@@ -909,10 +746,7 @@ export default function BuildLabsLandingPage() {
 
                   <button
                     onClick={() =>
-                      window.open(
-                        "https://cal.com/buildlabs/30min",
-                        "_blank"
-                      )
+                      window.open("https://cal.com/buildlabs/30min", "_blank")
                     }
                     className="w-full py-4 px-6 rounded-full font-semibold transition-all duration-200 group-hover:scale-105 bg-white text-gray-900 hover:bg-gray-100 shadow-lg hover:shadow-xl"
                   >
@@ -988,10 +822,7 @@ export default function BuildLabsLandingPage() {
 
                   <button
                     onClick={() =>
-                      window.open(
-                        "https://cal.com/buildlabs/30min",
-                        "_blank"
-                      )
+                      window.open("https://cal.com/buildlabs/30min", "_blank")
                     }
                     className="w-full py-4 px-6 rounded-full font-semibold transition-all duration-200 group-hover:scale-105 bg-white text-gray-900 hover:bg-gray-100 shadow-lg hover:shadow-xl"
                   >
@@ -1067,10 +898,7 @@ export default function BuildLabsLandingPage() {
 
                   <button
                     onClick={() =>
-                      window.open(
-                        "https://cal.com/buildlabs/30min",
-                        "_blank"
-                      )
+                      window.open("https://cal.com/buildlabs/30min", "_blank")
                     }
                     className="w-full py-4 px-6 rounded-full font-semibold transition-all duration-200 group-hover:scale-105 bg-white text-orange-500 hover:bg-gray-100 shadow-lg hover:shadow-xl"
                   >
@@ -1141,10 +969,7 @@ export default function BuildLabsLandingPage() {
 
                   <button
                     onClick={() =>
-                      window.open(
-                        "https://cal.com/buildlabs/30min",
-                        "_blank"
-                      )
+                      window.open("https://cal.com/buildlabs/30min", "_blank")
                     }
                     className="w-full py-4 px-6 rounded-full font-semibold transition-all duration-200 group-hover:scale-105 bg-white text-gray-900 hover:bg-gray-100 shadow-lg hover:shadow-xl"
                   >
@@ -1161,10 +986,7 @@ export default function BuildLabsLandingPage() {
               Need a custom solution?{" "}
               <button
                 onClick={() =>
-                  window.open(
-                    "https://cal.com/buildlabs/30min",
-                    "_blank"
-                  )
+                  window.open("https://cal.com/buildlabs/30min", "_blank")
                 }
                 className="text-orange-500 hover:text-orange-600 font-medium"
               >
@@ -1177,7 +999,7 @@ export default function BuildLabsLandingPage() {
 
       <section
         id="faq"
-        className="py-24 bg-gradient-to-br from-gray-50 to-orange-50 relative z-10 overflow-hidden"
+        className="py-24 bg-black relative z-10 overflow-hidden"
       >
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
@@ -1196,11 +1018,7 @@ export default function BuildLabsLandingPage() {
 
           <div className="max-w-6xl mx-auto">
             <Card className="p-12 bg-white/95 backdrop-blur-sm shadow-2xl rounded-3xl border border-orange-200/50 hover:shadow-orange-500/10 transition-all duration-300">
-              <Accordion
-                type="single"
-                collapsible
-                className="space-y-6"
-              >
+              <Accordion type="single" collapsible className="space-y-6">
                 {[
                   {
                     question: "How fast can you launch an MVP?",
@@ -1368,10 +1186,7 @@ export default function BuildLabsLandingPage() {
             <p className="text-gray-600 mb-4">Still have questions?</p>
             <button
               onClick={() =>
-                window.open(
-                  "https://cal.com/buildlabs/30min",
-                  "_blank"
-                )
+                window.open("https://cal.com/buildlabs/30min", "_blank")
               }
               className="px-8 py-3 bg-orange-500 text-white rounded-full font-medium hover:bg-orange-600 transition-colors duration-200 shadow-lg hover:shadow-xl"
             >
@@ -1383,7 +1198,7 @@ export default function BuildLabsLandingPage() {
 
       <footer
         id="contact"
-        className="py-16 bg-gray-900 border-t border-gray-800 relative z-10"
+        className="py-16 bg-black border-t border-gray-800 relative z-10"
       >
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-12 gap-8 mb-12">
