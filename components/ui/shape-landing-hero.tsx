@@ -223,10 +223,11 @@ function HeroGeometric({
             animate="visible"
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <div className="mt-40">
-              <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-black/50 text-white text-sm font-medium mb-4 border border-white/20 backdrop-blur-sm mr-8">
-                <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                <span>{badge}</span>
+            <div className="mt-24">
+              <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-gray-500/20 text-gray-200 text-sm font-medium mb-4 border border-gray-400/30 backdrop-blur-md shadow-lg hover:shadow-xl hover:shadow-gray-400/20 hover:brightness-110 transition-all duration-300 ease-out mr-8">
+                <div className="w-2 h-2 bg-gray-300 rounded-full shadow-sm"></div>
+                <span>3 spots left</span>
+                <span className="text-gray-300">→</span>
               </div>
               <h1 className="text-6xl sm:text-7xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight transform transition-all duration-700 ease-out">
                 <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
